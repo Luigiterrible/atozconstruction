@@ -619,5 +619,162 @@ db.addEventListener('click',function(e){e.stopPropagation();const o=dw.classList
 document.addEventListener('click',()=>{dw.classList.remove('open');db.setAttribute('aria-expanded','false');});
 dw.addEventListener('click',e=>e.stopPropagation());
 </script>
+<!-- ══════════════════════════════════════════
+     POPUP 1 — TIMER (20 segundos)
+     Tono: proactivo / friendly
+════════════════════════════════════════════ -->
+<div id="popup-timer" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:9000;align-items:center;justify-content:center;padding:1rem;" aria-modal="true" role="dialog" aria-labelledby="popup-timer-title">
+  <div style="background:white;border-radius:16px;max-width:400px;width:100%;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.4);position:relative;animation:popupIn .3s ease;">
+    <div style="background:var(--orange);padding:1.4rem 1.5rem 1.2rem;position:relative;">
+      <button onclick="closePopup('timer')" aria-label="Close" style="position:absolute;top:.8rem;right:.8rem;background:rgba(0,0,0,.15);border:none;color:white;width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:.95rem;display:flex;align-items:center;justify-content:center;">&#10005;</button>
+      <p style="font-family:'Oswald',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.85);margin-bottom:.35rem;" data-en="Free &mdash; No Obligation" data-es="Gratis &mdash; Sin Compromiso">Free &mdash; No Obligation</p>
+      <h2 id="popup-timer-title" style="font-family:'Oswald',sans-serif;font-size:1.6rem;font-weight:700;color:white;line-height:1.1;margin-bottom:.35rem;" data-en="Ready to Get Started?" data-es="&iquest;Listo para Empezar?">Ready to Get Started?</h2>
+      <p style="font-size:.88rem;color:rgba(255,255,255,.88);line-height:1.45;" data-en="Get your free estimate today &mdash; fast response, no pressure." data-es="Obt&eacute;n tu presupuesto gratis hoy &mdash; respuesta r&aacute;pida, sin presi&oacute;n.">Get your free estimate today &mdash; fast response, no pressure.</p>
+    </div>
+    <div style="padding:1.4rem;">
+      <p style="font-size:.85rem;color:var(--gray-dark);margin-bottom:1rem;text-align:center;font-weight:600;" data-en="How would you like to reach us?" data-es="&iquest;C&oacute;mo prefieres contactarnos?">How would you like to reach us?</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1rem;">
+        <a href="https://wa.me/15551234567?text=Hello!%20I%20would%20like%20a%20free%20estimate." target="_blank" rel="noopener noreferrer" onclick="closePopup('timer')" style="display:flex;flex-direction:column;align-items:center;gap:.45rem;padding:1rem .75rem;background:#25D366;color:white;border-radius:10px;text-decoration:none;text-align:center;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a5.006 5.006 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.5 2C6.247 2 2 6.247 2 11.5c0 1.823.5 3.532 1.37 4.995L2 22l5.618-1.344A9.449 9.449 0 0 0 11.5 21c5.253 0 9.5-4.247 9.5-9.5S16.753 2 11.5 2z"/></svg>
+          <span style="font-family:'Oswald',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;" data-en="WhatsApp" data-es="WhatsApp">WhatsApp</span>
+          <span style="font-size:.7rem;opacity:.9;" data-en="Fast response" data-es="Respuesta r&aacute;pida">Fast response</span>
+        </a>
+        <a href="tel:+15551234567" onclick="closePopup('timer')" style="display:flex;flex-direction:column;align-items:center;gap:.45rem;padding:1rem .75rem;background:var(--black);color:white;border-radius:10px;text-decoration:none;text-align:center;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span style="font-family:'Oswald',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;" data-en="Call Us" data-es="Llamar">Call Us</span>
+          <span style="font-size:.7rem;opacity:.75;" data-en="Mon-Sat 7am-8pm" data-es="Lun-S&aacute;b 7am-8pm">Mon-Sat 7am-8pm</span>
+        </a>
+      </div>
+      <p style="font-size:.73rem;color:var(--gray-mid);text-align:center;" data-en="No obligation &mdash; free estimates always." data-es="Sin compromiso &mdash; presupuestos siempre gratis.">No obligation &mdash; free estimates always.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     POPUP 2 — EXIT INTENT
+     Tono: retención / urgencia
+════════════════════════════════════════════ -->
+<div id="popup-exit" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:9001;align-items:center;justify-content:center;padding:1rem;" aria-modal="true" role="dialog" aria-labelledby="popup-exit-title">
+  <div style="background:white;border-radius:16px;max-width:420px;width:100%;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5);position:relative;animation:popupIn .3s ease;">
+    <div style="background:var(--black);padding:1.4rem 1.5rem 1.2rem;position:relative;">
+      <button onclick="closePopup('exit')" aria-label="Close" style="position:absolute;top:.8rem;right:.8rem;background:rgba(255,255,255,.1);border:none;color:white;width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:.95rem;display:flex;align-items:center;justify-content:center;">&#10005;</button>
+      <p style="font-family:'Oswald',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:.35rem;" data-en="Wait &mdash; before you go!" data-es="&iexcl;Espera &mdash; antes de irte!">Wait &mdash; before you go!</p>
+      <h2 id="popup-exit-title" style="font-family:'Oswald',sans-serif;font-size:1.6rem;font-weight:700;color:white;line-height:1.1;margin-bottom:.35rem;">
+        <span data-en="Don&rsquo;t Leave Without Your" data-es="No te vayas sin tu">Don&rsquo;t Leave Without Your</span><br>
+        <span style="color:var(--orange);" data-en="Free Estimate!" data-es="&iexcl;Presupuesto Gratis!">Free Estimate!</span>
+      </h2>
+      <p style="font-size:.88rem;color:rgba(255,255,255,.78);line-height:1.45;" data-en="We&rsquo;re licensed, insured, and ready to help. Contact us now &mdash; it takes less than a minute." data-es="Estamos licenciados, asegurados y listos para ayudarte. Cont&aacute;ctanos ahora &mdash; toma menos de un minuto.">We&rsquo;re licensed, insured, and ready to help. Contact us now &mdash; it takes less than a minute.</p>
+    </div>
+    <div style="padding:1.4rem;">
+      <div style="background:var(--orange-pale);border:1.5px solid rgba(232,130,26,.3);border-radius:8px;padding:.75rem 1rem;margin-bottom:1.1rem;display:flex;align-items:center;gap:.6rem;">
+        <span style="font-size:1.3rem;" aria-hidden="true">⚡</span>
+        <p style="font-size:.82rem;color:var(--black);font-weight:600;line-height:1.4;" data-en="Free estimates &middot; Fast response &middot; No obligation" data-es="Presupuestos gratis &middot; Respuesta r&aacute;pida &middot; Sin compromiso">Free estimates &middot; Fast response &middot; No obligation</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:.9rem;">
+        <a href="https://wa.me/15551234567?text=Hello!%20I%20was%20about%20to%20leave%20but%20I%20need%20a%20free%20estimate." target="_blank" rel="noopener noreferrer" onclick="closePopup('exit')" style="display:flex;flex-direction:column;align-items:center;gap:.45rem;padding:1rem .75rem;background:#25D366;color:white;border-radius:10px;text-decoration:none;text-align:center;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a5.006 5.006 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.5 2C6.247 2 2 6.247 2 11.5c0 1.823.5 3.532 1.37 4.995L2 22l5.618-1.344A9.449 9.449 0 0 0 11.5 21c5.253 0 9.5-4.247 9.5-9.5S16.753 2 11.5 2z"/></svg>
+          <span style="font-family:'Oswald',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;" data-en="WhatsApp" data-es="WhatsApp">WhatsApp</span>
+          <span style="font-size:.7rem;opacity:.9;" data-en="Instant reply" data-es="Respuesta instant&aacute;nea">Instant reply</span>
+        </a>
+        <a href="tel:+15551234567" onclick="closePopup('exit')" style="display:flex;flex-direction:column;align-items:center;gap:.45rem;padding:1rem .75rem;background:var(--black);color:white;border-radius:10px;text-decoration:none;text-align:center;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span style="font-family:'Oswald',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;" data-en="Call Us" data-es="Llamar">Call Us</span>
+          <span style="font-size:.7rem;opacity:.75;" data-en="Mon-Sat 7am-8pm" data-es="Lun-S&aacute;b 7am-8pm">Mon-Sat 7am-8pm</span>
+        </a>
+      </div>
+      <button onclick="closePopup('exit')" style="width:100%;font-size:.78rem;color:var(--gray-mid);background:none;border:none;cursor:pointer;padding:.4rem;" data-en="No thanks, I'll contact you later" data-es="No gracias, los contactar&eacute; despu&eacute;s">No thanks, I'll contact you later</button>
+    </div>
+  </div>
+</div>
+
+<style>
+@keyframes popupIn{from{opacity:0;transform:scale(.92) translateY(12px);}to{opacity:1;transform:scale(1) translateY(0);}}
+</style>
+
+<!-- ── TAWK.TO LIVE CHAT ── -->
+<!--
+  INSTRUCCIONES TAWK.TO:
+  1. Ve a tawk.to y crea una cuenta gratuita
+  2. Crea una propiedad para "A-Z Construction & Services"
+  3. Copia tu snippet personalizado y reemplaza el bloque de abajo
+  4. El snippet luce así:
+     <script type="text/javascript">
+     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+     (function(){
+       var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+       s1.async=true;
+       s1.src='https://embed.tawk.to/TU_PROPERTY_ID/TU_WIDGET_ID';
+       s1.charset='UTF-8';
+       s1.setAttribute('crossorigin','*');
+       s0.parentNode.insertBefore(s1,s0);
+     })();
+     </script>
+  REEMPLAZA: TU_PROPERTY_ID y TU_WIDGET_ID con tus valores reales
+-->
+
+<script>
+(function(){
+  var TIMER_KEY = 'azc_popup_timer';
+  var EXIT_KEY  = 'azc_popup_exit';
+
+  function applyLang(el){
+    var lang = localStorage.getItem('azc-lang') || 'en';
+    el.querySelectorAll('[data-en]').forEach(function(node){
+      var t = node.dataset[lang];
+      if(!t) return;
+      if(t.includes('<')){ node.innerHTML = t; } else { node.textContent = t; }
+    });
+  }
+
+  function showPopup(id){
+    var el = document.getElementById(id);
+    if(!el) return;
+    applyLang(el);
+    el.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  window.closePopup = function(type){
+    var id = type === 'timer' ? 'popup-timer' : 'popup-exit';
+    var el = document.getElementById(id);
+    if(el){ el.style.display = 'none'; document.body.style.overflow = ''; }
+  };
+
+  // Close on overlay click
+  ['popup-timer','popup-exit'].forEach(function(id){
+    var el = document.getElementById(id);
+    if(el) el.addEventListener('click', function(e){ if(e.target===this) closePopup(id==='popup-timer'?'timer':'exit'); });
+  });
+
+  // Close on ESC
+  document.addEventListener('keydown', function(e){
+    if(e.key==='Escape'){
+      closePopup('timer');
+      closePopup('exit');
+    }
+  });
+
+  // TIMER POPUP — 20 seconds
+  if(!sessionStorage.getItem(TIMER_KEY)){
+    setTimeout(function(){
+      sessionStorage.setItem(TIMER_KEY,'1');
+      showPopup('popup-timer');
+    }, 20000);
+  }
+
+  // EXIT INTENT POPUP
+  if(!sessionStorage.getItem(EXIT_KEY)){
+    document.addEventListener('mouseleave', function handler(e){
+      if(e.clientY <= 0){
+        document.removeEventListener('mouseleave', handler);
+        sessionStorage.setItem(EXIT_KEY,'1');
+        closePopup('timer'); // close timer if open
+        showPopup('popup-exit');
+      }
+    });
+  }
+})();
+</script>
+
 </body>
 </html>
