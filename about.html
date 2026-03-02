@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" id="html-root">
 <head>
   <meta charset="UTF-8">
@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/styles_ltr.css">
-  <script type="application/ld+json">
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "AboutPage",
@@ -60,23 +60,9 @@
     html{scroll-behavior:smooth;}
     body{font-family:'Source Sans 3',sans-serif;color:var(--black);background:var(--white);-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column;}
     h1,h2,h3,h4,h5,h6{font-family:'Oswald',sans-serif;letter-spacing:.01em;}
-
     .skip-link{position:absolute;top:-100px;left:1rem;z-index:9999;padding:.75rem 1.25rem;background:var(--orange);color:white;font-weight:700;border-radius:0 0 8px 8px;transition:top .2s;text-decoration:none;}
     .skip-link:focus{top:0;}
-
     /* HEADER */
-    #site-header{position:sticky;top:0;z-index:100;background:var(--black);border-bottom:3px solid var(--orange);box-shadow:0 2px 20px rgba(0,0,0,.3);}
-    .header-inner{max-width:1280px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:80px;gap:1rem;}
-    .logo-wrap{display:flex;align-items:center;gap:.75rem;text-decoration:none;flex-shrink:0;}
-    .logo-wrap img{height:56px;width:auto;background:white;border-radius:6px;padding:3px;box-shadow:0 0 0 2px var(--orange);}
-    .logo-text-wrap{display:flex;flex-direction:column;}
-    .logo-name{font-family:'Oswald',sans-serif;font-size:1.35rem;font-weight:700;color:var(--white);line-height:1.1;letter-spacing:.03em;}
-    .logo-name span{color:var(--orange);}
-    .logo-tagline{font-size:.65rem;font-weight:600;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;line-height:1.2;}
-    #main-nav{display:flex;align-items:center;gap:.25rem;}
-    .nav-link{font-family:'Oswald',sans-serif;font-size:.9rem;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:rgba(255,255,255,.85);text-decoration:none;padding:.5rem .75rem;border-radius:4px;transition:color .2s,background .2s;}
-    .nav-link:hover{color:var(--orange);background:rgba(232,130,26,.1);}
-    .nav-link.active{color:var(--orange);}
     .nav-dropdown-wrap{position:relative;}
     .nav-dropdown-trigger{display:flex;align-items:center;gap:.3rem;cursor:pointer;background:none;border:none;}
     .nav-dropdown-trigger svg{transition:transform .2s;flex-shrink:0;}
@@ -100,20 +86,7 @@
     .mega-cat-btn.residential:hover{background:var(--orange-dark);}
     .mega-cat-btn.commercial{background:var(--black);color:white;}
     .mega-cat-btn.commercial:hover{background:var(--black-soft);}
-    .header-right{display:flex;align-items:center;gap:.75rem;}
-    .lang-switcher{display:flex;align-items:center;border:1.5px solid rgba(255,255,255,.2);border-radius:6px;overflow:hidden;}
-    .lang-btn{padding:.3rem .65rem;font-family:'Oswald',sans-serif;font-size:.8rem;font-weight:600;letter-spacing:.05em;color:rgba(255,255,255,.6);background:transparent;border:none;cursor:pointer;transition:all .2s;}
-    .lang-btn.active{background:var(--orange);color:white;}
     .lang-btn:hover:not(.active){color:white;}
-    .btn-header-cta{font-family:'Oswald',sans-serif;font-size:.85rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:.5rem 1.1rem;background:var(--orange);color:white;border-radius:6px;text-decoration:none;border:none;cursor:pointer;transition:background .2s,transform .1s;white-space:nowrap;}
-    .btn-header-cta:hover{background:var(--orange-dark);transform:translateY(-1px);}
-    #mobile-menu-btn{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
-    #mobile-menu-btn span{display:block;width:24px;height:2px;background:white;border-radius:2px;transition:all .3s;}
-    #mobile-nav{display:none;background:var(--black-soft);border-top:1px solid rgba(255,255,255,.1);padding:1rem 1.5rem;}
-    #mobile-nav.open{display:block;}
-    .mobile-nav-link{display:block;font-family:'Oswald',sans-serif;font-size:1rem;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:rgba(255,255,255,.85);text-decoration:none;padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.08);transition:color .2s;}
-    .mobile-nav-link:hover{color:var(--orange);}
-
     /* PAGE HERO */
     #page-hero{background:var(--black);padding:3.5rem 1.5rem 3rem;position:relative;overflow:hidden;}
     #page-hero::before{content:'';position:absolute;right:-80px;top:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(232,130,26,.12) 0%,transparent 70%);pointer-events:none;}
@@ -133,7 +106,6 @@
     .btn-primary:hover{background:var(--orange-dark);border-color:var(--orange-dark);transform:translateY(-2px);}
     .btn-outline{display:inline-flex;align-items:center;gap:.5rem;font-family:'Oswald',sans-serif;font-size:.95rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:.8rem 1.75rem;background:transparent;color:white;border-radius:8px;text-decoration:none;border:2px solid rgba(255,255,255,.4);cursor:pointer;transition:all .2s;}
     .btn-outline:hover{border-color:white;background:rgba(255,255,255,.08);}
-
     /* WHO WE ARE */
     #who-we-are{background:var(--white);padding:4.5rem 1.5rem;}
     .who-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
@@ -147,7 +119,6 @@
     .who-badge{position:absolute;bottom:-20px;right:-20px;background:var(--orange);color:white;border-radius:12px;padding:1.1rem 1.25rem;box-shadow:0 8px 30px rgba(232,130,26,.4);text-align:center;min-width:120px;}
     .who-badge-num{font-family:'Oswald',sans-serif;font-size:2.2rem;font-weight:700;line-height:1;display:block;}
     .who-badge-label{font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.9;margin-top:.2rem;display:block;}
-
     /* VALUES */
     #values{background:var(--off-white);padding:4rem 1.5rem;}
     .values-inner{max-width:1280px;margin:0 auto;}
@@ -157,7 +128,6 @@
     .value-icon{width:48px;height:48px;background:var(--orange-pale);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--orange);margin-bottom:1rem;}
     .value-title{font-family:'Oswald',sans-serif;font-size:1.15rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
     .value-desc{font-size:.9rem;color:var(--text-muted);line-height:1.65;}
-
     /* STATS */
     #stats{background:var(--black);padding:3.5rem 1.5rem;}
     .stats-inner{max-width:1280px;margin:0 auto;}
@@ -165,7 +135,6 @@
     .stat-item{text-align:center;padding:1.5rem 1rem;border:1px solid rgba(255,255,255,.08);border-radius:10px;background:rgba(255,255,255,.03);}
     .stat-num{font-family:'Oswald',sans-serif;font-size:2.8rem;font-weight:700;color:var(--orange);line-height:1;}
     .stat-label{font-size:.85rem;color:rgba(255,255,255,.6);margin-top:.4rem;letter-spacing:.04em;}
-
     /* WHY US */
     #why-us{background:var(--white);padding:4.5rem 1.5rem;}
     .why-inner{max-width:1280px;margin:0 auto;}
@@ -175,7 +144,6 @@
     .why-check{width:36px;height:36px;background:var(--orange);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:white;}
     .why-text h4{font-family:'Oswald',sans-serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.3rem;}
     .why-text p{font-size:.88rem;color:var(--text-muted);line-height:1.6;}
-
     /* COVERAGE */
     #coverage{background:var(--off-white);padding:4rem 1.5rem;}
     .coverage-inner{max-width:1280px;margin:0 auto;}
@@ -185,7 +153,6 @@
     .coverage-flag{font-size:2.5rem;margin-bottom:.75rem;display:block;}
     .coverage-state{font-family:'Oswald',sans-serif;font-size:1.3rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
     .coverage-cities{font-size:.88rem;color:var(--text-muted);line-height:1.6;}
-
     /* CTA BANNER */
     #cta-banner{background:linear-gradient(135deg,var(--orange) 0%,var(--orange-dark) 100%);padding:3.5rem 1.5rem;text-align:center;}
     .cta-inner{max-width:700px;margin:0 auto;}
@@ -196,122 +163,29 @@
     .btn-white:hover{background:transparent;color:white;}
     .btn-outline-white{display:inline-flex;align-items:center;gap:.5rem;font-family:'Oswald',sans-serif;font-size:.95rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:.8rem 1.75rem;background:transparent;color:white;border-radius:8px;text-decoration:none;border:2px solid rgba(255,255,255,.6);transition:all .2s;}
     .btn-outline-white:hover{border-color:white;background:rgba(255,255,255,.1);}
-
     /* FOOTER */
-    #site-footer{background:var(--black);color:white;border-top:3px solid var(--orange);margin-top:auto;}
-    .footer-inner{max-width:1280px;margin:0 auto;padding:3rem 1.5rem 1.5rem;}
-    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2.5rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:1.5rem;}
-    .footer-logo img{height:60px;width:auto;background:white;border-radius:8px;padding:4px;box-shadow:0 0 0 2px var(--orange);display:block;margin-bottom:1rem;}
-    .footer-desc{font-size:.85rem;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:1rem;}
-    .footer-col-title{font-family:'Oswald',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin-bottom:1rem;}
-    .footer-links{list-style:none;display:flex;flex-direction:column;gap:.5rem;}
-    .footer-links a{font-size:.85rem;color:rgba(255,255,255,.6);text-decoration:none;transition:color .2s;}
-    .footer-links a:hover{color:var(--orange);}
-    .footer-contact-item{display:flex;align-items:flex-start;gap:.5rem;font-size:.85rem;color:rgba(255,255,255,.6);margin-bottom:.6rem;}
-    .footer-contact-item a{color:rgba(255,255,255,.6);text-decoration:none;transition:color .2s;}
-    .footer-contact-item a:hover{color:var(--orange);}
-    .footer-contact-item svg{color:var(--orange);flex-shrink:0;margin-top:2px;}
-    .footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
-    .footer-copyright{font-size:.8rem;color:rgba(255,255,255,.35);}
-    .footer-legal-links{display:flex;gap:1.5rem;}
-    .footer-legal-links a{font-size:.8rem;color:rgba(255,255,255,.35);text-decoration:none;transition:color .2s;}
-    .footer-legal-links a:hover{color:rgba(255,255,255,.7);}
-
     /* FLOATING WA */
     #whatsapp-float{position:fixed;bottom:1.5rem;right:1.5rem;z-index:90;display:flex;align-items:center;gap:.5rem;background:#25D366;color:white;padding:.75rem 1.25rem;border-radius:50px;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.4);font-family:'Oswald',sans-serif;font-size:.9rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;transition:all .3s;}
     #whatsapp-float:hover{background:#1da851;transform:translateY(-2px);}
-
     /* RESPONSIVE */
     @media(max-width:1024px){.who-inner{grid-template-columns:1fr;}.stats-grid{grid-template-columns:repeat(2,1fr);}.why-grid{grid-template-columns:1fr;}.coverage-grid{grid-template-columns:1fr 1fr;}.footer-grid{grid-template-columns:1fr 1fr;}}
     @media(max-width:768px){
-      #main-nav{display:none;}#mobile-menu-btn{display:flex;}.btn-header-cta{display:none;}
       .who-badge{bottom:-10px;right:0;}
       .stats-grid{grid-template-columns:repeat(2,1fr);}
       .coverage-grid{grid-template-columns:1fr;}
-      .footer-grid{grid-template-columns:1fr;gap:1.5rem;}.footer-bottom{flex-direction:column;align-items:flex-start;}
       .mega-menu{width:95vw;left:0;transform:none;}
       .nav-dropdown-wrap:hover .mega-menu,.nav-dropdown-wrap.open .mega-menu{transform:translateY(0);}
       #whatsapp-float .wa-text{display:none;}#whatsapp-float{padding:.85rem;border-radius:50%;}
     }
     @media(max-width:480px){.page-hero-ctas{flex-direction:column;}.values-grid{grid-template-columns:1fr;}.cta-btns{flex-direction:column;align-items:center;}}
   </style>
+  <link rel="stylesheet" href="./assets/css/global-layout.css" data-global-layout="override">
 </head>
 <body>
 <a href="#main-content" class="skip-link" data-en="Skip to main content" data-es="Ir al contenido principal">Skip to main content</a>
-
 <!-- HEADER -->
-<header id="site-header" role="banner">
-  <div class="header-inner">
-    <a href="./index.html" class="logo-wrap" aria-label="A-Z Construction &amp; Services &ndash; Home">
-      <img src="./assets/images/icon.png" alt="A-Z Construction &amp; Services Logo" width="56" height="56">
-      <div class="logo-text-wrap">
-        <span class="logo-name"><span>A-Z</span> Construction &amp; Services</span>
-        <span class="logo-tagline" data-en="Pro-Handyman Xpress &middot; General Contractor" data-es="Pro-Handyman Xpress &middot; Contratista General">Pro-Handyman Xpress &middot; General Contractor</span>
-      </div>
-    </a>
-    <nav id="main-nav" aria-label="Main navigation">
-      <a href="./index.html" class="nav-link" data-en="Home" data-es="Inicio">Home</a>
-      <div class="nav-dropdown-wrap" id="services-dropdown">
-        <button class="nav-link nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" id="services-btn">
-          <span data-en="Services" data-es="Servicios">Services</span>
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-        </button>
-        <div class="mega-menu" role="menu">
-          <div class="mega-menu-header"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg><span data-en="All Services &mdash; A to Z" data-es="Todos los Servicios &mdash; A a la Z">All Services &mdash; A to Z</span></div>
-          <div class="alpha-group"><span class="alpha-letter">A</span><div class="alpha-services"><a class="mega-service-item active" href="./residential.html">Additions &amp; Remodeling</a><span class="mega-service-item coming-soon">Air Duct Cleaning <span class="badge-soon">Soon</span></span><span class="mega-service-item coming-soon">Alarm Installation <span class="badge-soon">Soon</span></span><span class="mega-service-item coming-soon">Appliance Repair <span class="badge-soon">Soon</span></span><span class="mega-service-item coming-soon">Asphalt / Driveway Sealcoat <span class="badge-soon">Soon</span></span></div></div>
-          <div class="alpha-group"><span class="alpha-letter">B</span><div class="alpha-services"><span class="mega-service-item coming-soon">Backflow Testing <span class="badge-soon">Soon</span></span><span class="mega-service-item coming-soon">Basement Waterproofing <span class="badge-soon">Soon</span></span><a class="mega-service-item active" href="./residential.html">Bathroom Remodeling</a><span class="mega-service-item coming-soon">Brick / Stone Work <span class="badge-soon">Soon</span></span></div></div>
-          <div class="alpha-group"><span class="alpha-letter">C</span><div class="alpha-services"><span class="mega-service-item coming-soon">Cabinet Refacing &amp; Install <span class="badge-soon">Soon</span></span><span class="mega-service-item coming-soon">Carpet Cleaning <span class="badge-soon">Soon</span></span><span class="mega-service-item coming-soon">Chimney Cleaning &amp; Repair <span class="badge-soon">Soon</span></span><span class="mega-service-item coming-soon">Concrete Leveling &amp; Walkways <span class="badge-soon">Soon</span></span><span class="mega-service-item coming-soon">Countertop Installation <span class="badge-soon">Soon</span></span></div></div>
-          <div class="alpha-group"><span class="alpha-letter">D</span><div class="alpha-services"><span class="mega-service-item coming-soon">Deck &amp; Porch Construction <span class="badge-soon">Soon</span></span><span class="mega-service-item coming-soon">Drainage Services <span class="badge-soon">Soon</span></span><a class="mega-service-item active" href="./residential.html">Drywall &amp; Plaster Repair</a><span class="mega-service-item coming-soon">Dumpster Rentals <span class="badge-soon">Soon</span></span></div></div>
-          <div class="alpha-group"><span class="alpha-letter">E</span><div class="alpha-services"><a class="mega-service-item active" href="./residential.html">Electrical Contracting &amp; Repair</a><span class="mega-service-item coming-soon">Environmental Remediation <span class="badge-soon">Soon</span></span></div></div>
-          <div class="alpha-group"><span class="alpha-letter">F</span><div class="alpha-services"><span class="mega-service-item coming-soon">Fencing Services <span class="badge-soon">Soon</span></span><span class="mega-service-item coming-soon">Fire &amp; Water Restoration <span class="badge-soon">Soon</span></span><a class="mega-service-item active" href="./residential.html">Flooring Installation &amp; Repair</a></div></div>
-          <div class="alpha-group"><span class="alpha-letter">G</span><div class="alpha-services"><span class="mega-service-item coming-soon">Garage Door Install &amp; Repair <span class="badge-soon">Soon</span></span><span class="mega-service-item coming-soon">Gutter Cleaning &amp; Installation <span class="badge-soon">Soon</span></span></div></div>
-          <div class="alpha-group"><span class="alpha-letter">H</span><div class="alpha-services"><a class="mega-service-item active" href="./residential.html">Handyman Services</a><span class="mega-service-item coming-soon">Home Inspection <span class="badge-soon">Soon</span></span><a class="mega-service-item active" href="./residential.html">HVAC &ndash; Heating, Cooling &amp; Ventilation</a></div></div>
-          <div class="alpha-group"><span class="alpha-letter">I</span><div class="alpha-services"><span class="mega-service-item coming-soon">Insulation <span class="badge-soon">Soon</span></span><span class="mega-service-item coming-soon">Interior Design / Decor <span class="badge-soon">Soon</span></span></div></div>
-          <div class="alpha-group"><span class="alpha-letter">J</span><div class="alpha-services"><span class="mega-service-item coming-soon">Janitorial Services <span class="badge-soon">Soon</span></span><span class="mega-service-item coming-soon">Junk Removal <span class="badge-soon">Soon</span></span></div></div>
-          <div class="alpha-group"><span class="alpha-letter">K</span><div class="alpha-services"><span class="mega-service-item coming-soon">Kids &amp; Pet Proofing <span class="badge-soon">Soon</span></span><a class="mega-service-item active" href="./residential.html">Kitchen Remodeling</a></div></div>
-          <div class="alpha-group"><span class="alpha-letter">L</span><div class="alpha-services"><span class="mega-service-item coming-soon">Lawn Care / Landscaping <span class="badge-soon">Soon</span></span><a class="mega-service-item active" href="./residential.html">Lighting Installation</a><span class="mega-service-item coming-soon">Locksmith Services <span class="badge-soon">Soon</span></span></div></div>
-          <div class="alpha-group"><span class="alpha-letter">M</span><div class="alpha-services"><span class="mega-service-item coming-soon">Masonry <span class="badge-soon">Soon</span></span><span class="mega-service-item coming-soon">Mold Remediation <span class="badge-soon">Soon</span></span><span class="mega-service-item coming-soon">Moving Services <span class="badge-soon">Soon</span></span></div></div>
-          <div class="alpha-group"><span class="alpha-letter">P</span><div class="alpha-services"><a class="mega-service-item active" href="./residential.html">Painting &ndash; Interior &amp; Exterior</a><span class="mega-service-item coming-soon">Pest Control <span class="badge-soon">Soon</span></span><a class="mega-service-item active" href="./residential.html">Plumbing &amp; Pipes Services</a><span class="mega-service-item coming-soon">Pool &amp; Spa Services <span class="badge-soon">Soon</span></span><a class="mega-service-item active" href="./residential.html">Pressure Washing</a></div></div>
-          <div class="alpha-group"><span class="alpha-letter">R</span><div class="alpha-services"><span class="mega-service-item coming-soon">Radon Remediation <span class="badge-soon">Soon</span></span><span class="mega-service-item coming-soon">Retaining Walls &amp; Structures <span class="badge-soon">Soon</span></span><span class="mega-service-item coming-soon">Roofing &ndash; Repair &amp; Installation <span class="badge-soon">Soon</span></span></div></div>
-          <div class="alpha-group"><span class="alpha-letter">S</span><div class="alpha-services"><span class="mega-service-item coming-soon">Security System Installation <span class="badge-soon">Soon</span></span><span class="mega-service-item coming-soon">Septic Tank Pumping <span class="badge-soon">Soon</span></span><span class="mega-service-item coming-soon">Siding Repair / Installation <span class="badge-soon">Soon</span></span></div></div>
-          <div class="alpha-group"><span class="alpha-letter">T</span><div class="alpha-services"><span class="mega-service-item coming-soon">Thermostat / Smart Home <span class="badge-soon">Soon</span></span><a class="mega-service-item active" href="./residential.html">Tile &amp; Flooring</a><span class="mega-service-item coming-soon">Tree Service &amp; Removal <span class="badge-soon">Soon</span></span></div></div>
-          <div class="alpha-group"><span class="alpha-letter">W</span><div class="alpha-services"><span class="mega-service-item coming-soon">Wallpaper Installation <span class="badge-soon">Soon</span></span><span class="mega-service-item coming-soon">Well Water Services <span class="badge-soon">Soon</span></span><span class="mega-service-item coming-soon">Window Cleaning / Replacement <span class="badge-soon">Soon</span></span></div></div>
-          <div class="mega-menu-footer">
-            <a href="./residential.html" class="mega-cat-btn residential"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span data-en="All Residential" data-es="Todo Residencial">All Residential</span></a>
-            <a href="./commercial.html" class="mega-cat-btn commercial"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/></svg><span data-en="All Commercial" data-es="Todo Comercial">All Commercial</span></a>
-          </div>
-        </div>
-      </div>
-      <a href="./residential.html" class="nav-link" data-en="Residential" data-es="Residencial">Residential</a>
-<a href="./commercial.html" class="nav-link" data-en="Commercial" data-es="Comercial">Commercial</a>
-<a href="./about.html" class="nav-link" data-en="About Us" data-es="Nosotros">About Us</a>
-      <a href="./contact.html" class="nav-link" data-en="Contact" data-es="Contacto">Contact</a>
-      <a href="./affiliates.html" class="nav-link" data-en="Affiliates" data-es="Afiliados">Affiliates</a>
-    </nav>
-    <div class="header-right">
-      <div class="lang-switcher" role="group" aria-label="Language / Idioma">
-        <button class="lang-btn active" id="btn-en" onclick="setLang('en')" aria-pressed="true">EN</button>
-        <button class="lang-btn" id="btn-es" onclick="setLang('es')" aria-pressed="false">ES</button>
-      </div>
-      <a href="./contact.html" class="btn-header-cta" data-en="Free Estimate" data-es="Presupuesto Gratis">Free Estimate</a>
-      <button id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
-    </div>
-  </div>
-  <nav id="mobile-nav" aria-label="Mobile navigation">
-    <a href="./index.html" class="mobile-nav-link" data-en="Home" data-es="Inicio">Home</a>
-    <a href="./residential.html" class="mobile-nav-link" data-en="Residential Services" data-es="Servicios Residenciales">Residential Services</a>
-    <a href="./commercial.html" class="mobile-nav-link" data-en="Commercial Services" data-es="Servicios Comerciales">Commercial Services</a>
-    <a href="./residential.html" class="mobile-nav-link" data-en="Residential" data-es="Residencial">Residential</a>
-<a href="./commercial.html" class="mobile-nav-link" data-en="Commercial" data-es="Comercial">Commercial</a>
-<a href="./affiliates.html" class="mobile-nav-link" data-en="Affiliates" data-es="Afiliados">Affiliates</a>
-    <a href="./about.html" class="mobile-nav-link" style="color:var(--orange);" data-en="About Us" data-es="Nosotros">About Us</a>
-    <a href="./contact.html" class="mobile-nav-link" data-en="Contact" data-es="Contacto">Contact</a>
-    <a href="./contact.html" class="mobile-nav-link" style="color:var(--orange);font-weight:700;" data-en="Free Estimate" data-es="Presupuesto Gratis">Free Estimate</a>
-  </nav>
-</header>
-
+<div id="global-header"></div>
 <main id="main-content">
-
   <!-- PAGE HERO -->
   <section id="page-hero" aria-labelledby="page-h1">
     <div class="page-hero-inner">
@@ -342,7 +216,6 @@
       </div>
     </div>
   </section>
-
   <!-- WHO WE ARE -->
   <section id="who-we-are" aria-labelledby="who-heading">
     <div class="who-inner">
@@ -362,54 +235,45 @@
       </div>
     </div>
   </section>
-
   <!-- VALUES -->
   <section id="values" aria-labelledby="values-heading">
     <div class="values-inner">
       <p class="section-eyebrow" data-en="What We Stand For" data-es="Lo Que Nos Define">What We Stand For</p>
       <h2 class="section-title" id="values-heading"><span data-en="Our Core <em>Values</em>" data-es="Nuestros <em>Valores Fundamentales</em>">Our Core <em>Values</em></span></h2>
       <div class="values-grid">
-
         <div class="value-card">
           <div class="value-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
           <h3 class="value-title" data-en="Integrity First" data-es="Integridad Primero">Integrity First</h3>
           <p class="value-desc" data-en="We give honest estimates, clear timelines, and straightforward answers &mdash; even when the news isn't what you hoped for. No hidden fees, no surprises." data-es="Damos presupuestos honestos, plazos claros y respuestas directas &mdash; incluso cuando las noticias no son las que esperabas. Sin cargos ocultos, sin sorpresas.">We give honest estimates, clear timelines, and straightforward answers &mdash; even when the news isn't what you hoped for. No hidden fees, no surprises.</p>
         </div>
-
         <div class="value-card">
           <div class="value-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
           <h3 class="value-title" data-en="Quality Without Compromise" data-es="Calidad Sin Concesiones">Quality Without Compromise</h3>
           <p class="value-desc" data-en="Every project &mdash; big or small &mdash; gets our full attention and premium materials. We don't cut corners because your property deserves better." data-es="Cada proyecto &mdash; grande o peque&ntilde;o &mdash; recibe toda nuestra atenci&oacute;n y materiales premium. No tomamos atajos porque tu propiedad merece lo mejor.">Every project &mdash; big or small &mdash; gets our full attention and premium materials. We don't cut corners because your property deserves better.</p>
         </div>
-
         <div class="value-card">
           <div class="value-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
           <h3 class="value-title" data-en="Clear Communication" data-es="Comunicaci&oacute;n Clara">Clear Communication</h3>
           <p class="value-desc" data-en="You'll always know where your project stands. We keep you informed from estimate to completion &mdash; in English and in Spanish." data-es="Siempre sabr&aacute;s c&oacute;mo va tu proyecto. Te mantenemos informado desde el presupuesto hasta la finalizaci&oacute;n &mdash; en ingl&eacute;s y en espa&ntilde;ol.">You'll always know where your project stands. We keep you informed from estimate to completion &mdash; in English and in Spanish.</p>
         </div>
-
         <div class="value-card">
           <div class="value-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
           <h3 class="value-title" data-en="Reliability &amp; Punctuality" data-es="Confiabilidad y Puntualidad">Reliability &amp; Punctuality</h3>
           <p class="value-desc" data-en="We show up when we say we will. We finish when we commit to finishing. Your time is valuable and we treat it that way." data-es="Llegamos cuando decimos que llegaremos. Terminamos cuando nos comprometemos a terminar. Tu tiempo es valioso y lo tratamos as&iacute;.">We show up when we say we will. We finish when we commit to finishing. Your time is valuable and we treat it that way.</p>
         </div>
-
         <div class="value-card">
           <div class="value-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg></div>
           <h3 class="value-title" data-en="Specialized Excellence" data-es="Excelencia Especializada">Specialized Excellence</h3>
           <p class="value-desc" data-en="Through our network of vetted professional affiliates, every trade is handled by a true specialist. We coordinate the best people for every job." data-es="A trav&eacute;s de nuestra red de afiliados profesionales verificados, cada oficio lo maneja un verdadero especialista. Coordinamos a las mejores personas para cada trabajo.">Through our network of vetted professional affiliates, every trade is handled by a true specialist. We coordinate the best people for every job.</p>
         </div>
-
         <div class="value-card">
           <div class="value-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
           <h3 class="value-title" data-en="Respect for Your Space" data-es="Respeto por Tu Espacio">Respect for Your Space</h3>
           <p class="value-desc" data-en="We treat every home and business as if it were our own. Clean work areas, careful material handling, and a site left better than we found it." data-es="Tratamos cada hogar y negocio como si fuera el nuestro. &Aacute;reas de trabajo limpias, manejo cuidadoso de materiales y un lugar dejado mejor de lo que lo encontramos.">We treat every home and business as if it were our own. Clean work areas, careful material handling, and a site left better than we found it.</p>
         </div>
-
       </div>
     </div>
   </section>
-
   <!-- STATS -->
   <section id="stats" aria-label="Company milestones">
     <div class="stats-inner">
@@ -435,14 +299,12 @@
       </div>
     </div>
   </section>
-
   <!-- WHY US -->
   <section id="why-us" aria-labelledby="why-heading">
     <div class="why-inner">
       <p class="section-eyebrow" data-en="Why Choose Us" data-es="Por Qu&eacute; Elegirnos">Why Choose Us</p>
       <h2 class="section-title" id="why-heading"><span data-en="What Sets A-Z <em>Apart</em>" data-es="Lo Que Distingue a <em>A-Z</em>">What Sets A-Z <em>Apart</em></span></h2>
       <div class="why-grid">
-
         <div class="why-item">
           <div class="why-check" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
           <div class="why-text">
@@ -450,7 +312,6 @@
             <p data-en="Fully licensed and insured in NY, NJ, and PA &mdash; you're protected from start to finish." data-es="Completamente licenciado y asegurado en NY, NJ y PA &mdash; est&aacute;s protegido de principio a fin.">Fully licensed and insured in NY, NJ, and PA &mdash; you're protected from start to finish.</p>
           </div>
         </div>
-
         <div class="why-item">
           <div class="why-check" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
           <div class="why-text">
@@ -458,7 +319,6 @@
             <p data-en="No runaround between subcontractors. You communicate with us and we handle the coordination." data-es="Sin ir de un subcontratista a otro. Comunicas con nosotros y nosotros manejamos la coordinaci&oacute;n.">No runaround between subcontractors. You communicate with us and we handle the coordination.</p>
           </div>
         </div>
-
         <div class="why-item">
           <div class="why-check" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
           <div class="why-text">
@@ -466,7 +326,6 @@
             <p data-en="We serve our community in both English and Spanish &mdash; no language barrier, no misunderstandings." data-es="Servimos a nuestra comunidad en ingl&eacute;s y espa&ntilde;ol &mdash; sin barrera de idioma, sin malentendidos.">We serve our community in both English and Spanish &mdash; no language barrier, no misunderstandings.</p>
           </div>
         </div>
-
         <div class="why-item">
           <div class="why-check" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
           <div class="why-text">
@@ -474,7 +333,6 @@
             <p data-en="We assess your project and provide a clear, detailed estimate at no cost. You decide when you're ready." data-es="Evaluamos tu proyecto y te damos un presupuesto claro y detallado sin costo. T&uacute; decides cu&aacute;ndo est&aacute;s listo.">We assess your project and provide a clear, detailed estimate at no cost. You decide when you're ready.</p>
           </div>
         </div>
-
         <div class="why-item">
           <div class="why-check" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
           <div class="why-text">
@@ -482,7 +340,6 @@
             <p data-en="Emergencies don't wait for business hours. We have teams available around the clock for urgent repairs." data-es="Las emergencias no esperan el horario de trabajo. Tenemos equipos disponibles las 24 horas para reparaciones urgentes.">Emergencies don't wait for business hours. We have teams available around the clock for urgent repairs.</p>
           </div>
         </div>
-
         <div class="why-item">
           <div class="why-check" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
           <div class="why-text">
@@ -490,11 +347,9 @@
             <p data-en="Our affiliate network ensures the right expert handles every trade &mdash; plumbers, electricians, HVAC techs, and more." data-es="Nuestra red de afiliados garantiza que el experto correcto maneje cada oficio &mdash; plomeros, electricistas, t&eacute;cnicos de HVAC y m&aacute;s.">Our affiliate network ensures the right expert handles every trade &mdash; plumbers, electricians, HVAC techs, and more.</p>
           </div>
         </div>
-
       </div>
     </div>
   </section>
-
   <!-- COVERAGE -->
   <section id="coverage" aria-labelledby="coverage-heading">
     <div class="coverage-inner">
@@ -502,24 +357,23 @@
       <h2 class="section-title" id="coverage-heading"><span data-en="Serving <em>NY, NJ &amp; Philadelphia</em>" data-es="Sirviendo <em>NY, NJ y Filadelfia</em>">Serving <em>NY, NJ &amp; Philadelphia</em></span></h2>
       <div class="coverage-grid">
         <div class="coverage-card">
-          <span class="coverage-flag" aria-hidden="true">🗽</span>
+          <span class="coverage-flag" aria-hidden="true">ðŸ—½</span>
           <p class="coverage-state" data-en="New York" data-es="Nueva York">New York</p>
           <p class="coverage-cities" data-en="Brooklyn &middot; Queens &middot; The Bronx &middot; Manhattan &middot; Staten Island &middot; Long Island &middot; Westchester" data-es="Brooklyn &middot; Queens &middot; El Bronx &middot; Manhattan &middot; Staten Island &middot; Long Island &middot; Westchester">Brooklyn &middot; Queens &middot; The Bronx &middot; Manhattan &middot; Staten Island &middot; Long Island &middot; Westchester</p>
         </div>
         <div class="coverage-card">
-          <span class="coverage-flag" aria-hidden="true">🏙️</span>
+          <span class="coverage-flag" aria-hidden="true">ðŸ™ï¸</span>
           <p class="coverage-state" data-en="New Jersey" data-es="Nueva Jersey">New Jersey</p>
           <p class="coverage-cities" data-en="Newark &middot; Jersey City &middot; Paterson &middot; Elizabeth &middot; Trenton &middot; Camden &middot; Hackensack &middot; Union City" data-es="Newark &middot; Jersey City &middot; Paterson &middot; Elizabeth &middot; Trenton &middot; Camden &middot; Hackensack &middot; Union City">Newark &middot; Jersey City &middot; Paterson &middot; Elizabeth &middot; Trenton &middot; Camden &middot; Hackensack &middot; Union City</p>
         </div>
         <div class="coverage-card">
-          <span class="coverage-flag" aria-hidden="true">🔔</span>
+          <span class="coverage-flag" aria-hidden="true">ðŸ””</span>
           <p class="coverage-state" data-en="Philadelphia" data-es="Filadelfia">Philadelphia</p>
           <p class="coverage-cities" data-en="Center City &middot; South Philly &middot; North Philly &middot; West Philly &middot; Kensington &middot; Fishtown &middot; Germantown" data-es="Center City &middot; South Philly &middot; North Philly &middot; West Philly &middot; Kensington &middot; Fishtown &middot; Germantown">Center City &middot; South Philly &middot; North Philly &middot; West Philly &middot; Kensington &middot; Fishtown &middot; Germantown</p>
         </div>
       </div>
     </div>
   </section>
-
   <!-- CTA BANNER -->
   <section id="cta-banner" aria-label="Call to action">
     <div class="cta-inner">
@@ -537,69 +391,16 @@
       </div>
     </div>
   </section>
-
 </main>
-
 <!-- FOOTER -->
-<footer id="site-footer" role="contentinfo">
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div class="footer-logo">
-        <a href="./index.html"><img src="./assets/images/icon.png" alt="A-Z Construction &amp; Services" loading="lazy" width="60" height="60"></a>
-        <p class="footer-desc" data-en="Licensed General Contractor serving New York, New Jersey &amp; Philadelphia. Residential &amp; commercial construction, repairs, and remodeling &mdash; from A to Z." data-es="Contratista General licenciado sirviendo Nueva York, Nueva Jersey y Filadelfia. Construcci&oacute;n, reparaciones y remodelaci&oacute;n &mdash; de la A a la Z.">Licensed General Contractor serving New York, New Jersey &amp; Philadelphia. Residential &amp; commercial construction, repairs, and remodeling &mdash; from A to Z.</p>
-        <a href="tel:+15551234567" style="color:var(--orange);font-weight:700;font-size:1rem;text-decoration:none;">+1 (555) 123-4567</a>
-      </div>
-      <div>
-        <h4 class="footer-col-title" data-en="Quick Links" data-es="Enlaces R&aacute;pidos">Quick Links</h4>
-        <ul class="footer-links">
-          <li><a href="./index.html" data-en="Home" data-es="Inicio">Home</a></li>
-          <li><a href="./residential.html" data-en="Residential" data-es="Residencial">Residential</a></li>
-          <li><a href="./commercial.html" data-en="Commercial" data-es="Comercial">Commercial</a></li>
-          <li><a href="./affiliates.html" data-en="Affiliates" data-es="Afiliados">Affiliates</a></li>
-          <li><a href="./about.html" data-en="About Us" data-es="Nosotros">About Us</a></li>
-          <li><a href="./contact.html" data-en="Contact" data-es="Contacto">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="footer-col-title" data-en="Our Services" data-es="Nuestros Servicios">Our Services</h4>
-        <ul class="footer-links">
-          <li><a href="./residential.html">Plumbing &amp; Pipes</a></li>
-          <li><a href="./residential.html">Electrical Repair</a></li>
-          <li><a href="./residential.html">HVAC Services</a></li>
-          <li><a href="./commercial.html">Office Build-Outs</a></li>
-          <li><a href="./commercial.html">Facility Maintenance</a></li>
-          <li><a href="./residential.html">Handyman Services</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="footer-col-title" data-en="Contact Us" data-es="Cont&aacute;ctanos">Contact Us</h4>
-        <div class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+15551234567">+1 (555) 123-4567</a></div>
-        <div class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><a href="mailto:info@atozconstruction.com">info@atozconstruction.com</a></div>
-        <div class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>NY &middot; NJ &middot; Philadelphia</span></div>
-        <div style="margin-top:1rem;"><a href="https://wa.me/15551234567" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:.4rem;background:#25D366;color:white;padding:.5rem 1rem;border-radius:6px;text-decoration:none;font-size:.8rem;font-family:'Oswald',sans-serif;font-weight:600;letter-spacing:.05em;text-transform:uppercase;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a5.006 5.006 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.5 2C6.247 2 2 6.247 2 11.5c0 1.823.5 3.532 1.37 4.995L2 22l5.618-1.344A9.449 9.449 0 0 0 11.5 21c5.253 0 9.5-4.247 9.5-9.5S16.753 2 11.5 2z"/></svg>WhatsApp</a></div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p class="footer-copyright">&copy; 2026 A-Z Construction &amp; Services. All rights reserved.</p>
-      <nav class="footer-legal-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Sitemap</a></nav>
-    </div>
-  </div>
-</footer>
-
+<div id="global-footer"></div>
 <a id="whatsapp-float" href="https://wa.me/15551234567?text=Hello!%20I%20would%20like%20to%20learn%20more%20about%20A-Z%20Construction." target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
   <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a5.006 5.006 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.5 2C6.247 2 2 6.247 2 11.5c0 1.823.5 3.532 1.37 4.995L2 22l5.618-1.344A9.449 9.449 0 0 0 11.5 21c5.253 0 9.5-4.247 9.5-9.5S16.753 2 11.5 2z"/></svg>
   <span class="wa-text" data-en="WhatsApp" data-es="WhatsApp">WhatsApp</span>
 </a>
-
+<script src="./assets/js/global-layout.js"></script>
 <script>
-  (function(){
-  const page = location.pathname.split('/').pop() || 'AtoZConstruction.html';
-  document.querySelectorAll('#main-nav .nav-link, #mobile-nav .mobile-nav-link').forEach(function(el){
-    const href = (el.getAttribute('href') || '').replace('./','');
-    if(href && href === page) el.classList.add('active');
-  });
-})();
-function setLang(lang){
+  function setLang(lang){
   document.getElementById('html-root').lang=lang;
   localStorage.setItem('azc-lang',lang);
   document.querySelectorAll('[data-en]').forEach(el=>{const t=el.dataset[lang];if(!t)return;if(t.includes('<')){el.innerHTML=t;}else{el.textContent=t;}});
@@ -609,20 +410,11 @@ function setLang(lang){
   document.getElementById('btn-es').setAttribute('aria-pressed',lang==='es');
 }
 (function(){const s=localStorage.getItem('azc-lang');const bl=navigator.language||navigator.userLanguage;const dl=s||(bl.startsWith('es')?'es':'en');if(dl!=='en')setLang(dl);})();
-const mBtn=document.getElementById('mobile-menu-btn');
-const mNav=document.getElementById('mobile-nav');
-mBtn.addEventListener('click',function(){const o=mNav.classList.toggle('open');this.setAttribute('aria-expanded',o);});
-mNav.querySelectorAll('.mobile-nav-link').forEach(l=>l.addEventListener('click',()=>{mNav.classList.remove('open');mBtn.setAttribute('aria-expanded','false');}));
-const dw=document.getElementById('services-dropdown');
-const db=document.getElementById('services-btn');
-db.addEventListener('click',function(e){e.stopPropagation();const o=dw.classList.toggle('open');this.setAttribute('aria-expanded',o);});
-document.addEventListener('click',()=>{dw.classList.remove('open');db.setAttribute('aria-expanded','false');});
-dw.addEventListener('click',e=>e.stopPropagation());
 </script>
-<!-- ══════════════════════════════════════════
-     POPUP 1 — TIMER (20 segundos)
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+     POPUP 1 â€” TIMER (20 segundos)
      Tono: proactivo / friendly
-════════════════════════════════════════════ -->
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
 <div id="popup-timer" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:9000;align-items:center;justify-content:center;padding:1rem;" aria-modal="true" role="dialog" aria-labelledby="popup-timer-title">
   <div style="background:white;border-radius:16px;max-width:400px;width:100%;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.4);position:relative;animation:popupIn .3s ease;">
     <div style="background:var(--orange);padding:1.4rem 1.5rem 1.2rem;position:relative;">
@@ -649,11 +441,10 @@ dw.addEventListener('click',e=>e.stopPropagation());
     </div>
   </div>
 </div>
-
-<!-- ══════════════════════════════════════════
-     POPUP 2 — EXIT INTENT
-     Tono: retención / urgencia
-════════════════════════════════════════════ -->
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+     POPUP 2 â€” EXIT INTENT
+     Tono: retenciÃ³n / urgencia
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
 <div id="popup-exit" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:9001;align-items:center;justify-content:center;padding:1rem;" aria-modal="true" role="dialog" aria-labelledby="popup-exit-title">
   <div style="background:white;border-radius:16px;max-width:420px;width:100%;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5);position:relative;animation:popupIn .3s ease;">
     <div style="background:var(--black);padding:1.4rem 1.5rem 1.2rem;position:relative;">
@@ -667,7 +458,7 @@ dw.addEventListener('click',e=>e.stopPropagation());
     </div>
     <div style="padding:1.4rem;">
       <div style="background:var(--orange-pale);border:1.5px solid rgba(232,130,26,.3);border-radius:8px;padding:.75rem 1rem;margin-bottom:1.1rem;display:flex;align-items:center;gap:.6rem;">
-        <span style="font-size:1.3rem;" aria-hidden="true">⚡</span>
+        <span style="font-size:1.3rem;" aria-hidden="true">âš¡</span>
         <p style="font-size:.82rem;color:var(--black);font-weight:600;line-height:1.4;" data-en="Free estimates &middot; Fast response &middot; No obligation" data-es="Presupuestos gratis &middot; Respuesta r&aacute;pida &middot; Sin compromiso">Free estimates &middot; Fast response &middot; No obligation</p>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:.9rem;">
@@ -686,18 +477,16 @@ dw.addEventListener('click',e=>e.stopPropagation());
     </div>
   </div>
 </div>
-
 <style>
 @keyframes popupIn{from{opacity:0;transform:scale(.92) translateY(12px);}to{opacity:1;transform:scale(1) translateY(0);}}
 </style>
-
-<!-- ── TAWK.TO LIVE CHAT ── -->
+<!-- â”€â”€ TAWK.TO LIVE CHAT â”€â”€ -->
 <!--
   INSTRUCCIONES TAWK.TO:
   1. Ve a tawk.to y crea una cuenta gratuita
   2. Crea una propiedad para "A-Z Construction & Services"
   3. Copia tu snippet personalizado y reemplaza el bloque de abajo
-  4. El snippet luce así:
+  4. El snippet luce asÃ­:
      <script type="text/javascript">
      var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
      (function(){
@@ -711,12 +500,10 @@ dw.addEventListener('click',e=>e.stopPropagation());
      </script>
   REEMPLAZA: TU_PROPERTY_ID y TU_WIDGET_ID con tus valores reales
 -->
-
 <script>
 (function(){
   var TIMER_KEY = 'azc_popup_timer';
   var EXIT_KEY  = 'azc_popup_exit';
-
   function applyLang(el){
     var lang = localStorage.getItem('azc-lang') || 'en';
     el.querySelectorAll('[data-en]').forEach(function(node){
@@ -725,7 +512,6 @@ dw.addEventListener('click',e=>e.stopPropagation());
       if(t.includes('<')){ node.innerHTML = t; } else { node.textContent = t; }
     });
   }
-
   function showPopup(id){
     var el = document.getElementById(id);
     if(!el) return;
@@ -733,19 +519,16 @@ dw.addEventListener('click',e=>e.stopPropagation());
     el.style.display = 'flex';
     document.body.style.overflow = 'hidden';
   }
-
   window.closePopup = function(type){
     var id = type === 'timer' ? 'popup-timer' : 'popup-exit';
     var el = document.getElementById(id);
     if(el){ el.style.display = 'none'; document.body.style.overflow = ''; }
   };
-
   // Close on overlay click
   ['popup-timer','popup-exit'].forEach(function(id){
     var el = document.getElementById(id);
     if(el) el.addEventListener('click', function(e){ if(e.target===this) closePopup(id==='popup-timer'?'timer':'exit'); });
   });
-
   // Close on ESC
   document.addEventListener('keydown', function(e){
     if(e.key==='Escape'){
@@ -753,15 +536,13 @@ dw.addEventListener('click',e=>e.stopPropagation());
       closePopup('exit');
     }
   });
-
-  // TIMER POPUP — 20 seconds
+  // TIMER POPUP â€” 20 seconds
   if(!sessionStorage.getItem(TIMER_KEY)){
     setTimeout(function(){
       sessionStorage.setItem(TIMER_KEY,'1');
       showPopup('popup-timer');
     }, 20000);
   }
-
   // EXIT INTENT POPUP
   if(!sessionStorage.getItem(EXIT_KEY)){
     document.addEventListener('mouseleave', function handler(e){
@@ -775,6 +556,5 @@ dw.addEventListener('click',e=>e.stopPropagation());
   }
 })();
 </script>
-
 </body>
 </html>
