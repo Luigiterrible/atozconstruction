@@ -53,13 +53,13 @@
       {
         "@type": "ContactPoint",
         "telephone": "+15551234567",
-        "contactType": "emergency",
+        "contactType": "customer support",
         "availableLanguage": ["English", "Spanish"],
         "hoursAvailable": {
           "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-          "opens": "00:00",
-          "closes": "23:59"
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+          "opens": "07:00",
+          "closes": "20:00"
         }
       }
     ],
@@ -263,7 +263,7 @@
       <div>
         <p class="section-eyebrow" data-en="Free Estimate" data-es="Presupuesto Gratis">Free Estimate</p>
         <h2 class="section-title" id="form-heading"><span data-en="Send Us a <em>Message</em>" data-es="Env&iacute;enos un <em>Mensaje</em>">Send Us a <em>Message</em></span></h2>
-        <p class="section-subtitle" data-en="Fill out the form and we&rsquo;ll get back to you as soon as possible. For urgent needs, use WhatsApp or call us directly." data-es="Completa el formulario y te responderemos lo antes posible. Para necesidades urgentes, usa WhatsApp o ll&aacute;manos directamente.">Fill out the form and we&rsquo;ll get back to you as soon as possible. For urgent needs, use WhatsApp or call us directly.</p>
+        <p class="section-subtitle" data-en="Fill out the form and we&rsquo;ll get back to you as soon as possible. If you need immediate contact, use WhatsApp or call us directly." data-es="Completa el formulario y te responderemos lo antes posible. Si necesitas contacto inmediato, usa WhatsApp o ll&aacute;manos directamente.">Fill out the form and we&rsquo;ll get back to you as soon as possible. If you need immediate contact, use WhatsApp or call us directly.</p>
         <div class="form-wrap">
           <h3 class="form-title" data-en="Contact Form &mdash; Free Estimate" data-es="Formulario de Contacto &mdash; Presupuesto Gratis">Contact Form &mdash; Free Estimate</h3>
           <form id="contact-form" action="#" method="post" aria-label="General contact form" novalidate>
@@ -287,7 +287,7 @@
                 <option value="" data-en="Select type..." data-es="Selecciona el tipo...">Select type...</option>
                 <option value="residential" data-en="Residential Service" data-es="Servicio Residencial">Residential Service</option>
                 <option value="commercial" data-en="Commercial Service" data-es="Servicio Comercial">Commercial Service</option>
-                <option value="emergency" data-en="Emergency Repair" data-es="Reparaci&oacute;n de Emergencia">Emergency Repair</option>
+                <option value="priority" data-en="Immediate Assistance" data-es="Asistencia Inmediata">Immediate Assistance</option>
                 <option value="other" data-en="Other / Not Sure" data-es="Otro / No estoy seguro">Other / Not Sure</option>
               </select>
             </div>
@@ -330,7 +330,7 @@
               </select>
             </div>
             <button type="submit" class="form-submit" data-en="Send Message &amp; Request Estimate &rarr;" data-es="Enviar Mensaje y Solicitar Presupuesto &rarr;">Send Message &amp; Request Estimate &rarr;</button>
-            <p class="form-note" data-en="We typically respond within a few hours during business hours. For urgent requests, use WhatsApp." data-es="Normalmente respondemos en pocas horas durante el horario laboral. Para solicitudes urgentes, usa WhatsApp.">We typically respond within a few hours during business hours. For urgent requests, use WhatsApp.</p>
+            <p class="form-note" data-en="We typically respond within a few hours during business hours. Every service is backed by warranty." data-es="Normalmente respondemos en pocas horas durante el horario laboral. Todos los servicios tienen garant&iacute;a.">We typically respond within a few hours during business hours. Every service is backed by warranty.</p>
             <div class="form-success" id="form-success" role="alert">
               <p data-en="&#10003; Message sent! We&rsquo;ll be in touch shortly." data-es="&#10003; &iexcl;Mensaje enviado! Nos pondremos en contacto pronto.">&#10003; Message sent! We&rsquo;ll be in touch shortly.</p>
             </div>
@@ -366,23 +366,23 @@
           <div class="hours-row"><span class="hours-day" data-en="Monday &ndash; Friday" data-es="Lunes &ndash; Viernes">Monday &ndash; Friday</span><span class="hours-time">7am &ndash; 8pm</span></div>
           <div class="hours-row"><span class="hours-day" data-en="Saturday" data-es="S&aacute;bado">Saturday</span><span class="hours-time">8am &ndash; 6pm</span></div>
           <div class="hours-row"><span class="hours-day" data-en="Sunday" data-es="Domingo">Sunday</span><span class="hours-time" data-en="By appointment" data-es="Con cita previa">By appointment</span></div>
-          <div class="hours-row"><span class="hours-day" data-en="Emergencies" data-es="Emergencias">Emergencies</span><span class="hours-time emergency">24 / 7</span></div>
+          <div class="hours-row"><span class="hours-day" data-en="Response Time" data-es="Tiempo de Respuesta">Response Time</span><span class="hours-time" data-en="Same-day options" data-es="Opciones el mismo d&iacute;a">Same-day options</span></div>
         </div>
         <div class="sidebar-card">
           <p class="sidebar-label" data-en="Service Areas" data-es="&Aacute;reas de Servicio">Service Areas</p>
           <p class="sidebar-text" data-en="New York (NY) &middot; New Jersey (NJ) &middot; Philadelphia (PA)" data-es="Nueva York (NY) &middot; Nueva Jersey (NJ) &middot; Filadelfia (PA)">New York (NY) &middot; New Jersey (NJ) &middot; Philadelphia (PA)</p>
         </div>
         <div class="emergency-card">
-          <p class="emergency-title" data-en="&#9889; Emergency? We&rsquo;re Available 24/7" data-es="&#9889; &iquest;Emergencia? Estamos Disponibles 24/7">&#9889; Emergency? We&rsquo;re Available 24/7</p>
-          <p class="emergency-text" data-en="Burst pipe, electrical failure, no heat? Don&rsquo;t wait. Contact us immediately and we&rsquo;ll dispatch a team fast." data-es="&iquest;Tuber&iacute;a reventada, falla el&eacute;ctrica, sin calefacci&oacute;n? No esperes. Cont&aacute;ctanos de inmediato y enviamos un equipo r&aacute;pido.">Burst pipe, electrical failure, no heat? Don&rsquo;t wait. Contact us immediately and we&rsquo;ll dispatch a team fast.</p>
+          <p class="emergency-title" data-en="Need Immediate Contact?" data-es="&iquest;Necesitas Contacto Inmediato?">Need Immediate Contact?</p>
+          <p class="emergency-text" data-en="Licensed &amp; insured. Every service is backed by warranty. Trusted General Contractor serving NY &middot; NJ &middot; Philadelphia." data-es="Licenciado y asegurado. Todos los servicios tienen garant&iacute;a. Contratista General de confianza en NY &middot; NJ &middot; Filadelfia.">Licensed &amp; insured. Every service is backed by warranty. Trusted General Contractor serving NY &middot; NJ &middot; Philadelphia.</p>
           <div class="emergency-btns">
-            <a href="https://wa.me/15551234567?text=EMERGENCY%3A%20I%20need%20urgent%20repair%20assistance." target="_blank" rel="noopener noreferrer" class="emergency-link wa">
+            <a href="https://wa.me/15551234567?text=Hello!%20I%20need%20immediate%20contact%20for%20a%20service%20estimate." target="_blank" rel="noopener noreferrer" class="emergency-link wa">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a5.006 5.006 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.5 2C6.247 2 2 6.247 2 11.5c0 1.823.5 3.532 1.37 4.995L2 22l5.618-1.344A9.449 9.449 0 0 0 11.5 21c5.253 0 9.5-4.247 9.5-9.5S16.753 2 11.5 2z"/></svg>
-              <span data-en="WhatsApp Emergency" data-es="WhatsApp Emergencia">WhatsApp Emergency</span>
+              <span data-en="WhatsApp Now" data-es="WhatsApp Ahora">WhatsApp Now</span>
             </a>
             <a href="tel:+15551234567" class="emergency-link phone">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              <span data-en="Call Now &mdash; 24/7" data-es="Llamar Ahora &mdash; 24/7">Call Now &mdash; 24/7</span>
+              <span data-en="Call Us" data-es="Llamar">Call Us</span>
             </a>
           </div>
         </div>

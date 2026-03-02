@@ -75,13 +75,13 @@
     .az-letter-group{margin-bottom:2.5rem;}
     .az-letter-header{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem;}
     .az-letter-badge{font-family:'Oswald',sans-serif;font-size:2rem;font-weight:700;color:var(--orange);width:52px;height:52px;display:flex;align-items:center;justify-content:center;border:3px solid var(--orange);border-radius:8px;flex-shrink:0;}
-    .az-cards-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem;}
+    .az-cards-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:.85rem;}
     .svc-card{background:var(--white);border-radius:14px;overflow:hidden;border:1.5px solid var(--gray-light);box-shadow:0 2px 12px rgba(0,0,0,.06);transition:border-color .25s,box-shadow .25s,transform .25s;display:flex;flex-direction:column;}
     .svc-card:hover{border-color:var(--orange);box-shadow:0 10px 36px rgba(232,130,26,.15);transform:translateY(-4px);}
-    .svc-card-img-wrap{overflow:hidden;height:190px;background:var(--black);}
+    .svc-card-img-wrap{display:none;}
     .svc-card-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .4s;display:block;}
     .svc-card:hover .svc-card-img-wrap img{transform:scale(1.05);}
-    .svc-card-body{padding:1.1rem;display:flex;flex-direction:column;flex:1;gap:.4rem;}
+    .svc-card-body{padding:.9rem .95rem;display:flex;flex-direction:column;flex:1;gap:.35rem;}
     .svc-card-title{font-family:'Oswald',sans-serif;font-size:1.05rem;font-weight:700;color:var(--black);line-height:1.2;}
     .svc-card-desc{font-size:.84rem;color:var(--text-muted);line-height:1.6;flex:1;}
     .svc-card-cta{display:inline-flex;align-items:center;font-family:'Oswald',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--orange);text-decoration:none;margin-top:.4rem;transition:gap .2s;gap:.3rem;}
@@ -757,11 +757,77 @@ function setLang(lang){
   document.getElementById('btn-es').classList.toggle('active',lang==='es');
   document.getElementById('btn-en').setAttribute('aria-pressed',lang==='en');
   document.getElementById('btn-es').setAttribute('aria-pressed',lang==='es');
+  regroupServices(lang);
+}
+function decodeHtml(text){
+  var ta=document.createElement('textarea');
+  ta.innerHTML=text||'';
+  return ta.value;
+}
+function serviceTitleForLang(card,lang){
+  var titleEl=card.querySelector('.svc-card-title');
+  if(!titleEl) return '';
+  return decodeHtml(titleEl.dataset[lang]||titleEl.textContent||'').trim();
+}
+function normalizeLetter(ch){
+  return (ch||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+}
+function letterFromTitle(title,lang){
+  if(!title) return '#';
+  var first=title.charAt(0).toUpperCase();
+  if(lang==='es'&&first==='Ñ') return 'Ñ';
+  first=normalizeLetter(first);
+  return /^[A-Z]$/.test(first)?first:'#';
+}
+function buildLetterGroup(letter,cards){
+  var group=document.createElement('div');
+  group.className='az-letter-group';
+  var header=document.createElement('div');
+  header.className='az-letter-header';
+  var badge=document.createElement('span');
+  badge.className='az-letter-badge';
+  badge.textContent=letter;
+  header.appendChild(badge);
+  var row=document.createElement('div');
+  row.className='az-cards-row';
+  cards.forEach(function(card){row.appendChild(card);});
+  group.appendChild(header);
+  group.appendChild(row);
+  return group;
+}
+function regroupSection(sectionId,lang){
+  var section=document.getElementById(sectionId);
+  if(!section) return;
+  var cards=Array.from(section.querySelectorAll('.svc-card'));
+  if(!cards.length) return;
+  cards.sort(function(a,b){
+    return serviceTitleForLang(a,lang).localeCompare(serviceTitleForLang(b,lang),lang==='es'?'es':'en',{sensitivity:'base'});
+  });
+  Array.from(section.querySelectorAll('.az-letter-group')).forEach(function(g){g.remove();});
+  var byLetter={};
+  cards.forEach(function(card){
+    var letter=letterFromTitle(serviceTitleForLang(card,lang),lang);
+    if(!byLetter[letter]) byLetter[letter]=[];
+    byLetter[letter].push(card);
+  });
+  var letters=Object.keys(byLetter).sort(function(a,b){
+    if(a==='#') return 1;
+    if(b==='#') return -1;
+    return a.localeCompare(b,lang==='es'?'es':'en',{sensitivity:'base'});
+  });
+  letters.forEach(function(letter){
+    section.appendChild(buildLetterGroup(letter,byLetter[letter]));
+  });
+}
+function regroupServices(lang){
+  regroupSection('az-res',lang);
+  regroupSection('az-com',lang);
 }
 (function(){
   var s=localStorage.getItem('azc-lang');
   var bl=navigator.language||navigator.userLanguage;
   var dl=s||(bl.startsWith('es')?'es':'en');
+  regroupServices(dl);
   if(dl!=='en') setLang(dl);
 })();
 </script>
