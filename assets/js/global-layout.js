@@ -23,12 +23,12 @@
       '      <a href="./affiliates.html" class="nav-link" data-en="Affiliates" data-es="Afiliados">Affiliates</a>' +
       "    </nav>" +
       '    <div class="header-right">' +
+      '      <a id="header-cta-link" href="./contact.html" class="btn-header-cta" data-en="Free Estimate" data-es="Presupuesto Gratis">Free Estimate</a>' +
+      '      <button id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>' +
       '      <div class="lang-switcher" role="group" aria-label="Language">' +
       '        <button class="lang-btn active" id="btn-en" aria-pressed="true">EN</button>' +
       '        <button class="lang-btn" id="btn-es" aria-pressed="false">ES</button>' +
       "      </div>" +
-      '      <a href="./contact.html" class="btn-header-cta" data-en="Free Estimate" data-es="Presupuesto Gratis">Free Estimate</a>' +
-      '      <button id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>' +
       "    </div>" +
       "  </div>" +
       '  <nav id="mobile-nav">' +
@@ -39,7 +39,7 @@
       '    <a href="./about.html" class="mobile-nav-link" data-en="About Us" data-es="Nosotros">About Us</a>' +
       '    <a href="./contact.html" class="mobile-nav-link" data-en="Contact" data-es="Contacto">Contact</a>' +
       '    <a href="./affiliates.html" class="mobile-nav-link" data-en="Affiliates" data-es="Afiliados">Affiliates</a>' +
-      '    <a href="./contact.html" class="mobile-nav-link" style="font-weight:700;" data-en="Free Estimate" data-es="Presupuesto Gratis">Free Estimate</a>' +
+      '    <a id="mobile-cta-link" href="./contact.html" class="mobile-nav-link" style="font-weight:700;" data-en="Free Estimate" data-es="Presupuesto Gratis">Free Estimate</a>' +
       "  </nav>" +
       "</header>";
   }
@@ -51,7 +51,7 @@
       '    <div class="footer-grid">' +
       '      <div class="footer-logo">' +
       '        <a href="./index.html"><img src="./assets/images/icon.png" alt="A-Z Construction" loading="lazy" width="60" height="60"></a>' +
-      '        <p class="footer-desc" data-en="Licensed General Contractor &mdash; All Work Guaranteed. Serving NY, NJ &amp; Philadelphia." data-es="Contratista General Licenciado &mdash; Todos los Trabajos Garantizados. NY, NJ y Filadelfia.">Licensed General Contractor &mdash; All Work Guaranteed.</p>' +
+      '        <p class="footer-desc" data-en="Licensed General Contractor<br>All Work Guaranteed<br>Serving NY, NJ &amp; Philadelphia." data-es="Contratista General Licenciado<br>Todos los Trabajos Garantizados<br>NY, NJ y Filadelfia.">Licensed General Contractor<br>All Work Guaranteed<br>Serving NY, NJ &amp; Philadelphia.</p>' +
       '        <a href="tel:+15551234567" style="color:var(--orange);font-weight:700;font-size:1rem;text-decoration:none;">+1 (555) 123-4567</a>' +
       "      </div>" +
       "      <div>" +
@@ -115,6 +115,29 @@
       var href = (el.getAttribute("href") || "").replace("./", "").toLowerCase();
       if (href && href === page) {
         el.classList.add("active");
+        if (page === "affiliates.html" && href === "affiliates.html") {
+          el.classList.add("affiliates-active");
+        }
+      }
+    });
+    return page;
+  }
+
+  function updateHeaderCta(page) {
+    var isAffiliatesPage = page === "affiliates.html";
+    [document.getElementById("header-cta-link"), document.getElementById("mobile-cta-link")].forEach(function (cta) {
+      if (!cta) return;
+
+      if (isAffiliatesPage) {
+        cta.setAttribute("href", "./affiliates.html#apply-form");
+        cta.dataset.en = "Apply";
+        cta.dataset.es = "Aplicar";
+        cta.classList.add("affiliates-cta");
+      } else {
+        cta.setAttribute("href", "./contact.html");
+        cta.dataset.en = "Free Estimate";
+        cta.dataset.es = "Presupuesto Gratis";
+        cta.classList.remove("affiliates-cta");
       }
     });
   }
@@ -159,7 +182,8 @@
     });
   }
 
-  setActiveNav();
+  var currentPage = setActiveNav();
+  updateHeaderCta(currentPage);
   wireGlobalLangButtons();
   wireMobileMenu();
   applyLangToGlobal(localStorage.getItem("azc-lang") || ((navigator.language || "").indexOf("es") === 0 ? "es" : "en"));
