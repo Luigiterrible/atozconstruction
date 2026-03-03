@@ -79,25 +79,6 @@
     .skip-link{position:absolute;top:-100px;left:1rem;z-index:9999;padding:.75rem 1.25rem;background:var(--orange);color:white;font-weight:700;border-radius:0 0 8px 8px;transition:top .2s;text-decoration:none;}
     .skip-link:focus{top:0;}
     /* HEADER */
-    .nav-dropdown-wrap{position:relative;}
-    .nav-dropdown-trigger{display:flex;align-items:center;gap:.3rem;cursor:pointer;background:none;border:none;}
-    .nav-dropdown-trigger svg{transition:transform .2s;flex-shrink:0;}
-    .nav-dropdown-wrap:hover .nav-dropdown-trigger svg,.nav-dropdown-wrap.open .nav-dropdown-trigger svg{transform:rotate(180deg);}
-    .mega-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(-8px);width:660px;background:var(--white);border-top:3px solid var(--orange);border-radius:0 0 12px 12px;box-shadow:0 20px 50px rgba(0,0,0,.25);padding:1.25rem 1.5rem 1.5rem;opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s,transform .2s;z-index:200;max-height:78vh;overflow-y:auto;}
-    .nav-dropdown-wrap:hover .mega-menu,.nav-dropdown-wrap.open .mega-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);}
-    .mega-menu-header{font-family:'Oswald',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--black);padding-bottom:.75rem;margin-bottom:.75rem;border-bottom:2px solid var(--orange);display:flex;align-items:center;gap:.5rem;}
-    .mega-menu-header span{color:var(--orange);}
-    .alpha-group{margin-bottom:.65rem;}
-    .alpha-letter{font-family:'Oswald',sans-serif;font-size:1.1rem;font-weight:700;color:var(--orange);display:block;padding:.3rem 0 .2rem;border-bottom:1px solid rgba(232,130,26,.2);margin-bottom:.25rem;}
-    .alpha-services{display:grid;grid-template-columns:1fr 1fr;gap:.05rem .5rem;}
-    .mega-service-item{display:flex;align-items:center;gap:.4rem;padding:.22rem .4rem;border-radius:4px;font-size:.8rem;font-weight:500;text-decoration:none;transition:background .15s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-    .mega-service-item.active{color:var(--black);}
-    .mega-service-item.active:hover{background:var(--orange-pale);color:var(--orange-dark);}
-    .mega-service-item.active::before{content:'';width:5px;height:5px;background:var(--orange);border-radius:50%;flex-shrink:0;}
-    .mega-service-item.coming-soon{color:var(--gray-mid);cursor:default;font-style:italic;}
-    .mega-service-item.coming-soon::before{content:'';width:5px;height:5px;background:var(--gray-mid);border-radius:50%;flex-shrink:0;}
-    .badge-soon{font-size:.58rem;background:#F3F2EF;color:var(--gray-mid);padding:1px 4px;border-radius:3px;font-weight:700;flex-shrink:0;}
-    .mega-menu-footer{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;border-top:1px solid #F3F2EF;padding-top:1rem;margin-top:.5rem;}
     .mega-cat-btn{display:flex;align-items:center;justify-content:center;gap:.5rem;padding:.6rem 1rem;border-radius:6px;font-family:'Oswald',sans-serif;font-size:.85rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;transition:all .2s;}
     .mega-cat-btn.residential{background:var(--orange);color:white;}
     .mega-cat-btn.residential:hover{background:var(--orange-dark);}
@@ -238,7 +219,7 @@
       </div>
       <div class="trust-bar">
         <div class="trust-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span data-en="Licensed &amp; Insured" data-es="Licenciado y Asegurado">Licensed &amp; Insured</span></div>
-        <div class="trust-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span data-en="Minimal Downtime Guaranteed" data-es="M&iacute;nima Interrupci&oacute;n Garantizada">Minimal Downtime Guaranteed</span></div>
+        <div class="trust-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span data-en="All Services Guaranteed" data-es="Todos los Servicios Garantizados">All Services Guaranteed</span></div>
         <div class="trust-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span data-en="Dedicated Commercial Team" data-es="Equipo Comercial Dedicado">Dedicated Commercial Team</span></div>
         <div class="trust-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span data-en="NY &middot; NJ &middot; Philadelphia" data-es="NY &middot; NJ &middot; Filadelfia">NY &middot; NJ &middot; Philadelphia</span></div>
       </div>
