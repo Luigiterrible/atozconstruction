@@ -14,8 +14,8 @@
 - [x] `<meta name="author" content="A-Z Construction & Services">`
 - [x] `<meta name="geo.region" content="US-NY, US-NJ, US-PA">`
 - [x] `<meta name="geo.placename" content="New York, New Jersey, Philadelphia">`
-- [x] `<link rel="canonical">` – absolute URL per page (tudominio.com placeholder)
-- [x] `hreflang` – EN, ES, x-default on all 6 pages
+- [x] `<link rel="canonical">` - absolute URL per page with production domain
+- [ ] `hreflang` - EN, ES, x-default on all pages (currently x-default only)
 - [x] Skip link for accessibility
 
 ## ✅ Open Graph & Social
@@ -83,19 +83,19 @@
 - [x] `localStorage` para persistencia del idioma
 - [x] Auto-detección del idioma del navegador
 - [x] 100% del contenido traducido via `data-en` / `data-es`
-- [x] `hreflang` configurado en todas las páginas
+- [ ] `hreflang` configurado en todas las paginas (EN/ES pendiente)
 
 ---
 
 ## ⏳ Pendiente – Requiere dominio real
 
-- [ ] Replace All `https://www.tudominio.com` → dominio definitivo (6 archivos)
+- [x] Replace All `https://www.tudominio.com` -> dominio definitivo
 - [ ] Replace All `+15551234567` → teléfono real (6 archivos)
-- [ ] Replace All `info@atozconstruction.com` → email real si cambia
-- [ ] Canonical URLs → absolutas con dominio real
+- [x] Replace All `info@atozconstruction.com` -> email real actualizado
+- [x] Canonical URLs -> absolutas con dominio real
 - [ ] Validar schemas en https://search.google.com/test/rich-results
-- [ ] Crear y subir `sitemap.xml`
-- [ ] Crear y subir `robots.txt`
+- [x] Crear y subir `sitemap.xml`
+- [x] Crear y subir `robots.txt`
 - [ ] Registrar sitio en Google Search Console
 - [ ] Enviar sitemap.xml a Google Search Console
 
@@ -113,3 +113,4 @@
 - [ ] Sección de testimonios + Review Schema
 - [ ] Galería de proyectos antes/después
 - [ ] Integrar backend para formularios (Formspree, EmailJS, etc.)
+
