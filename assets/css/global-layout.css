@@ -46,4 +46,4 @@
 .footer-legal-links a{font-size:.8rem;color:rgba(255,255,255,.35);text-decoration:none;transition:color .2s;}
 .footer-legal-links a:hover{color:rgba(255,255,255,.7);}
 @media(max-width:1024px){.footer-grid{grid-template-columns:1fr 1fr;}}
-@media(max-width:768px){#main-nav{display:none;}#mobile-menu-btn{display:flex;}.btn-header-cta{display:none;}.header-right{padding-right:0;}.lang-switcher{position:static;right:auto;top:auto;transform:none;margin-left:.6rem;}.footer-grid{grid-template-columns:1fr;gap:1.5rem;}}
+@media(max-width:768px){#main-nav{display:none;}#mobile-menu-btn{display:flex;}.btn-header-cta{display:none;}.header-right{padding-right:0;}.lang-switcher{position:static;right:auto;top:auto;transform:none;margin-left:.6rem;border:2px solid rgba(255,255,255,.45);background:rgba(0,0,0,.25);box-shadow:0 0 0 1px rgba(0,0,0,.25) inset;}.lang-btn{min-width:42px;}.lang-btn + .lang-btn{border-left:1px solid rgba(255,255,255,.3);}.footer-grid{grid-template-columns:1fr;gap:1.5rem;}}
