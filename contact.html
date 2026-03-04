@@ -36,7 +36,7 @@
     "name": "A-Z Construction & Services",
     "url": "https://www.tudominio.com",
     "telephone": "+15551234567",
-    "email": "info@atozconstruction.com",
+    "email": "info@atozgeneralcontractor.com",
     "contactPoint": [
       {
         "@type": "ContactPoint",
@@ -91,6 +91,7 @@
     .mega-cat-btn.commercial{background:var(--black);color:white;}
     .mega-cat-btn.commercial:hover{background:var(--black-soft);}
     .lang-btn:hover:not(.active){color:white;}
+    .wa-icon{display:inline-block;vertical-align:-0.08em;}
     /* PAGE HERO */
     #page-hero{background:var(--black);padding:3.5rem 1.5rem 3rem;position:relative;overflow:hidden;}
     #page-hero::before{content:'';position:absolute;right:-80px;top:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(232,130,26,.12) 0%,transparent 70%);pointer-events:none;}
@@ -110,6 +111,10 @@
     .quick-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
     .quick-card{background:var(--white);border-radius:12px;padding:1.75rem 1.5rem;border:1.5px solid var(--gray-light);box-shadow:0 2px 10px rgba(0,0,0,.04);text-align:center;text-decoration:none;transition:border-color .25s,box-shadow .25s,transform .25s;display:flex;flex-direction:column;align-items:center;gap:.75rem;}
     .quick-card:hover{border-color:var(--orange);box-shadow:0 8px 30px rgba(232,130,26,.12);transform:translateY(-3px);}
+    .quick-card.whatsapp-card{background:#25D366;border-color:#25D366;color:white;}
+    .quick-card.whatsapp-card .quick-card-label,.quick-card.whatsapp-card .quick-card-value,.quick-card.whatsapp-card .quick-card-note{color:white;}
+    .quick-card.whatsapp-card .quick-card-icon{background:rgba(255,255,255,.2);color:white;}
+    .quick-card.whatsapp-card:hover{border-color:#1da851;box-shadow:0 10px 30px rgba(37,211,102,.35);}
     .quick-card-icon{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
     .quick-card-icon.orange{background:var(--orange-pale);color:var(--orange);}
     .quick-card-icon.green{background:#DCFCE7;color:#16A34A;}
@@ -134,6 +139,9 @@
     .form-input,.form-select,.form-textarea{width:100%;padding:.7rem 1rem;border:1.5px solid #e5e7eb;border-radius:6px;font-family:'Source Sans 3',sans-serif;font-size:.95rem;color:var(--black);background:white;transition:border-color .2s,box-shadow .2s;outline:none;}
     .form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--orange);box-shadow:0 0 0 3px rgba(232,130,26,.12);}
     .form-textarea{resize:vertical;min-height:130px;}
+    .form-input.invalid,.form-select.invalid,.form-textarea.invalid{border-color:#DC2626 !important;box-shadow:0 0 0 3px rgba(220,38,38,.12);}
+    .field-error{display:none;margin-top:.35rem;font-size:.78rem;line-height:1.35;color:#B91C1C;font-weight:600;}
+    .form-group.has-error .field-error{display:block;}
     .form-submit{width:100%;font-family:'Oswald',sans-serif;font-size:1rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:.9rem;background:var(--orange);color:white;border:none;border-radius:8px;cursor:pointer;transition:background .2s,transform .1s;margin-top:.5rem;}
     .form-submit:hover{background:var(--orange-dark);transform:translateY(-1px);}
     .form-note{font-size:.78rem;color:var(--text-muted);margin-top:.75rem;text-align:center;}
@@ -159,15 +167,6 @@
     .emergency-link.wa:hover{background:#1da851;}
     .emergency-link.phone{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);}
     .emergency-link.phone:hover{background:rgba(255,255,255,.2);}
-    /* COVERAGE */
-    #coverage{background:var(--off-white);padding:3.5rem 1.5rem;}
-    .coverage-inner{max-width:1280px;margin:0 auto;}
-    .coverage-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2rem;}
-    .coverage-card{background:var(--white);border-radius:12px;padding:1.5rem;text-align:center;border:1.5px solid var(--gray-light);transition:border-color .2s,transform .2s;}
-    .coverage-card:hover{border-color:var(--orange);transform:translateY(-2px);}
-    .coverage-flag{font-size:2rem;margin-bottom:.5rem;display:block;}
-    .coverage-state{font-family:'Oswald',sans-serif;font-size:1.15rem;font-weight:700;color:var(--black);margin-bottom:.3rem;}
-    .coverage-cities{font-size:.82rem;color:var(--text-muted);line-height:1.65;}
     /* FOOTER */
     /* FLOATING WA */
     #whatsapp-float{position:fixed;bottom:5.5rem;right:1.5rem;z-index:90;display:flex;align-items:center;gap:.5rem;background:#25D366;color:white;padding:.75rem 1.25rem;border-radius:50px;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.4);font-family:'Oswald',sans-serif;font-size:.9rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;transition:all .3s;}
@@ -177,11 +176,10 @@
     .form-success.show{display:block;}
     .form-success p{font-size:.95rem;color:#166534;font-weight:600;}
     /* RESPONSIVE */
-    @media(max-width:1024px){.contact-inner{grid-template-columns:1fr;}.contact-sidebar{position:static;}.footer-grid{grid-template-columns:1fr 1fr;}.coverage-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:1024px){.contact-inner{grid-template-columns:1fr;}.contact-sidebar{position:static;}.footer-grid{grid-template-columns:1fr 1fr;}}
     @media(max-width:768px){
       .quick-grid{grid-template-columns:1fr;}
       .form-row{grid-template-columns:1fr;}
-      .coverage-grid{grid-template-columns:1fr;}
       #whatsapp-float .wa-text{display:none;}#whatsapp-float{padding:.85rem;border-radius:50%;}
     }
   </style>
@@ -222,16 +220,16 @@
           <span class="quick-card-value">+1 (555) 123-4567</span>
           <span class="quick-card-note" data-en="Mon&ndash;Sat, 7am&ndash;8pm" data-es="Lun&ndash;S&aacute;b, 7am&ndash;8pm">Mon&ndash;Sat, 7am&ndash;8pm</span>
         </a>
-        <a href="https://wa.me/15551234567?text=Hello!%20I%20need%20a%20free%20estimate." target="_blank" rel="noopener noreferrer" class="quick-card">
-          <div class="quick-card-icon green" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a5.006 5.006 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.5 2C6.247 2 2 6.247 2 11.5c0 1.823.5 3.532 1.37 4.995L2 22l5.618-1.344A9.449 9.449 0 0 0 11.5 21c5.253 0 9.5-4.247 9.5-9.5S16.753 2 11.5 2z"/></svg></div>
+        <a href="https://wa.me/15551234567?text=Hello!%20I%20need%20a%20free%20estimate." target="_blank" rel="noopener noreferrer" class="quick-card whatsapp-card">
+          <div class="quick-card-icon green" aria-hidden="true"><svg class="wa-icon" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.601 2.326A7.85 7.85 0 0 0 8.034.001C3.636.001.057 3.582.056 7.98c0 1.4.366 2.77 1.062 3.98L0 16l4.158-1.09a7.93 7.93 0 0 0 3.873 1.01h.003c4.397 0 7.978-3.582 7.979-7.98a7.94 7.94 0 0 0-2.412-5.614zm-5.567 12.258h-.003a6.57 6.57 0 0 1-3.347-.916l-.24-.142-2.468.648.659-2.407-.156-.247a6.56 6.56 0 0 1-1.01-3.513c.002-3.627 2.955-6.58 6.586-6.58 1.756 0 3.407.684 4.648 1.926a6.56 6.56 0 0 1 1.923 4.655c-.001 3.627-2.955 6.576-6.59 6.576z"/><path d="M11.609 9.292c-.198-.099-1.17-.578-1.352-.644-.182-.066-.315-.099-.446.1-.132.198-.512.644-.628.776-.116.132-.231.149-.429.05-.197-.1-.833-.307-1.588-.98-.588-.524-.985-1.17-1.1-1.367-.116-.198-.012-.305.087-.404.09-.09.198-.231.297-.347.099-.116.132-.198.198-.33.066-.132.033-.248-.017-.347-.05-.099-.446-1.075-.611-1.473-.161-.387-.325-.334-.446-.34a1.8 1.8 0 0 0-.38-.036c-.132 0-.347.05-.528.248-.182.198-.694.677-.694 1.65s.71 1.914.809 2.046c.099.132 1.398 2.133 3.387 2.992.473.204.84.325 1.127.416.474.151.904.13 1.245.08.38-.057 1.17-.478 1.336-.94.165-.462.165-.859.116-.94-.05-.083-.182-.132-.38-.231z"/></svg></div>
           <span class="quick-card-label">WhatsApp</span>
           <span class="quick-card-value">+1 (555) 123-4567</span>
           <span class="quick-card-note" data-en="Fast response guaranteed" data-es="Respuesta r&aacute;pida garantizada">Fast response guaranteed</span>
         </a>
-        <a href="mailto:info@atozconstruction.com" class="quick-card">
+        <a href="mailto:info@atozgeneralcontractor.com" class="quick-card">
           <div class="quick-card-icon dark" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
           <span class="quick-card-label" data-en="Email Us" data-es="Escr&iacute;benos">Email Us</span>
-          <span class="quick-card-value" style="font-size:.9rem;">info@atozconstruction.com</span>
+          <span class="quick-card-value" style="font-size:.9rem;">info@atozgeneralcontractor.com</span>
           <span class="quick-card-note" data-en="We reply within a few hours" data-es="Respondemos en pocas horas">We reply within a few hours</span>
         </a>
       </div>
@@ -246,7 +244,7 @@
         <p class="section-subtitle" data-en="Fill out the form and we&rsquo;ll get back to you as soon as possible. If you need immediate contact, use WhatsApp or call us directly." data-es="Completa el formulario y te responderemos lo antes posible. Si necesitas contacto inmediato, usa WhatsApp o ll&aacute;manos directamente.">Fill out the form and we&rsquo;ll get back to you as soon as possible. If you need immediate contact, use WhatsApp or call us directly.</p>
         <div class="form-wrap">
           <h3 class="form-title" data-en="Contact Form &mdash; Free Estimate" data-es="Formulario de Contacto &mdash; Presupuesto Gratis">Contact Form &mdash; Free Estimate</h3>
-          <form id="contact-form" action="#" method="post" aria-label="General contact form" novalidate>
+          <form id="contact-form" action="mailto:estimates@atozgeneralcontractor.com" method="post" aria-label="General contact form">
             <div class="form-row">
               <div class="form-group">
                 <label class="form-label" for="name" data-en="Full Name *" data-es="Nombre Completo *">Full Name *</label>
@@ -329,16 +327,16 @@
         <div class="sidebar-card">
           <p class="sidebar-label">WhatsApp</p>
           <a href="https://wa.me/15551234567" target="_blank" rel="noopener noreferrer" class="sidebar-link">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="color:#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a5.006 5.006 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.5 2C6.247 2 2 6.247 2 11.5c0 1.823.5 3.532 1.37 4.995L2 22l5.618-1.344A9.449 9.449 0 0 0 11.5 21c5.253 0 9.5-4.247 9.5-9.5S16.753 2 11.5 2z"/></svg>
+            <svg class="wa-icon" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.601 2.326A7.85 7.85 0 0 0 8.034.001C3.636.001.057 3.582.056 7.98c0 1.4.366 2.77 1.062 3.98L0 16l4.158-1.09a7.93 7.93 0 0 0 3.873 1.01h.003c4.397 0 7.978-3.582 7.979-7.98a7.94 7.94 0 0 0-2.412-5.614zm-5.567 12.258h-.003a6.57 6.57 0 0 1-3.347-.916l-.24-.142-2.468.648.659-2.407-.156-.247a6.56 6.56 0 0 1-1.01-3.513c.002-3.627 2.955-6.58 6.586-6.58 1.756 0 3.407.684 4.648 1.926a6.56 6.56 0 0 1 1.923 4.655c-.001 3.627-2.955 6.576-6.59 6.576z"/><path d="M11.609 9.292c-.198-.099-1.17-.578-1.352-.644-.182-.066-.315-.099-.446.1-.132.198-.512.644-.628.776-.116.132-.231.149-.429.05-.197-.1-.833-.307-1.588-.98-.588-.524-.985-1.17-1.1-1.367-.116-.198-.012-.305.087-.404.09-.09.198-.231.297-.347.099-.116.132-.198.198-.33.066-.132.033-.248-.017-.347-.05-.099-.446-1.075-.611-1.473-.161-.387-.325-.334-.446-.34a1.8 1.8 0 0 0-.38-.036c-.132 0-.347.05-.528.248-.182.198-.694.677-.694 1.65s.71 1.914.809 2.046c.099.132 1.398 2.133 3.387 2.992.473.204.84.325 1.127.416.474.151.904.13 1.245.08.38-.057 1.17-.478 1.336-.94.165-.462.165-.859.116-.94-.05-.083-.182-.132-.38-.231z"/></svg>
             +1 (555) 123-4567
           </a>
           <p class="sidebar-text" data-en="Message us anytime &mdash; we respond fast." data-es="Escr&iacute;benos cuando quieras &mdash; respondemos r&aacute;pido.">Message us anytime &mdash; we respond fast.</p>
         </div>
         <div class="sidebar-card">
           <p class="sidebar-label" data-en="Email" data-es="Correo">Email</p>
-          <a href="mailto:info@atozconstruction.com" class="sidebar-link">
+          <a href="mailto:info@atozgeneralcontractor.com" class="sidebar-link">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            info@atozconstruction.com
+            info@atozgeneralcontractor.com
           </a>
         </div>
         <div class="sidebar-card">
@@ -357,7 +355,7 @@
           <p class="emergency-text" data-en="Licensed &amp; insured. Every service is backed by warranty. Trusted General Contractor serving NY &middot; NJ &middot; Philadelphia." data-es="Licenciado y asegurado. Todos los servicios tienen garant&iacute;a. Contratista General de confianza en NY &middot; NJ &middot; Filadelfia.">Licensed &amp; insured. Every service is backed by warranty. Trusted General Contractor serving NY &middot; NJ &middot; Philadelphia.</p>
           <div class="emergency-btns">
             <a href="https://wa.me/15551234567?text=Hello!%20I%20need%20immediate%20contact%20for%20a%20service%20estimate." target="_blank" rel="noopener noreferrer" class="emergency-link wa">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a5.006 5.006 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.5 2C6.247 2 2 6.247 2 11.5c0 1.823.5 3.532 1.37 4.995L2 22l5.618-1.344A9.449 9.449 0 0 0 11.5 21c5.253 0 9.5-4.247 9.5-9.5S16.753 2 11.5 2z"/></svg>
+              <svg class="wa-icon" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.601 2.326A7.85 7.85 0 0 0 8.034.001C3.636.001.057 3.582.056 7.98c0 1.4.366 2.77 1.062 3.98L0 16l4.158-1.09a7.93 7.93 0 0 0 3.873 1.01h.003c4.397 0 7.978-3.582 7.979-7.98a7.94 7.94 0 0 0-2.412-5.614zm-5.567 12.258h-.003a6.57 6.57 0 0 1-3.347-.916l-.24-.142-2.468.648.659-2.407-.156-.247a6.56 6.56 0 0 1-1.01-3.513c.002-3.627 2.955-6.58 6.586-6.58 1.756 0 3.407.684 4.648 1.926a6.56 6.56 0 0 1 1.923 4.655c-.001 3.627-2.955 6.576-6.59 6.576z"/><path d="M11.609 9.292c-.198-.099-1.17-.578-1.352-.644-.182-.066-.315-.099-.446.1-.132.198-.512.644-.628.776-.116.132-.231.149-.429.05-.197-.1-.833-.307-1.588-.98-.588-.524-.985-1.17-1.1-1.367-.116-.198-.012-.305.087-.404.09-.09.198-.231.297-.347.099-.116.132-.198.198-.33.066-.132.033-.248-.017-.347-.05-.099-.446-1.075-.611-1.473-.161-.387-.325-.334-.446-.34a1.8 1.8 0 0 0-.38-.036c-.132 0-.347.05-.528.248-.182.198-.694.677-.694 1.65s.71 1.914.809 2.046c.099.132 1.398 2.133 3.387 2.992.473.204.84.325 1.127.416.474.151.904.13 1.245.08.38-.057 1.17-.478 1.336-.94.165-.462.165-.859.116-.94-.05-.083-.182-.132-.38-.231z"/></svg>
               <span data-en="WhatsApp Now" data-es="WhatsApp Ahora">WhatsApp Now</span>
             </a>
             <a href="tel:+15551234567" class="emergency-link phone">
@@ -369,35 +367,11 @@
       </aside>
     </div>
   </section>
-  <!-- COVERAGE -->
-  <section id="coverage" aria-labelledby="coverage-heading">
-    <div class="coverage-inner">
-      <p class="section-eyebrow" data-en="Where We Work" data-es="D&oacute;nde Trabajamos">Where We Work</p>
-      <h2 class="section-title" id="coverage-heading"><span data-en="Serving <em>NY, NJ &amp; Philadelphia</em>" data-es="Sirviendo <em>NY, NJ y Filadelfia</em>">Serving <em>NY, NJ &amp; Philadelphia</em></span></h2>
-      <div class="coverage-grid">
-        <div class="coverage-card">
-          <span class="coverage-flag" aria-hidden="true">🗽</span>
-          <p class="coverage-state" data-en="New York" data-es="Nueva York">New York</p>
-          <p class="coverage-cities" data-en="Brooklyn &middot; Queens &middot; The Bronx &middot; Manhattan &middot; Staten Island &middot; Long Island &middot; Westchester" data-es="Brooklyn &middot; Queens &middot; El Bronx &middot; Manhattan &middot; Staten Island &middot; Long Island &middot; Westchester">Brooklyn &middot; Queens &middot; The Bronx &middot; Manhattan &middot; Staten Island &middot; Long Island &middot; Westchester</p>
-        </div>
-        <div class="coverage-card">
-          <span class="coverage-flag" aria-hidden="true">🏙️</span>
-          <p class="coverage-state" data-en="New Jersey" data-es="Nueva Jersey">New Jersey</p>
-          <p class="coverage-cities" data-en="Newark &middot; Jersey City &middot; Paterson &middot; Elizabeth &middot; Trenton &middot; Camden &middot; Hackensack &middot; Union City" data-es="Newark &middot; Jersey City &middot; Paterson &middot; Elizabeth &middot; Trenton &middot; Camden &middot; Hackensack &middot; Union City">Newark &middot; Jersey City &middot; Paterson &middot; Elizabeth &middot; Trenton &middot; Camden &middot; Hackensack &middot; Union City</p>
-        </div>
-        <div class="coverage-card">
-          <span class="coverage-flag" aria-hidden="true">🔔</span>
-          <p class="coverage-state" data-en="Philadelphia" data-es="Filadelfia">Philadelphia</p>
-          <p class="coverage-cities" data-en="Center City &middot; South Philly &middot; North Philly &middot; West Philly &middot; Kensington &middot; Fishtown &middot; Germantown" data-es="Center City &middot; South Philly &middot; North Philly &middot; West Philly &middot; Kensington &middot; Fishtown &middot; Germantown">Center City &middot; South Philly &middot; North Philly &middot; West Philly &middot; Kensington &middot; Fishtown &middot; Germantown</p>
-        </div>
-      </div>
-    </div>
-  </section>
 </main>
 <!-- FOOTER -->
 <div id="global-footer"></div>
 <a id="whatsapp-float" href="https://wa.me/15551234567?text=Hello!%20I%20need%20a%20free%20estimate." target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a5.006 5.006 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.5 2C6.247 2 2 6.247 2 11.5c0 1.823.5 3.532 1.37 4.995L2 22l5.618-1.344A9.449 9.449 0 0 0 11.5 21c5.253 0 9.5-4.247 9.5-9.5S16.753 2 11.5 2z"/></svg>
+  <svg class="wa-icon" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.601 2.326A7.85 7.85 0 0 0 8.034.001C3.636.001.057 3.582.056 7.98c0 1.4.366 2.77 1.062 3.98L0 16l4.158-1.09a7.93 7.93 0 0 0 3.873 1.01h.003c4.397 0 7.978-3.582 7.979-7.98a7.94 7.94 0 0 0-2.412-5.614zm-5.567 12.258h-.003a6.57 6.57 0 0 1-3.347-.916l-.24-.142-2.468.648.659-2.407-.156-.247a6.56 6.56 0 0 1-1.01-3.513c.002-3.627 2.955-6.58 6.586-6.58 1.756 0 3.407.684 4.648 1.926a6.56 6.56 0 0 1 1.923 4.655c-.001 3.627-2.955 6.576-6.59 6.576z"/><path d="M11.609 9.292c-.198-.099-1.17-.578-1.352-.644-.182-.066-.315-.099-.446.1-.132.198-.512.644-.628.776-.116.132-.231.149-.429.05-.197-.1-.833-.307-1.588-.98-.588-.524-.985-1.17-1.1-1.367-.116-.198-.012-.305.087-.404.09-.09.198-.231.297-.347.099-.116.132-.198.198-.33.066-.132.033-.248-.017-.347-.05-.099-.446-1.075-.611-1.473-.161-.387-.325-.334-.446-.34a1.8 1.8 0 0 0-.38-.036c-.132 0-.347.05-.528.248-.182.198-.694.677-.694 1.65s.71 1.914.809 2.046c.099.132 1.398 2.133 3.387 2.992.473.204.84.325 1.127.416.474.151.904.13 1.245.08.38-.057 1.17-.478 1.336-.94.165-.462.165-.859.116-.94-.05-.083-.182-.132-.38-.231z"/></svg>
   <span class="wa-text" data-en="WhatsApp" data-es="WhatsApp">WhatsApp</span>
 </a>
 <script src="./assets/js/global-layout.js"></script>
@@ -412,12 +386,77 @@
   document.getElementById('btn-es').setAttribute('aria-pressed',lang==='es');
 }
 (function(){const s=localStorage.getItem('azc-lang');const bl=navigator.language||navigator.userLanguage;const dl=s||(bl.startsWith('es')?'es':'en');if(dl!=='en')setLang(dl);})();
-document.getElementById('contact-form').addEventListener('submit',function(e){
-  e.preventDefault();
-  document.getElementById('form-success').classList.add('show');
-  this.reset();
-  this.scrollIntoView({behavior:'smooth',block:'end'});
-});
+(function(){
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+
+  const requiredFields = Array.from(form.querySelectorAll('[required]'));
+
+  function ensureErrorNode(field){
+    const group = field.closest('.form-group');
+    if (!group) return null;
+    let err = group.querySelector('.field-error');
+    if (!err){
+      err = document.createElement('p');
+      err.className = 'field-error';
+      err.setAttribute('aria-live','polite');
+      group.appendChild(err);
+    }
+    return err;
+  }
+
+  function showFieldError(field){
+    const err = ensureErrorNode(field);
+    const group = field.closest('.form-group');
+    if (!err || !group) return;
+    field.classList.add('invalid');
+    group.classList.add('has-error');
+    err.textContent = field.validationMessage || 'This field is required.';
+  }
+
+  function clearFieldError(field){
+    const group = field.closest('.form-group');
+    if (!group) return;
+    const err = group.querySelector('.field-error');
+    field.classList.remove('invalid');
+    group.classList.remove('has-error');
+    if (err) err.textContent = '';
+  }
+
+  function validateField(field){
+    if (field.checkValidity()) {
+      clearFieldError(field);
+      return true;
+    }
+    showFieldError(field);
+    return false;
+  }
+
+  requiredFields.forEach((field) => {
+    ensureErrorNode(field);
+    field.addEventListener('input', () => {
+      if (field.classList.contains('invalid')) validateField(field);
+    });
+    field.addEventListener('change', () => validateField(field));
+    field.addEventListener('blur', () => validateField(field));
+  });
+
+  form.addEventListener('submit', function (e) {
+    const firstInvalid = requiredFields.find((field) => !validateField(field));
+    if (firstInvalid) {
+      e.preventDefault();
+      firstInvalid.focus();
+      return;
+    }
+
+    e.preventDefault();
+    document.getElementById('form-success').classList.add('show');
+    this.reset();
+    requiredFields.forEach(clearFieldError);
+    this.scrollIntoView({ behavior: 'smooth', block: 'end' });
+  });
+})();
+
 document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){const t=document.querySelector(this.getAttribute('href'));if(t){e.preventDefault();window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-88,behavior:'smooth'});}});});
 </script>
 <!-- ==========================================
@@ -436,7 +475,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click'
       <p style="font-size:.85rem;color:var(--gray-dark);margin-bottom:1rem;text-align:center;font-weight:600;" data-en="How would you like to reach us?" data-es="&iquest;C&oacute;mo prefieres contactarnos?">How would you like to reach us?</p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1rem;">
         <a href="https://wa.me/15551234567?text=Hello!%20I%20would%20like%20a%20free%20estimate." target="_blank" rel="noopener noreferrer" onclick="closePopup('timer')" style="display:flex;flex-direction:column;align-items:center;gap:.45rem;padding:1rem .75rem;background:#25D366;color:white;border-radius:10px;text-decoration:none;text-align:center;">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a5.006 5.006 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.5 2C6.247 2 2 6.247 2 11.5c0 1.823.5 3.532 1.37 4.995L2 22l5.618-1.344A9.449 9.449 0 0 0 11.5 21c5.253 0 9.5-4.247 9.5-9.5S16.753 2 11.5 2z"/></svg>
+          <svg class="wa-icon" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.601 2.326A7.85 7.85 0 0 0 8.034.001C3.636.001.057 3.582.056 7.98c0 1.4.366 2.77 1.062 3.98L0 16l4.158-1.09a7.93 7.93 0 0 0 3.873 1.01h.003c4.397 0 7.978-3.582 7.979-7.98a7.94 7.94 0 0 0-2.412-5.614zm-5.567 12.258h-.003a6.57 6.57 0 0 1-3.347-.916l-.24-.142-2.468.648.659-2.407-.156-.247a6.56 6.56 0 0 1-1.01-3.513c.002-3.627 2.955-6.58 6.586-6.58 1.756 0 3.407.684 4.648 1.926a6.56 6.56 0 0 1 1.923 4.655c-.001 3.627-2.955 6.576-6.59 6.576z"/><path d="M11.609 9.292c-.198-.099-1.17-.578-1.352-.644-.182-.066-.315-.099-.446.1-.132.198-.512.644-.628.776-.116.132-.231.149-.429.05-.197-.1-.833-.307-1.588-.98-.588-.524-.985-1.17-1.1-1.367-.116-.198-.012-.305.087-.404.09-.09.198-.231.297-.347.099-.116.132-.198.198-.33.066-.132.033-.248-.017-.347-.05-.099-.446-1.075-.611-1.473-.161-.387-.325-.334-.446-.34a1.8 1.8 0 0 0-.38-.036c-.132 0-.347.05-.528.248-.182.198-.694.677-.694 1.65s.71 1.914.809 2.046c.099.132 1.398 2.133 3.387 2.992.473.204.84.325 1.127.416.474.151.904.13 1.245.08.38-.057 1.17-.478 1.336-.94.165-.462.165-.859.116-.94-.05-.083-.182-.132-.38-.231z"/></svg>
           <span style="font-family:'Oswald',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;" data-en="WhatsApp" data-es="WhatsApp">WhatsApp</span>
           <span style="font-size:.7rem;opacity:.9;" data-en="Fast response" data-es="Respuesta r&aacute;pida">Fast response</span>
         </a>
@@ -472,7 +511,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click'
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:.9rem;">
         <a href="https://wa.me/15551234567?text=Hello!%20I%20was%20about%20to%20leave%20but%20I%20need%20a%20free%20estimate." target="_blank" rel="noopener noreferrer" onclick="closePopup('exit')" style="display:flex;flex-direction:column;align-items:center;gap:.45rem;padding:1rem .75rem;background:#25D366;color:white;border-radius:10px;text-decoration:none;text-align:center;">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a5.006 5.006 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.5 2C6.247 2 2 6.247 2 11.5c0 1.823.5 3.532 1.37 4.995L2 22l5.618-1.344A9.449 9.449 0 0 0 11.5 21c5.253 0 9.5-4.247 9.5-9.5S16.753 2 11.5 2z"/></svg>
+          <svg class="wa-icon" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.601 2.326A7.85 7.85 0 0 0 8.034.001C3.636.001.057 3.582.056 7.98c0 1.4.366 2.77 1.062 3.98L0 16l4.158-1.09a7.93 7.93 0 0 0 3.873 1.01h.003c4.397 0 7.978-3.582 7.979-7.98a7.94 7.94 0 0 0-2.412-5.614zm-5.567 12.258h-.003a6.57 6.57 0 0 1-3.347-.916l-.24-.142-2.468.648.659-2.407-.156-.247a6.56 6.56 0 0 1-1.01-3.513c.002-3.627 2.955-6.58 6.586-6.58 1.756 0 3.407.684 4.648 1.926a6.56 6.56 0 0 1 1.923 4.655c-.001 3.627-2.955 6.576-6.59 6.576z"/><path d="M11.609 9.292c-.198-.099-1.17-.578-1.352-.644-.182-.066-.315-.099-.446.1-.132.198-.512.644-.628.776-.116.132-.231.149-.429.05-.197-.1-.833-.307-1.588-.98-.588-.524-.985-1.17-1.1-1.367-.116-.198-.012-.305.087-.404.09-.09.198-.231.297-.347.099-.116.132-.198.198-.33.066-.132.033-.248-.017-.347-.05-.099-.446-1.075-.611-1.473-.161-.387-.325-.334-.446-.34a1.8 1.8 0 0 0-.38-.036c-.132 0-.347.05-.528.248-.182.198-.694.677-.694 1.65s.71 1.914.809 2.046c.099.132 1.398 2.133 3.387 2.992.473.204.84.325 1.127.416.474.151.904.13 1.245.08.38-.057 1.17-.478 1.336-.94.165-.462.165-.859.116-.94-.05-.083-.182-.132-.38-.231z"/></svg>
           <span style="font-family:'Oswald',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;" data-en="WhatsApp" data-es="WhatsApp">WhatsApp</span>
           <span style="font-size:.7rem;opacity:.9;" data-en="Instant reply" data-es="Respuesta instant&aacute;nea">Instant reply</span>
         </a>
@@ -512,3 +551,16 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click'
 <script src="./assets/js/popup.js?v=20260304b"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,4 +1,4 @@
-(function () {
+﻿(function () {
   var headerHost = document.getElementById("global-header");
   var footerHost = document.getElementById("global-footer");
 
@@ -79,19 +79,19 @@
       "      <div>" +
       '        <h4 class="footer-col-title" data-en="Contact Us" data-es="Cont&aacute;ctanos">Contact Us</h4>' +
       '        <div class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+15551234567">+1 (555) 123-4567</a></div>' +
-      '        <div class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><a href="mailto:info@atozconstruction.com">info@atozconstruction.com</a></div>' +
+      '        <div class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><a href="mailto:info@atozgeneralcontractor.com">info@atozgeneralcontractor.com</a></div>' +
       '        <div class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>NY &middot; NJ &middot; Philadelphia</span></div>' +
       "      </div>" +
       "    </div>" +
       '    <div class="footer-bottom">' +
       '      <p class="footer-copyright">&copy; 2026 A-Z Construction &amp; Services. All rights reserved.</p>' +
       '      <nav class="footer-social-links" aria-label="Social media">' +
-      '        <a href="#" aria-label="Facebook" title="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.25.2 2.25.2v2.46H15.2c-1.25 0-1.64.78-1.64 1.58V12h2.79l-.45 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>' +
-      '        <a href="#" aria-label="Instagram" title="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2zm0 1.9A3.9 3.9 0 0 0 3.9 7.8v8.4a3.9 3.9 0 0 0 3.9 3.9h8.4a3.9 3.9 0 0 0 3.9-3.9V7.8a3.9 3.9 0 0 0-3.9-3.9H7.8zm8.95 1.43a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.9a3.1 3.1 0 1 0 0 6.2 3.1 3.1 0 0 0 0-6.2z"/></svg></a>' +
-      '        <a href="#" aria-label="LinkedIn" title="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 8.5H3.56V20h3.38V8.5zM5.25 3A1.97 1.97 0 1 0 5.3 6.94 1.97 1.97 0 0 0 5.25 3zM20.44 13.55c0-3.45-1.84-5.05-4.3-5.05-1.98 0-2.87 1.09-3.37 1.86V8.5H9.39V20h3.38v-6.07c0-1.6.3-3.14 2.28-3.14 1.95 0 1.98 1.82 1.98 3.24V20h3.41v-6.45z"/></svg></a>' +
-      '        <a href="#" aria-label="Google Business Profile" title="Google"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.35 11.1H12v2.92h5.38c-.23 1.5-1.75 4.4-5.38 4.4-3.24 0-5.87-2.68-5.87-5.98s2.63-5.98 5.87-5.98c1.84 0 3.08.78 3.79 1.46l2.58-2.5C16.74 3.86 14.63 3 12 3 7.03 3 3 7.03 3 12s4.03 9 9 9c5.2 0 8.65-3.65 8.65-8.8 0-.59-.06-1.03-.14-1.1z"/></svg></a>' +
+      '        <a href="./contact.html" aria-label="Facebook (pending)" title="Facebook (pending)"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.25.2 2.25.2v2.46H15.2c-1.25 0-1.64.78-1.64 1.58V12h2.79l-.45 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>' +
+      '        <a href="./contact.html" aria-label="Instagram (pending)" title="Instagram (pending)"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2zm0 1.9A3.9 3.9 0 0 0 3.9 7.8v8.4a3.9 3.9 0 0 0 3.9 3.9h8.4a3.9 3.9 0 0 0 3.9-3.9V7.8a3.9 3.9 0 0 0-3.9-3.9H7.8zm8.95 1.43a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.9a3.1 3.1 0 1 0 0 6.2 3.1 3.1 0 0 0 0-6.2z"/></svg></a>' +
+      '        <a href="./contact.html" aria-label="LinkedIn (pending)" title="LinkedIn (pending)"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 8.5H3.56V20h3.38V8.5zM5.25 3A1.97 1.97 0 1 0 5.3 6.94 1.97 1.97 0 0 0 5.25 3zM20.44 13.55c0-3.45-1.84-5.05-4.3-5.05-1.98 0-2.87 1.09-3.37 1.86V8.5H9.39V20h3.38v-6.07c0-1.6.3-3.14 2.28-3.14 1.95 0 1.98 1.82 1.98 3.24V20h3.41v-6.45z"/></svg></a>' +
+      '        <a href="./contact.html" aria-label="Google Business Profile (pending)" title="Google Business Profile (pending)"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.35 11.1H12v2.92h5.38c-.23 1.5-1.75 4.4-5.38 4.4-3.24 0-5.87-2.68-5.87-5.98s2.63-5.98 5.87-5.98c1.84 0 3.08.78 3.79 1.46l2.58-2.5C16.74 3.86 14.63 3 12 3 7.03 3 3 7.03 3 12s4.03 9 9 9c5.2 0 8.65-3.65 8.65-8.8 0-.59-.06-1.03-.14-1.1z"/></svg></a>' +
       "      </nav>" +
-      '      <nav class="footer-legal-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Sitemap</a></nav>' +
+      '      <nav class="footer-legal-links"><a href="./privacy-policy.html">Privacy Policy</a><a href="./terms-of-service.html">Terms of Service</a><a href="./sitemap.xml">Sitemap</a></nav>' +
       '      <span class="footer-badge-corner" aria-label="Company badge"><img src="./assets/images/revemetrics-badge.png" alt="by Revemetrics" loading="lazy" onerror="this.closest(\'.footer-badge-corner\').style.display=\'none\';"></span>' +
       "    </div>" +
       "  </div>" +
@@ -241,9 +241,9 @@
       '  <p class="cookie-title" data-en="Cookie Preferences" data-es="Preferencias de Cookies">Cookie Preferences</p>' +
       '  <p class="cookie-text" data-en="We use essential cookies to run this site and optional cookies to improve performance." data-es="Usamos cookies esenciales para operar este sitio y cookies opcionales para mejorar el rendimiento.">We use essential cookies to run this site and optional cookies to improve performance.</p>' +
       '  <p class="cookie-links">' +
-      '    <a href="#" data-en="Privacy Policy" data-es="Pol&iacute;tica de Privacidad">Privacy Policy</a>' +
+      '    <a href="./privacy-policy.html" data-en="Privacy Policy" data-es="Pol&iacute;tica de Privacidad">Privacy Policy</a>' +
       '    <span aria-hidden="true">&middot;</span>' +
-      '    <a href="#" data-en="Terms of Service" data-es="T&eacute;rminos de Servicio">Terms of Service</a>' +
+      '    <a href="./terms-of-service.html" data-en="Terms of Service" data-es="T&eacute;rminos de Servicio">Terms of Service</a>' +
       "  </p>" +
       '  <div class="cookie-actions">' +
       '    <button type="button" id="cookie-reject" class="cookie-btn secondary" data-en="Reject Optional" data-es="Rechazar Opcionales">Reject Optional</button>' +
