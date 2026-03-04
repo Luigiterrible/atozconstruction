@@ -26,8 +26,8 @@
       '      <a id="header-cta-link" href="./contact.html" class="btn-header-cta" data-en="Free Estimate" data-es="Presupuesto Gratis">Free Estimate</a>' +
       '      <button id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>' +
       '      <div class="lang-switcher" role="group" aria-label="Language">' +
-      '        <button class="lang-btn active" id="btn-en" aria-pressed="true">EN</button>' +
-      '        <button class="lang-btn" id="btn-es" aria-pressed="false">ES</button>' +
+      '        <button type="button" class="lang-btn active" id="btn-en" aria-pressed="true">EN</button>' +
+      '        <button type="button" class="lang-btn" id="btn-es" aria-pressed="false">ES</button>' +
       "      </div>" +
       "    </div>" +
       "  </div>" +
@@ -147,21 +147,21 @@
     var btnEs = document.getElementById("btn-es");
     if (!btnEn || !btnEs) return;
 
-    btnEn.addEventListener("click", function () {
-      if (typeof window.setLang === "function") window.setLang("en");
+    function applyLang(lang, evt) {
+      if (evt) evt.preventDefault();
+      if (typeof window.setLang === "function") window.setLang(lang);
       else {
-        localStorage.setItem("azc-lang", "en");
-        applyLangToGlobal("en");
+        localStorage.setItem("azc-lang", lang);
+        applyLangToGlobal(lang);
       }
-    });
+    }
 
-    btnEs.addEventListener("click", function () {
-      if (typeof window.setLang === "function") window.setLang("es");
-      else {
-        localStorage.setItem("azc-lang", "es");
-        applyLangToGlobal("es");
-      }
-    });
+    btnEn.addEventListener("click", function (evt) { applyLang("en", evt); });
+    btnEs.addEventListener("click", function (evt) { applyLang("es", evt); });
+
+    // Some Android browsers are unreliable with click on sticky header controls.
+    btnEn.addEventListener("touchend", function (evt) { applyLang("en", evt); }, { passive: false });
+    btnEs.addEventListener("touchend", function (evt) { applyLang("es", evt); }, { passive: false });
   }
 
   function wireMobileMenu() {
