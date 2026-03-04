@@ -50,7 +50,7 @@
     style.id = 'azc-popup-mobile-style';
     style.textContent =
       '@media (max-width: 560px){' +
-      '  #popup-timer,#popup-exit{padding:.75rem !important;}' +
+      '  #popup-timer,#popup-exit{padding:.75rem !important;min-height:100dvh !important;align-items:center !important;justify-content:center !important;}' +
       '  #popup-timer .azc-popup-card,#popup-exit .azc-popup-card{max-width:340px !important;border-radius:12px !important;}' +
       '  #popup-timer .azc-popup-head,#popup-exit .azc-popup-head{padding:1rem 1rem .9rem !important;}' +
       '  #popup-timer .azc-popup-body,#popup-exit .azc-popup-body{padding:1rem !important;}' +

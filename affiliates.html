@@ -66,7 +66,7 @@
     .mega-cat-btn.commercial{background:var(--black);color:white;}
     .mega-cat-btn.commercial:hover{background:var(--black-soft);}
     .lang-btn:hover:not(.active){color:white;}
-    /* â”€â”€ HERO â”€â”€ full black with gold accents */
+    /* -- HERO -- full black with gold accents */
     #affiliates-hero{background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url('./assets/images/hero_affiliates.jpg.jpeg') center/cover no-repeat;padding:4rem 1.5rem 3.5rem;position:relative;overflow:hidden;border-bottom:1px solid rgba(250,204,21,.12);}
     #affiliates-hero::before{content:'';position:absolute;right:-100px;top:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(250,204,21,.06) 0%,transparent 65%);pointer-events:none;}
     #affiliates-hero::after{content:'';position:absolute;left:-60px;bottom:-60px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(232,130,26,.05) 0%,transparent 65%);pointer-events:none;}
@@ -89,7 +89,7 @@
     .hero-trust{display:flex;flex-wrap:wrap;gap:1.75rem;align-items:center;}
     .trust-item{display:flex;align-items:center;gap:.5rem;color:rgba(255,255,255,.6);font-size:.83rem;font-weight:600;}
     .trust-item svg{color:var(--gold);flex-shrink:0;}
-    /* â”€â”€ WHAT IS THIS â”€â”€ */
+    /* -- WHAT IS THIS -- */
     #what-is{background:#111111;padding:4rem 1.5rem;}
     .what-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
     .what-text .section-eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-family:'Oswald',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;}
@@ -103,7 +103,7 @@
     .what-stat{background:var(--black-soft);border:1px solid rgba(255,255,255,.07);border-left:3px solid var(--gold);border-radius:10px;padding:1.25rem 1.5rem;}
     .what-stat-number{font-family:'Oswald',sans-serif;font-size:2.2rem;font-weight:700;color:var(--gold);line-height:1;}
     .what-stat-label{font-size:.85rem;color:rgba(255,255,255,.6);margin-top:.25rem;}
-    /* â”€â”€ WHO CAN JOIN â”€â”€ */
+    /* -- WHO CAN JOIN -- */
     #who-can-join{background:var(--black);padding:4rem 1.5rem;}
     .who-inner{max-width:1280px;margin:0 auto;}
     .section-label{display:inline-flex;align-items:center;gap:.5rem;font-family:'Oswald',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;}
@@ -117,7 +117,7 @@
     .trade-icon{width:40px;height:40px;background:rgba(250,204,21,.1);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--gold);flex-shrink:0;}
     .trade-name{font-family:'Oswald',sans-serif;font-size:1rem;font-weight:600;color:var(--white);line-height:1.2;}
     .trade-desc{font-size:.78rem;color:rgba(255,255,255,.5);margin-top:.25rem;line-height:1.45;}
-    /* â”€â”€ HOW IT WORKS â”€â”€ */
+    /* -- HOW IT WORKS -- */
     #how-it-works{background:#111111;padding:4rem 1.5rem;}
     .how-inner{max-width:1280px;margin:0 auto;}
     .steps-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:2.5rem;position:relative;}
@@ -126,7 +126,7 @@
     .step-num{width:56px;height:56px;border-radius:50%;background:var(--gold);color:var(--black);font-family:'Oswald',sans-serif;font-size:1.4rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
     .step-title{font-family:'Oswald',sans-serif;font-size:1rem;font-weight:700;color:var(--white);}
     .step-desc{font-size:.82rem;color:rgba(255,255,255,.55);line-height:1.5;}
-    /* â”€â”€ WHAT WE OFFER AFFILIATES â”€â”€ */
+    /* -- WHAT WE OFFER AFFILIATES -- */
     #affiliate-benefits{background:var(--black);padding:4rem 1.5rem;}
     .benefits-inner{max-width:1280px;margin:0 auto;}
     .benefits-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem;margin-top:2.5rem;}
@@ -135,7 +135,7 @@
     .benefit-icon{width:44px;height:44px;background:rgba(250,204,21,.1);border-radius:9px;display:flex;align-items:center;justify-content:center;color:var(--gold);}
     .benefit-title{font-family:'Oswald',sans-serif;font-size:1.05rem;font-weight:700;color:var(--white);}
     .benefit-desc{font-size:.85rem;color:rgba(255,255,255,.58);line-height:1.6;}
-    /* â”€â”€ APPLY FORM â”€â”€ */
+    /* -- APPLY FORM -- */
     #apply-form{background:#111111;padding:4.5rem 1.5rem;}
     .apply-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 380px;gap:4rem;align-items:start;}
     .form-wrap{background:var(--black-soft);border-radius:14px;padding:2.25rem;border:1px solid rgba(255,255,255,.08);}
@@ -501,10 +501,10 @@
 (function(){const s=localStorage.getItem('azc-lang');const bl=navigator.language||navigator.userLanguage;const dl=s||(bl.startsWith('es')?'es':'en');if(dl!=='en')setLang(dl);})();
 document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){const t=document.querySelector(this.getAttribute('href'));if(t){e.preventDefault();window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-88,behavior:'smooth'});}});});
 </script>
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-     POPUP 1 â€” TIMER (20 segundos)
+<!-- ==========================================
+     POPUP 1 &mdash; TIMER (20 segundos)
      Tono: proactivo / friendly
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+============================================ -->
 <div id="popup-timer" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:9000;align-items:center;justify-content:center;padding:1rem;" aria-modal="true" role="dialog" aria-labelledby="popup-timer-title">
   <div style="background:white;border-radius:16px;max-width:400px;width:100%;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.4);position:relative;animation:popupIn .3s ease;">
     <div style="background:var(--orange);padding:1.4rem 1.5rem 1.2rem;position:relative;">
@@ -531,10 +531,10 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click'
     </div>
   </div>
 </div>
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-     POPUP 2 â€” EXIT INTENT
-     Tono: retenciÃ³n / urgencia
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- ==========================================
+     POPUP 2 &mdash; EXIT INTENT
+     Tono: retenci&oacute;n / urgencia
+============================================ -->
 <div id="popup-exit" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:9001;align-items:center;justify-content:center;padding:1rem;" aria-modal="true" role="dialog" aria-labelledby="popup-exit-title">
   <div style="background:white;border-radius:16px;max-width:420px;width:100%;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5);position:relative;animation:popupIn .3s ease;">
     <div style="background:var(--black);padding:1.4rem 1.5rem 1.2rem;position:relative;">
@@ -548,7 +548,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click'
     </div>
     <div style="padding:1.4rem;">
       <div style="background:var(--orange-pale);border:1.5px solid rgba(232,130,26,.3);border-radius:8px;padding:.75rem 1rem;margin-bottom:1.1rem;display:flex;align-items:center;gap:.6rem;">
-        <span style="font-size:1.3rem;" aria-hidden="true">âš¡</span>
+        <span style="font-size:1.3rem;" aria-hidden="true">&#9889;</span>
         <p style="font-size:.82rem;color:var(--black);font-weight:600;line-height:1.4;" data-en="Free estimates &middot; Fast response &middot; No obligation" data-es="Presupuestos gratis &middot; Respuesta r&aacute;pida &middot; Sin compromiso">Free estimates &middot; Fast response &middot; No obligation</p>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:.9rem;">
@@ -570,13 +570,13 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click'
 <style>
 @keyframes popupIn{from{opacity:0;transform:scale(.92) translateY(12px);}to{opacity:1;transform:scale(1) translateY(0);}}
 </style>
-<!-- â”€â”€ TAWK.TO LIVE CHAT â”€â”€ -->
+<!-- -- TAWK.TO LIVE CHAT -- -->
 <!--
   INSTRUCCIONES TAWK.TO:
   1. Ve a tawk.to y crea una cuenta gratuita
   2. Crea una propiedad para "A-Z Construction & Services"
   3. Copia tu snippet personalizado y reemplaza el bloque de abajo
-  4. El snippet luce asÃ­:
+  4. El snippet luce as&iacute;:
      <script type="text/javascript">
      var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
      (function(){
