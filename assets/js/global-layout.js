@@ -85,14 +85,21 @@
       "    </div>" +
       '    <div class="footer-bottom">' +
       '      <p class="footer-copyright">&copy; 2026 A-Z Construction &amp; Services. All rights reserved.</p>' +
+      '      <nav class="footer-social-links" aria-label="Social media">' +
+      '        <a href="#" aria-label="Facebook" title="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.25.2 2.25.2v2.46H15.2c-1.25 0-1.64.78-1.64 1.58V12h2.79l-.45 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>' +
+      '        <a href="#" aria-label="Instagram" title="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2zm0 1.9A3.9 3.9 0 0 0 3.9 7.8v8.4a3.9 3.9 0 0 0 3.9 3.9h8.4a3.9 3.9 0 0 0 3.9-3.9V7.8a3.9 3.9 0 0 0-3.9-3.9H7.8zm8.95 1.43a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.9a3.1 3.1 0 1 0 0 6.2 3.1 3.1 0 0 0 0-6.2z"/></svg></a>' +
+      '        <a href="#" aria-label="LinkedIn" title="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 8.5H3.56V20h3.38V8.5zM5.25 3A1.97 1.97 0 1 0 5.3 6.94 1.97 1.97 0 0 0 5.25 3zM20.44 13.55c0-3.45-1.84-5.05-4.3-5.05-1.98 0-2.87 1.09-3.37 1.86V8.5H9.39V20h3.38v-6.07c0-1.6.3-3.14 2.28-3.14 1.95 0 1.98 1.82 1.98 3.24V20h3.41v-6.45z"/></svg></a>' +
+      '        <a href="#" aria-label="Google Business Profile" title="Google"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.35 11.1H12v2.92h5.38c-.23 1.5-1.75 4.4-5.38 4.4-3.24 0-5.87-2.68-5.87-5.98s2.63-5.98 5.87-5.98c1.84 0 3.08.78 3.79 1.46l2.58-2.5C16.74 3.86 14.63 3 12 3 7.03 3 3 7.03 3 12s4.03 9 9 9c5.2 0 8.65-3.65 8.65-8.8 0-.59-.06-1.03-.14-1.1z"/></svg></a>' +
+      "      </nav>" +
       '      <nav class="footer-legal-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Sitemap</a></nav>' +
+      '      <span class="footer-badge-corner" aria-label="Company badge"><img src="./assets/images/revemetrics-badge.png" alt="by Revemetrics" loading="lazy" onerror="this.closest(\'.footer-badge-corner\').style.display=\'none\';"></span>' +
       "    </div>" +
       "  </div>" +
       "</footer>";
   }
 
   function applyLangToGlobal(lang) {
-    document.querySelectorAll("#site-header [data-en], #site-footer [data-en]").forEach(function (el) {
+    document.querySelectorAll("#site-header [data-en], #site-footer [data-en], #cookie-banner [data-en]").forEach(function (el) {
       var t = el.dataset[lang];
       if (!t) return;
       if (t.indexOf("<") !== -1 || t.indexOf("&") !== -1) el.innerHTML = t;
@@ -182,9 +189,84 @@
     });
   }
 
+  var COOKIE_CONSENT_KEY = "azc_cookie_consent_v1";
+
+  function activateDeferredScripts(consent) {
+    if (consent !== "accepted") return;
+    document.querySelectorAll('script[type="text/plain"][data-cookie-category]').forEach(function (oldScript) {
+      var category = (oldScript.getAttribute("data-cookie-category") || "").toLowerCase();
+      if (category !== "analytics" && category !== "marketing") return;
+      if (oldScript.dataset.cookieActivated === "1") return;
+      var s = document.createElement("script");
+      Array.from(oldScript.attributes).forEach(function (attr) {
+        if (attr.name === "type" || attr.name === "data-cookie-category") return;
+        s.setAttribute(attr.name, attr.value);
+      });
+      s.text = oldScript.text || oldScript.textContent || "";
+      oldScript.dataset.cookieActivated = "1";
+      oldScript.parentNode.insertBefore(s, oldScript.nextSibling);
+    });
+  }
+
+  function setCookieConsent(consent) {
+    try { localStorage.setItem(COOKIE_CONSENT_KEY, consent); } catch (_) {}
+    document.documentElement.setAttribute("data-cookie-consent", consent);
+    window.azCookieConsent = consent;
+    activateDeferredScripts(consent);
+    window.dispatchEvent(new CustomEvent("azc:cookie-consent", { detail: { consent: consent } }));
+  }
+
+  function getCookieConsent() {
+    try { return localStorage.getItem(COOKIE_CONSENT_KEY); } catch (_) { return null; }
+  }
+
+  function closeCookieBanner() {
+    var banner = document.getElementById("cookie-banner");
+    if (!banner) return;
+    banner.classList.remove("open");
+    setTimeout(function () {
+      if (banner && banner.parentNode) banner.parentNode.removeChild(banner);
+    }, 180);
+  }
+
+  function ensureCookieBanner() {
+    if (document.getElementById("cookie-banner")) return;
+    var banner = document.createElement("section");
+    banner.id = "cookie-banner";
+    banner.setAttribute("role", "dialog");
+    banner.setAttribute("aria-live", "polite");
+    banner.setAttribute("aria-label", "Cookie preferences");
+    banner.innerHTML =
+      '<div class="cookie-inner">' +
+      '  <p class="cookie-title" data-en="Cookie Preferences" data-es="Preferencias de Cookies">Cookie Preferences</p>' +
+      '  <p class="cookie-text" data-en="We use essential cookies to run this site and optional cookies to improve performance." data-es="Usamos cookies esenciales para operar este sitio y cookies opcionales para mejorar el rendimiento.">We use essential cookies to run this site and optional cookies to improve performance.</p>' +
+      '  <p class="cookie-links">' +
+      '    <a href="#" data-en="Privacy Policy" data-es="Pol&iacute;tica de Privacidad">Privacy Policy</a>' +
+      '    <span aria-hidden="true">&middot;</span>' +
+      '    <a href="#" data-en="Terms of Service" data-es="T&eacute;rminos de Servicio">Terms of Service</a>' +
+      "  </p>" +
+      '  <div class="cookie-actions">' +
+      '    <button type="button" id="cookie-reject" class="cookie-btn secondary" data-en="Reject Optional" data-es="Rechazar Opcionales">Reject Optional</button>' +
+      '    <button type="button" id="cookie-accept" class="cookie-btn primary" data-en="Accept All" data-es="Aceptar Todo">Accept All</button>' +
+      "  </div>" +
+      "</div>";
+    document.body.appendChild(banner);
+
+    var acceptBtn = document.getElementById("cookie-accept");
+    var rejectBtn = document.getElementById("cookie-reject");
+    if (acceptBtn) acceptBtn.addEventListener("click", function () { setCookieConsent("accepted"); closeCookieBanner(); });
+    if (rejectBtn) rejectBtn.addEventListener("click", function () { setCookieConsent("rejected"); closeCookieBanner(); });
+
+    applyLangToGlobal(localStorage.getItem("azc-lang") || ((navigator.language || "").indexOf("es") === 0 ? "es" : "en"));
+    requestAnimationFrame(function () { banner.classList.add("open"); });
+  }
+
   var currentPage = setActiveNav();
   updateHeaderCta(currentPage);
   wireGlobalLangButtons();
   wireMobileMenu();
   applyLangToGlobal(localStorage.getItem("azc-lang") || ((navigator.language || "").indexOf("es") === 0 ? "es" : "en"));
+  var consent = getCookieConsent();
+  if (!consent) ensureCookieBanner();
+  else setCookieConsent(consent);
 })();
