@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" id="html-root">
 <head>
   <meta charset="UTF-8">
@@ -112,8 +112,8 @@
     .section-title-white em{font-style:normal;color:var(--gold);}
     .section-sub-white{font-size:1rem;color:rgba(255,255,255,.6);max-width:600px;line-height:1.65;margin-bottom:2.5rem;}
     .trades-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;}
-    .trade-card{background:var(--black-soft);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:1.25rem;display:flex;align-items:flex-start;gap:.9rem;transition:border-color .25s,background .25s;}
-    .trade-card:hover{border-color:rgba(250,204,21,.3);background:#2a2a2a;}
+    .trade-card{background:var(--black-soft);border:1.5px solid rgba(250,204,21,.22);border-radius:10px;padding:1.25rem;display:flex;align-items:flex-start;gap:.9rem;transition:border-color .25s,background .25s,box-shadow .25s,transform .25s;}
+    .trade-card:hover{border-color:rgba(250,204,21,.38);background:#2a2a2a;transform:translateY(-3px);box-shadow:0 12px 26px rgba(250,204,21,.14);}
     .trade-icon{width:40px;height:40px;background:rgba(250,204,21,.1);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--gold);flex-shrink:0;}
     .trade-name{font-family:'Oswald',sans-serif;font-size:1rem;font-weight:600;color:var(--white);line-height:1.2;}
     .trade-desc{font-size:.78rem;color:rgba(255,255,255,.5);margin-top:.25rem;line-height:1.45;}
@@ -130,8 +130,8 @@
     #affiliate-benefits{background:var(--black);padding:4rem 1.5rem;}
     .benefits-inner{max-width:1280px;margin:0 auto;}
     .benefits-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem;margin-top:2.5rem;}
-    .benefit-card{background:var(--black-soft);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:1.5rem;display:flex;flex-direction:column;gap:.6rem;transition:border-color .25s;}
-    .benefit-card:hover{border-color:rgba(250,204,21,.25);}
+    .benefit-card{background:var(--black-soft);border:1.5px solid rgba(250,204,21,.22);border-radius:12px;padding:1.5rem;display:flex;flex-direction:column;gap:.6rem;transition:border-color .25s,box-shadow .25s,transform .25s;}
+    .benefit-card:hover{border-color:rgba(250,204,21,.35);transform:translateY(-3px);box-shadow:0 12px 26px rgba(250,204,21,.12);}
     .benefit-icon{width:44px;height:44px;background:rgba(250,204,21,.1);border-radius:9px;display:flex;align-items:center;justify-content:center;color:var(--gold);}
     .benefit-title{font-family:'Oswald',sans-serif;font-size:1.05rem;font-weight:700;color:var(--white);}
     .benefit-desc{font-size:.85rem;color:rgba(255,255,255,.58);line-height:1.6;}
@@ -594,6 +594,10 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click'
 <script src="./assets/js/popup.js?v=20260304b"></script>
 </body>
 </html>
+
+
+
+
 
 
 

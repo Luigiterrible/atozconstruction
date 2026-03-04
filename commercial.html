@@ -131,10 +131,11 @@
     #why-us{background:var(--black);padding:3.5rem 1.5rem;}
     .why-inner{max-width:1280px;margin:0 auto;}
     .why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.5rem;margin-top:2rem;}
-    .why-card{display:flex;flex-direction:column;align-items:flex-start;gap:.6rem;padding:1.5rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;border-left:3px solid var(--orange);}
+    .why-card{display:flex;flex-direction:column;align-items:flex-start;gap:.6rem;padding:1.5rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;border-left:3px solid var(--orange);transition:border-color .25s,box-shadow .25s,transform .25s,background .25s;}
     .why-card-icon{width:40px;height:40px;background:rgba(232,130,26,.12);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--orange);}
     .why-card-title{font-family:'Oswald',sans-serif;font-size:1rem;font-weight:700;color:var(--white);}
     .why-card-desc{font-size:.82rem;color:rgba(255,255,255,.6);line-height:1.55;}
+    .why-card:hover{border-color:rgba(232,130,26,.45);background:rgba(255,255,255,.06);box-shadow:0 12px 24px rgba(232,130,26,.16);transform:translateY(-3px);}
     /* CONTACT FORM */
     #contact-form{background:var(--white);padding:4.5rem 1.5rem;}
     .contact-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 420px;gap:4rem;align-items:start;}
@@ -591,6 +592,10 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click'
 <script src="./assets/js/popup.js?v=20260304b"></script>
 </body>
 </html>
+
+
+
+
 
 
 
