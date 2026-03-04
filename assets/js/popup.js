@@ -18,8 +18,57 @@
     var el = document.getElementById(id);
     if(!el) return;
     applyLang(el);
+    applyPopupLayout(el);
     el.style.display = 'flex';
     document.body.style.overflow = 'hidden';
+  }
+
+  function applyPopupLayout(popup){
+    if(!popup) return;
+    var card = popup.firstElementChild;
+    if(!card) return;
+
+    // Keep overlays centered regardless of page-level CSS conflicts.
+    popup.style.position = 'fixed';
+    popup.style.top = '0';
+    popup.style.right = '0';
+    popup.style.bottom = '0';
+    popup.style.left = '0';
+    popup.style.inset = '0';
+    popup.style.width = '100vw';
+    popup.style.maxWidth = '100vw';
+    popup.style.minHeight = '100dvh';
+    popup.style.margin = '0';
+    popup.style.display = 'grid';
+    popup.style.placeItems = 'center';
+    popup.style.boxSizing = 'border-box';
+
+    var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+    var mobile = vw <= 560;
+    if(!mobile){
+      popup.style.padding = '1rem';
+      card.style.marginLeft = '';
+      card.style.marginRight = '';
+      card.style.width = '';
+      return;
+    }
+
+    var sidePad = 12;
+    var maxCard = vw <= 360 ? 310 : 340;
+    var targetWidth = Math.max(260, Math.min(maxCard, vw - (sidePad * 2)));
+
+    popup.style.paddingTop = '12px';
+    popup.style.paddingRight = 'max(12px, env(safe-area-inset-right))';
+    popup.style.paddingBottom = '12px';
+    popup.style.paddingLeft = 'max(12px, env(safe-area-inset-left))';
+
+    card.style.width = targetWidth + 'px';
+    card.style.maxWidth = maxCard + 'px';
+    card.style.minWidth = '0';
+    card.style.marginLeft = 'auto';
+    card.style.marginRight = 'auto';
+    card.style.left = '0';
+    card.style.right = '0';
   }
 
   function hasConverted(){
@@ -50,14 +99,14 @@
     style.id = 'azc-popup-mobile-style';
     style.textContent =
       '@media (max-width: 560px){' +
-      '  #popup-timer,#popup-exit{padding:.75rem !important;min-height:100dvh !important;align-items:center !important;justify-content:center !important;}' +
-      '  #popup-timer .azc-popup-card,#popup-exit .azc-popup-card{max-width:340px !important;border-radius:12px !important;}' +
+      '  #popup-timer,#popup-exit{padding:.75rem max(.75rem,env(safe-area-inset-right)) .75rem max(.75rem,env(safe-area-inset-left)) !important;min-height:100dvh !important;align-items:center !important;justify-content:center !important;}' +
+      '  #popup-timer .azc-popup-card,#popup-exit .azc-popup-card{width:min(100%,340px) !important;max-width:340px !important;border-radius:12px !important;margin-inline:auto !important;margin-left:auto !important;margin-right:auto !important;left:0 !important;right:0 !important;}' +
       '  #popup-timer .azc-popup-head,#popup-exit .azc-popup-head{padding:1rem 1rem .9rem !important;}' +
       '  #popup-timer .azc-popup-body,#popup-exit .azc-popup-body{padding:1rem !important;}' +
       '  #popup-timer .azc-popup-actions,#popup-exit .azc-popup-actions{grid-template-columns:1fr !important;gap:.55rem !important;}' +
       '}' +
       '@media (max-width: 360px){' +
-      '  #popup-timer .azc-popup-card,#popup-exit .azc-popup-card{max-width:310px !important;}' +
+      '  #popup-timer .azc-popup-card,#popup-exit .azc-popup-card{width:min(100%,310px) !important;max-width:310px !important;}' +
       '}';
     document.head.appendChild(style);
   }
@@ -138,6 +187,11 @@
     if(!canShowExit()) return;
     showExitPopup();
     try { history.pushState({ azcExitTrap: true }, '', location.href); } catch(_) {}
+  });
+
+  window.addEventListener('resize', function(){
+    applyPopupLayout(document.getElementById('popup-timer'));
+    applyPopupLayout(document.getElementById('popup-exit'));
   });
 
   // QA helper: append ?popupTest=1 to URL to retest both popups without reopening tab.

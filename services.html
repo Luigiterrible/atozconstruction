@@ -1,4 +1,4 @@
-ï»¿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" id="html-root">
 <head>
   <meta charset="UTF-8">
@@ -775,7 +775,7 @@ function normalizeLetter(ch){
 function letterFromTitle(title,lang){
   if(!title) return '#';
   var first=title.charAt(0).toUpperCase();
-  if(lang==='es'&&first==='Ã‘') return 'Ã‘';
+  if(lang==='es'&&first==='Ñ') return 'Ñ';
   first=normalizeLetter(first);
   return /^[A-Z]$/.test(first)?first:'#';
 }
@@ -917,7 +917,7 @@ function regroupServices(lang){
   REEMPLAZA: TU_PROPERTY_ID y TU_WIDGET_ID con tus valores reales
 -->
 
-<script src="./assets/js/popup.js"></script>
+<script src="./assets/js/popup.js?v=20260304b"></script>
 
 </body>
 </html>
