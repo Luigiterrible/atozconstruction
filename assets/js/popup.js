@@ -2,6 +2,20 @@
   if(window.__azcPopupBooted) return;
   window.__azcPopupBooted = true;
 
+  // Temporary global kill-switch requested by user.
+  var POPUPS_ENABLED = false;
+  if(!POPUPS_ENABLED){
+    ['popup-timer','popup-exit'].forEach(function(id){
+      var el = document.getElementById(id);
+      if(!el) return;
+      el.style.display = 'none';
+      el.dataset.azcOpen = '0';
+    });
+    if(document.body) document.body.style.overflow = '';
+    window.closePopup = function(){};
+    return;
+  }
+
   var TIMER_KEY      = 'azc_popup_timer';
   var EXIT_KEY       = 'azc_popup_exit';
   var CONVERTED_KEY  = 'azc_converted';
