@@ -1,22 +1,37 @@
 (function(){
+  if(window.__azcPopupBooted) return;
+  window.__azcPopupBooted = true;
+
   var TIMER_KEY      = 'azc_popup_timer';
   var EXIT_KEY       = 'azc_popup_exit';
   var CONVERTED_KEY  = 'azc_converted';
   var EXIT_ARMED_KEY = 'azc_popup_exit_armed';
   var START_TS       = Date.now();
 
+  function normalizeLang(value){
+    var lang = (value || '').toString().toLowerCase();
+    return lang.indexOf('es') === 0 ? 'es' : 'en';
+  }
+
   function getCurrentLang(){
     var lang = '';
-    try { lang = localStorage.getItem('azc-lang') || ''; } catch(_) {}
+    try {
+      lang =
+        localStorage.getItem('azc-lang') ||
+        localStorage.getItem('lang') ||
+        localStorage.getItem('language') ||
+        localStorage.getItem('site-lang') ||
+        '';
+    } catch(_) {}
     if(!lang){
       var htmlLang = (document.documentElement && document.documentElement.lang) || '';
-      if(htmlLang) lang = htmlLang.toLowerCase().indexOf('es') === 0 ? 'es' : 'en';
+      if(htmlLang) lang = normalizeLang(htmlLang);
     }
     if(!lang){
       var browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
-      lang = browserLang.indexOf('es') === 0 ? 'es' : 'en';
+      lang = normalizeLang(browserLang);
     }
-    return lang === 'es' ? 'es' : 'en';
+    return normalizeLang(lang);
   }
 
   function applyLang(el){
@@ -28,11 +43,11 @@
     });
   }
 
-  function syncVisiblePopupsLanguage(){
+  function syncVisiblePopupsLanguage(includeHidden){
     ['popup-timer','popup-exit'].forEach(function(id){
       var el = document.getElementById(id);
       if(!el) return;
-      if(el.style.display === 'none') return;
+      if(!includeHidden && el.style.display === 'none') return;
       applyLang(el);
     });
   }
@@ -40,9 +55,11 @@
   function showPopup(id){
     var el = document.getElementById(id);
     if(!el) return;
+    if(el.dataset.azcOpen === '1') return;
     applyLang(el);
     applyPopupLayout(el);
     el.style.display = 'flex';
+    el.dataset.azcOpen = '1';
     document.body.style.overflow = 'hidden';
   }
 
@@ -153,7 +170,13 @@
   window.closePopup = function(type){
     var id = type === 'timer' ? 'popup-timer' : 'popup-exit';
     var el = document.getElementById(id);
-    if(el){ el.style.display = 'none'; document.body.style.overflow = ''; }
+    if(el){
+      el.style.display = 'none';
+      el.dataset.azcOpen = '0';
+    }
+    var timerOpen = (document.getElementById('popup-timer') || {}).dataset && document.getElementById('popup-timer').dataset.azcOpen === '1';
+    var exitOpen = (document.getElementById('popup-exit') || {}).dataset && document.getElementById('popup-exit').dataset.azcOpen === '1';
+    if(!timerOpen && !exitOpen) document.body.style.overflow = '';
   };
 
   // Mark conversion on any WhatsApp or Call click anywhere on the page
@@ -243,6 +266,12 @@
     window.setLang = wrappedSetLang;
   }
 
+  window.addEventListener('storage', function(e){
+    if(!e || !e.key) return;
+    if(['azc-lang','lang','language','site-lang'].indexOf(e.key) === -1) return;
+    syncVisiblePopupsLanguage(true);
+  });
+
   // QA helper: append ?popupTest=1 to URL to retest both popups without reopening tab.
   try{
     var params = new URLSearchParams(location.search);
@@ -256,4 +285,5 @@
 
   injectPopupResponsiveStyles();
   wirePopupSizing();
+  syncVisiblePopupsLanguage(true);
 })();

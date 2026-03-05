@@ -1,4 +1,4 @@
-(function () {
+﻿(function () {
   var headerHost = document.getElementById("global-header");
   var footerHost = document.getElementById("global-footer");
 
@@ -6,11 +6,11 @@
     headerHost.innerHTML =
       '<header id="site-header" role="banner">' +
       '  <div class="header-inner">' +
-      '    <a href="./index.html" class="logo-wrap" aria-label="A-Z Construction - Home">' +
-      '      <img src="./assets/images/icon.png" alt="A-Z Construction &amp; Services Logo" width="56" height="56">' +
+      '    <a href="./index.html" class="logo-wrap" aria-label="A to Z Construction - Home">' +
+      '      <img src="./assets/images/icon.png" alt="A to Z Construction &amp; Services Logo" width="56" height="56">' +
       '      <div class="logo-text-wrap">' +
-      '        <span class="logo-name"><span>A-Z</span> Construction &amp; Services</span>' +
-      '        <span class="logo-tagline" data-en="Pro-Handyman Xpress &middot; General Contractor" data-es="Pro-Handyman Xpress &middot; Contratista General">Pro-Handyman Xpress &middot; General Contractor</span>' +
+      '        <span class="logo-name"><span>A to Z</span> Construction &amp; Services</span>' +
+      '        <span class="logo-tagline" data-en="Pro Handyman Xpress &middot; General Contractor" data-es="Pro Handyman Xpress &middot; Contratista general">Pro Handyman Xpress &middot; General Contractor</span>' +
       "      </div>" +
       "    </a>" +
       '    <nav id="main-nav" aria-label="Main navigation">' +
@@ -50,8 +50,8 @@
       '  <div class="footer-inner">' +
       '    <div class="footer-grid">' +
       '      <div class="footer-logo">' +
-      '        <a href="./index.html"><img src="./assets/images/icon.png" alt="A-Z Construction" loading="lazy" width="60" height="60"></a>' +
-      '        <p class="footer-desc" data-en="Licensed General Contractor<br>All Work Guaranteed<br>Serving NY, NJ &amp; Philadelphia." data-es="Contratista General Licenciado<br>Todos los Trabajos Garantizados<br>NY, NJ y Filadelfia.">Licensed General Contractor<br>All Work Guaranteed<br>Serving NY, NJ &amp; Philadelphia.</p>' +
+      '        <a href="./index.html"><img src="./assets/images/icon.png" alt="A to Z Construction" loading="lazy" width="60" height="60"></a>' +
+      '        <p class="footer-desc" data-en="Licensed General Contractor<br>All Work Guaranteed<br>Serving NY, NJ &amp; Philadelphia." data-es="Contratista general licenciado<br>Todos los trabajos garantizados<br>Atendemos NY, NJ y Filadelfia.">Licensed General Contractor<br>All Work Guaranteed<br>Serving NY, NJ &amp; Philadelphia.</p>' +
       '        <a href="tel:+18565000237" style="color:var(--orange);font-weight:700;font-size:1rem;text-decoration:none;">+1 (856) 500-0237</a>' +
       "      </div>" +
       "      <div>" +
@@ -73,7 +73,7 @@
       '          <li><a href="./Residential.html">HVAC Repair</a></li>' +
       '          <li><a href="./Residential.html">Plumbing Repair</a></li>' +
       '          <li><a href="./Residential.html">Electrical Repair</a></li>' +
-      '          <li><a href="./commercial.html">Commercial Build-Outs</a></li>' +
+      '          <li><a href="./commercial.html">Commercial Build Outs</a></li>' +
       "        </ul>" +
       "      </div>" +
       "      <div>" +
@@ -84,7 +84,7 @@
       "      </div>" +
       "    </div>" +
       '    <div class="footer-bottom">' +
-      '      <p class="footer-copyright">&copy; 2026 A-Z Construction &amp; Services. All rights reserved.</p>' +
+      '      <p class="footer-copyright">&copy; 2026 A to Z Construction &amp; Services. All rights reserved.</p>' +
       '      <nav class="footer-social-links" aria-label="Social media">' +
       '        <a href="./contact.html" aria-label="Facebook (pending)" title="Facebook (pending)"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.25.2 2.25.2v2.46H15.2c-1.25 0-1.64.78-1.64 1.58V12h2.79l-.45 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>' +
       '        <a href="./contact.html" aria-label="Instagram (pending)" title="Instagram (pending)"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2zm0 1.9A3.9 3.9 0 0 0 3.9 7.8v8.4a3.9 3.9 0 0 0 3.9 3.9h8.4a3.9 3.9 0 0 0 3.9-3.9V7.8a3.9 3.9 0 0 0-3.9-3.9H7.8zm8.95 1.43a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.9a3.1 3.1 0 1 0 0 6.2 3.1 3.1 0 0 0 0-6.2z"/></svg></a>' +
@@ -270,4 +270,5 @@
   if (!consent) ensureCookieBanner();
   else setCookieConsent(consent);
 })();
+
 
