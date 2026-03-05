@@ -7,6 +7,7 @@
   var CONVERTED_KEY  = 'azc_converted';
   var EXIT_ARMED_KEY = 'azc_popup_exit_armed';
   var START_TS       = Date.now();
+  var EXIT_INTENT_ENABLED = false;
 
   function normalizeLang(value){
     var lang = (value || '').toString().toLowerCase();
@@ -122,14 +123,17 @@
   function canShowExit(){
     if(sessionStorage.getItem(EXIT_KEY)) return false;
     if(hasConverted()) return false;
+    if(!sessionStorage.getItem(TIMER_KEY)) return false;
+    var timerEl = document.getElementById('popup-timer');
+    if(timerEl && timerEl.dataset && timerEl.dataset.azcOpen === '1') return false;
     if(Date.now() - START_TS < 4000) return false;
     return true;
   }
 
   function showExitPopup(){
+    if(!EXIT_INTENT_ENABLED) return;
     if(!canShowExit()) return;
     markShown(EXIT_KEY);
-    closePopup('timer');
     showPopup('popup-exit');
   }
 
@@ -209,6 +213,7 @@
   if(!sessionStorage.getItem(TIMER_KEY)){
     setTimeout(function(){
       if(document.visibilityState === 'hidden') return;
+      if(hasConverted()) return;
       markShown(TIMER_KEY);
       showPopup('popup-timer');
     }, 20000);
@@ -238,6 +243,7 @@
   })();
 
   var shouldEnableExitIntent = !isTouchDevice && !isMobileViewport;
+  EXIT_INTENT_ENABLED = shouldEnableExitIntent;
 
   // EXIT INTENT POPUP - desktop only
   if(shouldEnableExitIntent && !sessionStorage.getItem(EXIT_KEY)){
