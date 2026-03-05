@@ -5,12 +5,35 @@
   var EXIT_ARMED_KEY = 'azc_popup_exit_armed';
   var START_TS       = Date.now();
 
+  function getCurrentLang(){
+    var lang = '';
+    try { lang = localStorage.getItem('azc-lang') || ''; } catch(_) {}
+    if(!lang){
+      var htmlLang = (document.documentElement && document.documentElement.lang) || '';
+      if(htmlLang) lang = htmlLang.toLowerCase().indexOf('es') === 0 ? 'es' : 'en';
+    }
+    if(!lang){
+      var browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+      lang = browserLang.indexOf('es') === 0 ? 'es' : 'en';
+    }
+    return lang === 'es' ? 'es' : 'en';
+  }
+
   function applyLang(el){
-    var lang = localStorage.getItem('azc-lang') || 'en';
+    var lang = getCurrentLang();
     el.querySelectorAll('[data-en]').forEach(function(node){
       var t = node.dataset[lang];
       if(!t) return;
       if(t.indexOf('<') !== -1 || t.indexOf('&') !== -1){ node.innerHTML = t; } else { node.textContent = t; }
+    });
+  }
+
+  function syncVisiblePopupsLanguage(){
+    ['popup-timer','popup-exit'].forEach(function(id){
+      var el = document.getElementById(id);
+      if(!el) return;
+      if(el.style.display === 'none') return;
+      applyLang(el);
     });
   }
 
@@ -207,6 +230,18 @@
     applyPopupLayout(document.getElementById('popup-timer'));
     applyPopupLayout(document.getElementById('popup-exit'));
   });
+
+  // Keep popup language in sync when user changes site language on mobile/desktop.
+  if(typeof window.setLang === 'function' && !window.setLang.__azcPopupWrapped){
+    var originalSetLang = window.setLang;
+    var wrappedSetLang = function(lang){
+      var result = originalSetLang.apply(this, arguments);
+      syncVisiblePopupsLanguage();
+      return result;
+    };
+    wrappedSetLang.__azcPopupWrapped = true;
+    window.setLang = wrappedSetLang;
+  }
 
   // QA helper: append ?popupTest=1 to URL to retest both popups without reopening tab.
   try{

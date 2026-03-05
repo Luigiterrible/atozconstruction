@@ -97,7 +97,7 @@
     .btn-phone:hover{background:rgba(255,255,255,.2);border-color:white;}
     #whatsapp-float{position:fixed;bottom:5.5rem;right:1.5rem;z-index:90;display:flex;align-items:center;gap:.5rem;background:#25D366;color:white;padding:.75rem 1.25rem;border-radius:50px;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.4);font-family:'Oswald',sans-serif;font-size:.9rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;transition:all .3s;}
     #whatsapp-float:hover{background:#1da851;transform:translateY(-2px);}
-    @media(max-width:768px){.az-cards-row{grid-template-columns:repeat(auto-fill,minmax(240px,1fr));}.filter-inner{flex-direction:column;align-items:flex-start;}#whatsapp-float .wa-text{display:none;}#whatsapp-float{padding:.85rem;border-radius:50%;}}
+    @media(max-width:768px){.az-cards-row{grid-template-columns:repeat(auto-fill,minmax(240px,1fr));}.filter-inner{flex-direction:column;align-items:flex-start;}#whatsapp-float .wa-text{display:none;}#whatsapp-float{padding:.85rem;border-radius:50%;bottom:max(1rem,env(safe-area-inset-bottom));}}
     @media(max-width:480px){.az-cards-row{grid-template-columns:1fr;}.filter-tab{padding:.55rem 1rem;font-size:.78rem;}}
   </style>
   <link rel="stylesheet" href="./assets/css/global-layout.css" data-global-layout="override">
@@ -916,7 +916,7 @@ function regroupServices(lang){
   REEMPLAZA: TU_PROPERTY_ID y TU_WIDGET_ID con tus valores reales
 -->
 
-<script src="./assets/js/popup.js?v=20260304c"></script>
+<script src="./assets/js/popup.js?v=20260304d"></script>
 
 </body>
 </html>
