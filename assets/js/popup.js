@@ -214,17 +214,7 @@
     }, 20000);
   }
 
-  // EXIT INTENT POPUP - desktop pointer exit
-  if(!sessionStorage.getItem(EXIT_KEY)){
-    document.addEventListener('mouseleave', function handler(e){
-      if(e.clientY <= 0){
-        document.removeEventListener('mouseleave', handler);
-        showExitPopup();
-      }
-    });
-  }
-
-  // EXIT INTENT POPUP - mobile/back button support (disabled on mobile/touch devices)
+  // Detect mobile context so mobile only uses the 20-second timer popup.
   var isTouchDevice = (function(){
     try {
       return (
@@ -237,7 +227,30 @@
     }
   })();
 
-  if(!isTouchDevice){
+  var isMobileViewport = (function(){
+    try {
+      if(window.matchMedia && window.matchMedia('(max-width: 768px)').matches) return true;
+      var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+      return vw <= 768;
+    } catch(_) {
+      return false;
+    }
+  })();
+
+  var shouldEnableExitIntent = !isTouchDevice && !isMobileViewport;
+
+  // EXIT INTENT POPUP - desktop only
+  if(shouldEnableExitIntent && !sessionStorage.getItem(EXIT_KEY)){
+    document.addEventListener('mouseleave', function handler(e){
+      if(e.clientY <= 0){
+        document.removeEventListener('mouseleave', handler);
+        showExitPopup();
+      }
+    });
+  }
+
+  // EXIT INTENT POPUP - back button support (desktop only)
+  if(shouldEnableExitIntent){
     if(!sessionStorage.getItem(EXIT_ARMED_KEY)){
       sessionStorage.setItem(EXIT_ARMED_KEY, '1');
       try { history.pushState({ azcExitTrap: true }, '', location.href); } catch(_) {}
