@@ -8,6 +8,15 @@
   var EXIT_ARMED_KEY = 'azc_popup_exit_armed';
   var START_TS       = Date.now();
   var EXIT_INTENT_ENABLED = false;
+  var memoryShown = { timer: false, exit: false, converted: false };
+
+  function safeGet(storage, key){
+    try { return storage.getItem(key); } catch(_) { return null; }
+  }
+
+  function safeSet(storage, key, value){
+    try { storage.setItem(key, value); } catch(_) {}
+  }
 
   function normalizeLang(value){
     var lang = (value || '').toString().toLowerCase();
@@ -54,6 +63,8 @@
   }
 
   function showPopup(id){
+    // Hard guard: never allow exit popup when exit-intent is disabled (mobile/tablet).
+    if(id === 'popup-exit' && !EXIT_INTENT_ENABLED) return;
     var el = document.getElementById(id);
     if(!el) return;
     if(el.dataset.azcOpen === '1') return;
@@ -113,17 +124,19 @@
   }
 
   function hasConverted(){
-    return !!sessionStorage.getItem(CONVERTED_KEY);
+    return memoryShown.converted || !!safeGet(sessionStorage, CONVERTED_KEY);
   }
 
   function markShown(key){
-    sessionStorage.setItem(key, '1');
+    if(key === TIMER_KEY) memoryShown.timer = true;
+    if(key === EXIT_KEY) memoryShown.exit = true;
+    safeSet(sessionStorage, key, '1');
   }
 
   function canShowExit(){
-    if(sessionStorage.getItem(EXIT_KEY)) return false;
+    if(memoryShown.exit || safeGet(sessionStorage, EXIT_KEY)) return false;
     if(hasConverted()) return false;
-    if(!sessionStorage.getItem(TIMER_KEY)) return false;
+    if(!memoryShown.timer && !safeGet(sessionStorage, TIMER_KEY)) return false;
     var timerEl = document.getElementById('popup-timer');
     if(timerEl && timerEl.dataset && timerEl.dataset.azcOpen === '1') return false;
     if(Date.now() - START_TS < 4000) return false;
@@ -189,7 +202,8 @@
     if(!link) return;
     var href = link.getAttribute('href') || '';
     if(href.indexOf('wa.me') !== -1 || href.indexOf('tel:') === 0){
-      sessionStorage.setItem(CONVERTED_KEY, '1');
+      memoryShown.converted = true;
+      safeSet(sessionStorage, CONVERTED_KEY, '1');
     }
   });
 
@@ -210,7 +224,7 @@
   });
 
   // TIMER POPUP - 20 seconds
-  if(!sessionStorage.getItem(TIMER_KEY)){
+  if(!memoryShown.timer && !safeGet(sessionStorage, TIMER_KEY)){
     setTimeout(function(){
       if(document.visibilityState === 'hidden') return;
       if(hasConverted()) return;
@@ -242,11 +256,14 @@
     }
   })();
 
-  var shouldEnableExitIntent = !isTouchDevice && !isMobileViewport;
+  var isLikelyMobileUA = /android|iphone|ipad|ipod|mobile|iemobile|opera mini/i.test((navigator.userAgent || '').toLowerCase());
+  var viewportWidth = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+  var isDesktopViewport = viewportWidth >= 1024;
+  var shouldEnableExitIntent = isDesktopViewport && !isTouchDevice && !isMobileViewport && !isLikelyMobileUA;
   EXIT_INTENT_ENABLED = shouldEnableExitIntent;
 
   // EXIT INTENT POPUP - desktop only
-  if(shouldEnableExitIntent && !sessionStorage.getItem(EXIT_KEY)){
+  if(shouldEnableExitIntent && !safeGet(sessionStorage, EXIT_KEY)){
     document.addEventListener('mouseleave', function handler(e){
       if(e.clientY <= 0){
         document.removeEventListener('mouseleave', handler);
@@ -257,8 +274,8 @@
 
   // EXIT INTENT POPUP - back button support (desktop only)
   if(shouldEnableExitIntent){
-    if(!sessionStorage.getItem(EXIT_ARMED_KEY)){
-      sessionStorage.setItem(EXIT_ARMED_KEY, '1');
+    if(!safeGet(sessionStorage, EXIT_ARMED_KEY)){
+      safeSet(sessionStorage, EXIT_ARMED_KEY, '1');
       try { history.pushState({ azcExitTrap: true }, '', location.href); } catch(_) {}
     }
     window.addEventListener('popstate', function(){
