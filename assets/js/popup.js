@@ -262,6 +262,18 @@
   var shouldEnableExitIntent = isDesktopViewport && !isTouchDevice && !isMobileViewport && !isLikelyMobileUA;
   EXIT_INTENT_ENABLED = shouldEnableExitIntent;
 
+  // Mobile hard-stop: fully disable exit popup state and visibility.
+  if(!EXIT_INTENT_ENABLED){
+    memoryShown.exit = true;
+    safeSet(sessionStorage, EXIT_KEY, '1');
+    safeSet(sessionStorage, EXIT_ARMED_KEY, '1');
+    var forcedExitEl = document.getElementById('popup-exit');
+    if(forcedExitEl){
+      forcedExitEl.style.display = 'none';
+      forcedExitEl.dataset.azcOpen = '0';
+    }
+  }
+
   // EXIT INTENT POPUP - desktop only
   if(shouldEnableExitIntent && !safeGet(sessionStorage, EXIT_KEY)){
     document.addEventListener('mouseleave', function handler(e){

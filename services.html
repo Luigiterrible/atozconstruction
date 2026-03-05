@@ -897,23 +897,36 @@ function regroupServices(lang){
 <style>
 @keyframes popupIn{from{opacity:0;transform:scale(.92) translateY(12px);}to{opacity:1;transform:scale(1) translateY(0);}}
 </style>
-<!-- TAWK.TO LIVE CHAT - ACTIVATED -->
+<!-- TAWK.TO LIVE CHAT - DEFERRED FOR INP -->
 <script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+var Tawk_API = Tawk_API || {}, Tawk_LoadStart;
 (function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/5f1b2c3d4e5f6a7b8c9d0e1f/default'; // Placeholder - Replace with real Tawk.to ID
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
+  var loaded = false;
+  function loadTawk(){
+    if(loaded) return;
+    loaded = true;
+    Tawk_LoadStart = new Date();
+    var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+    s1.async = true;
+    s1.src = 'https://embed.tawk.to/5f1b2c3d4e5f6a7b8c9d0e1f/default';
+    s1.charset = 'UTF-8';
+    s1.setAttribute('crossorigin', '*');
+    s0.parentNode.insertBefore(s1, s0);
+  }
+
+  if('requestIdleCallback' in window){
+    requestIdleCallback(loadTawk, { timeout: 4000 });
+  } else {
+    window.addEventListener('load', function(){ setTimeout(loadTawk, 1500); }, { once: true });
+  }
 })();
 </script>
 
-<script src="./assets/js/popup.js?v=20260305c"></script>
+<script src="./assets/js/popup.js?v=20260305d"></script>
 
 </body>
 </html>
+
 
 
 
