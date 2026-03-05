@@ -178,16 +178,30 @@
     });
   }
 
-  // EXIT INTENT POPUP - mobile/back button support
-  if(!sessionStorage.getItem(EXIT_ARMED_KEY)){
-    sessionStorage.setItem(EXIT_ARMED_KEY, '1');
-    try { history.pushState({ azcExitTrap: true }, '', location.href); } catch(_) {}
+  // EXIT INTENT POPUP - mobile/back button support (disabled on mobile/touch devices)
+  var isTouchDevice = (function(){
+    try {
+      return (
+        ('ontouchstart' in window) ||
+        (navigator.maxTouchPoints || 0) > 0 ||
+        (window.matchMedia && window.matchMedia('(pointer: coarse)').matches)
+      );
+    } catch(_) {
+      return false;
+    }
+  })();
+
+  if(!isTouchDevice){
+    if(!sessionStorage.getItem(EXIT_ARMED_KEY)){
+      sessionStorage.setItem(EXIT_ARMED_KEY, '1');
+      try { history.pushState({ azcExitTrap: true }, '', location.href); } catch(_) {}
+    }
+    window.addEventListener('popstate', function(){
+      if(!canShowExit()) return;
+      showExitPopup();
+      try { history.pushState({ azcExitTrap: true }, '', location.href); } catch(_) {}
+    });
   }
-  window.addEventListener('popstate', function(){
-    if(!canShowExit()) return;
-    showExitPopup();
-    try { history.pushState({ azcExitTrap: true }, '', location.href); } catch(_) {}
-  });
 
   window.addEventListener('resize', function(){
     applyPopupLayout(document.getElementById('popup-timer'));
