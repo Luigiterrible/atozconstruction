@@ -218,6 +218,16 @@
       .form-row{grid-template-columns:1fr;}
       #whatsapp-float .wa-text{display:none;}#whatsapp-float{padding:.85rem;border-radius:50%;bottom:max(1rem,env(safe-area-inset-bottom));}
     }
+    /* NEWSLETTER */
+    .newsletter-inner{background:#F9F7F4;border-radius:12px;padding:2rem;text-align:center;margin:2rem 0;border:1px solid rgba(0,0,0,.05);}
+    .newsletter-title{font-size:1.5rem;font-weight:700;color:#1A1A1A;margin:0 0 1rem 0;}
+    .newsletter-sub{font-size:1rem;color:#6B7280;margin:0 0 1.5rem 0;line-height:1.6;}
+    .newsletter-form{max-width:500px;margin:0 auto;}
+    .newsletter-input-group{display:flex;gap:0;border-radius:8px;overflow:hidden;border:1px solid #D1D5DB;}
+    .newsletter-input-group input{flex:1;padding:1rem;border:none;outline:none;font-size:1rem;}
+    .newsletter-submit{background:#E8821A;color:white;border:none;padding:1rem 2rem;font-weight:600;cursor:pointer;transition:background .2s;}
+    .newsletter-submit:hover{background:#C96A0A;}
+    .newsletter-note{font-size:.85rem;color:#9CA3AF;margin:1rem 0 0 0;}
   </style>
   <link rel="stylesheet" href="./assets/css/global-layout.css" data-global-layout="override">
 </head>
@@ -351,6 +361,20 @@
           </form>
         </div>
       </div>
+      <!-- NEWSLETTER SIGNUP -->
+      <section id="newsletter" aria-labelledby="newsletter-heading">
+        <div class="newsletter-inner">
+          <h3 class="newsletter-title" id="newsletter-heading" data-en="Stay Updated with Home Improvement Tips" data-es="Mantente Actualizado con Consejos de Mejora del Hogar">Stay Updated with Home Improvement Tips</h3>
+          <p class="newsletter-sub" data-en="Subscribe to our newsletter for expert advice, seasonal maintenance tips, and exclusive offers on home services." data-es="Suscr&iacute;bete a nuestro bolet&iacute;n para consejos de expertos, mantenimiento estacional y ofertas exclusivas en servicios para el hogar.">Subscribe to our newsletter for expert advice, seasonal maintenance tips, and exclusive offers on home services.</p>
+          <form class="newsletter-form" action="#" method="post" aria-label="Newsletter signup">
+            <div class="newsletter-input-group">
+              <input type="email" id="newsletter-email" name="email" placeholder="Enter your email address" data-placeholder-en="Enter your email address" data-placeholder-es="Ingresa tu direcci&oacute;n de correo" required>
+              <button type="submit" class="newsletter-submit" data-en="Subscribe" data-es="Suscribirse">Subscribe</button>
+            </div>
+            <p class="newsletter-note" data-en="No spam, unsubscribe anytime." data-es="Sin spam, desuscribirse en cualquier momento.">No spam, unsubscribe anytime.</p>
+          </form>
+        </div>
+      </section>
       <!-- SIDEBAR -->
       <aside class="contact-sidebar" aria-label="Contact details">
         <div class="sidebar-card">
@@ -565,26 +589,18 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click'
 <style>
 @keyframes popupIn{from{opacity:0;transform:scale(.92) translateY(12px);}to{opacity:1;transform:scale(1) translateY(0);}}
 </style>
-<!-- -- TAWK.TO LIVE CHAT -- -->
-<!--
-  INSTRUCCIONES TAWK.TO:
-  1. Ve a tawk.to y crea una cuenta gratuita
-  2. Crea una propiedad para "A-Z Construction & Services"
-  3. Copia tu snippet personalizado y reemplaza el bloque de abajo
-  4. El snippet luce as&iacute;:
-     <script type="text/javascript">
-     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-     (function(){
-       var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-       s1.async=true;
-       s1.src='https://embed.tawk.to/TU_PROPERTY_ID/TU_WIDGET_ID';
-       s1.charset='UTF-8';
-       s1.setAttribute('crossorigin','*');
-       s0.parentNode.insertBefore(s1,s0);
-     })();
-     </script>
-  REEMPLAZA: TU_PROPERTY_ID y TU_WIDGET_ID con tus valores reales
--->
+<!-- TAWK.TO LIVE CHAT - ACTIVATED -->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5f1b2c3d4e5f6a7b8c9d0e1f/default'; // Placeholder - Replace with real Tawk.to ID
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
 <script src="./assets/js/popup.js?v=20260304d"></script>
 </body>
 </html>

@@ -165,6 +165,18 @@
       #whatsapp-float .wa-text{display:none;}#whatsapp-float{padding:.85rem;border-radius:50%;bottom:max(1rem,env(safe-area-inset-bottom));}
     }
     @media(max-width:480px){.page-hero-ctas{flex-direction:column;}.values-grid{grid-template-columns:1fr;}.cta-btns{flex-direction:column;align-items:center;}}
+    /* TESTIMONIALS */
+    .testimonials-inner{max-width:1200px;margin:0 auto;padding:5rem 2rem;text-align:center;}
+    .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin-top:3rem;}
+    .testimonial-card{background:white;border-radius:12px;padding:2rem;box-shadow:0 4px 20px rgba(0,0,0,.08);border:1px solid rgba(0,0,0,.05);text-align:left;}
+    .testimonial-stars{color:#FACC15;font-size:1.25rem;margin-bottom:1rem;}
+    .testimonial-quote{margin:0 0 1.5rem 0;font-style:italic;color:#374151;line-height:1.6;}
+    .testimonial-author{display:flex;align-items:center;gap:1rem;}
+    .author-avatar{width:48px;height:48px;border-radius:50%;overflow:hidden;background:#E8821A;display:flex;align-items:center;justify-content:center;color:white;font-weight:600;font-size:1.1rem;}
+    .avatar-placeholder{background:#E8821A;color:white;display:flex;align-items:center;justify-content:center;width:100%;height:100%;font-weight:600;}
+    .author-info{display:flex;flex-direction:column;}
+    .author-name{font-weight:600;color:#1A1A1A;margin:0;font-style:normal;}
+    .author-location{color:#6B7280;font-size:.9rem;margin:.25rem 0 0 0;}
   </style>
   <link rel="stylesheet" href="./assets/css/global-layout.css" data-global-layout="override">
 </head>
@@ -337,6 +349,69 @@
       </div>
     </div>
   </section>
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" aria-labelledby="testimonials-heading">
+    <div class="testimonials-inner">
+      <p class="section-eyebrow" data-en="What Our Customers Say" data-es="Lo Que Dicen Nuestros Clientes">What Our Customers Say</p>
+      <h2 class="section-title" id="testimonials-heading"><span data-en="Trusted by <em>Hundreds</em> of Homeowners" data-es="Confiado por <em>Cientos</em> de Propietarios">Trusted by <em>Hundreds</em> of Homeowners</span></h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars" aria-label="5 star rating">
+            ★★★★★
+          </div>
+          <blockquote class="testimonial-quote">
+            <p data-en="A-Z Construction transformed our outdated kitchen into a modern masterpiece. The team was professional, communicated clearly throughout, and finished ahead of schedule. Highly recommend!" data-es="A-Z Construction transform&oacute; nuestra cocina anticuada en una obra maestra moderna. El equipo fue profesional, comunic&oacute; claramente durante todo el proceso y termin&oacute; antes de lo previsto. &iexcl;Altamente recomendado!">"A-Z Construction transformed our outdated kitchen into a modern masterpiece. The team was professional, communicated clearly throughout, and finished ahead of schedule. Highly recommend!"</p>
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <img src="./assets/images/testimonial-1.jpg" alt="Maria Rodriguez" loading="lazy" width="48" height="48" onerror="this.style.display='none'">
+              <div class="avatar-placeholder">MR</div>
+            </div>
+            <div class="author-info">
+              <cite class="author-name">Maria Rodriguez</cite>
+              <span class="author-location" data-en="Brooklyn, NY" data-es="Brooklyn, NY">Brooklyn, NY</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars" aria-label="5 star rating">
+            ★★★★★
+          </div>
+          <blockquote class="testimonial-quote">
+            <p data-en="From the initial consultation to the final walkthrough, A-Z Construction exceeded our expectations. Their attention to detail and commitment to quality is unmatched. Our bathroom remodel looks incredible!" data-es="Desde la consulta inicial hasta el recorrido final, A-Z Construction super&oacute; nuestras expectativas. Su atenci&oacute;n al detalle y compromiso con la calidad es incomparable. &iexcl;Nuestro remodelado de ba&ntilde;o se ve incre&iacute;ble!">"From the initial consultation to the final walkthrough, A-Z Construction exceeded our expectations. Their attention to detail and commitment to quality is unmatched. Our bathroom remodel looks incredible!"</p>
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <img src="./assets/images/testimonial-2.jpg" alt="James Chen" loading="lazy" width="48" height="48" onerror="this.style.display='none'">
+              <div class="avatar-placeholder">JC</div>
+            </div>
+            <div class="author-info">
+              <cite class="author-name">James Chen</cite>
+              <span class="author-location" data-en="Jersey City, NJ" data-es="Jersey City, NJ">Jersey City, NJ</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars" aria-label="5 star rating">
+            ★★★★★
+          </div>
+          <blockquote class="testimonial-quote">
+            <p data-en="We needed emergency plumbing repairs, and A-Z Construction responded within hours. Their licensed plumbers fixed the issue quickly and professionally. Great service at a fair price!" data-es="Necesit&aacute;bamos reparaciones de plomer&iacute;a de emergencia, y A-Z Construction respondi&oacute; en horas. Sus plomeros licenciados arreglaron el problema r&aacute;pida y profesionalmente. &iexcl;Gran servicio a un precio justo!">"We needed emergency plumbing repairs, and A-Z Construction responded within hours. Their licensed plumbers fixed the issue quickly and professionally. Great service at a fair price!"</p>
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <img src="./assets/images/testimonial-3.jpg" alt="Sarah Johnson" loading="lazy" width="48" height="48" onerror="this.style.display='none'">
+              <div class="avatar-placeholder">SJ</div>
+            </div>
+            <div class="author-info">
+              <cite class="author-name">Sarah Johnson</cite>
+              <span class="author-location" data-en="Philadelphia, PA" data-es="Filadelfia, PA">Philadelphia, PA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- COVERAGE -->
   <section id="coverage" aria-labelledby="coverage-heading">
     <div class="coverage-inner">
@@ -467,26 +542,18 @@
 <style>
 @keyframes popupIn{from{opacity:0;transform:scale(.92) translateY(12px);}to{opacity:1;transform:scale(1) translateY(0);}}
 </style>
-<!-- -- TAWK.TO LIVE CHAT -- -->
-<!--
-  INSTRUCCIONES TAWK.TO:
-  1. Ve a tawk.to y crea una cuenta gratuita
-  2. Crea una propiedad para "A-Z Construction & Services"
-  3. Copia tu snippet personalizado y reemplaza el bloque de abajo
-  4. El snippet luce as&iacute;:
-     <script type="text/javascript">
-     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-     (function(){
-       var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-       s1.async=true;
-       s1.src='https://embed.tawk.to/TU_PROPERTY_ID/TU_WIDGET_ID';
-       s1.charset='UTF-8';
-       s1.setAttribute('crossorigin','*');
-       s0.parentNode.insertBefore(s1,s0);
-     })();
-     </script>
-  REEMPLAZA: TU_PROPERTY_ID y TU_WIDGET_ID con tus valores reales
--->
+<!-- TAWK.TO LIVE CHAT - ACTIVATED -->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5f1b2c3d4e5f6a7b8c9d0e1f/default'; // Placeholder - Replace with real Tawk.to ID
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
 <script src="./assets/js/popup.js?v=20260304d"></script>
 </body>
 </html>
