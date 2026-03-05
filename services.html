@@ -12,6 +12,8 @@
   <meta name="geo.region" content="US-NY, US-NJ, US-PA">
   <meta name="geo.placename" content="New York, New Jersey, Philadelphia">
   <link rel="canonical" href="https://atozgeneralcontractor.com/services.html">
+  <link rel="alternate" hreflang="en" href="https://atozgeneralcontractor.com/services.html">
+  <link rel="alternate" hreflang="es" href="https://atozgeneralcontractor.com/services.html">
   <link rel="alternate" hreflang="x-default" href="https://atozgeneralcontractor.com/services.html">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://atozgeneralcontractor.com/services.html">
@@ -774,7 +776,7 @@ function normalizeLetter(ch){
 function letterFromTitle(title,lang){
   if(!title) return '#';
   var first=title.charAt(0).toUpperCase();
-  if(lang==='es'&&first==='Ñ') return 'Ñ';
+  if(lang==='es'&&first==='\u00D1') return '\u00D1';
   first=normalizeLetter(first);
   return /^[A-Z]$/.test(first)?first:'#';
 }
