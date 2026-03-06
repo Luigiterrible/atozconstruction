@@ -1,2 +1,5 @@
 # Local PowerShell cache artifacts
 Microsoft/Windows/PowerShell/
+
+# Webhook deploy script (contains secret, uploaded manually to server)
+deploy.php
