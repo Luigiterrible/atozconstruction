@@ -1,0 +1,17 @@
+name: Deploy to cPanel
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger cPanel Git Deploy
+        run: |
+          curl -s -X POST "https://atozgeneralcontractor.com:2083/execute/VersionControl/update" \
+            -H "Authorization: cpanel ${{ secrets.CPANEL_USERNAME }}:${{ secrets.CPANEL_API_TOKEN }}" \
+            -d "repository=/home/atozyspx/public_html/pruebas" \
+            -d "branch=main"
