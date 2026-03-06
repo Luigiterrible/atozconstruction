@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/atozyspx/public_html/pruebas
+    - /bin/cp -R . $DEPLOYPATH/
