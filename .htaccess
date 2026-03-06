@@ -6,10 +6,10 @@
   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
   # Canonical home URL
-  RewriteRule ^index\.html$ /pruebas/ [L,R=301,NC]
+  RewriteRule ^index\.html$ / [L,R=301,NC]
 
   # Legacy uppercase URL normalization
-  RewriteRule ^Residential\.html$ /pruebas/residential.html [L,R=301,NC]
+  RewriteRule ^Residential\.html$ /residential.html [L,R=301,NC]
 </IfModule>
 
 <IfModule mod_headers.c>

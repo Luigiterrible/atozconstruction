@@ -92,7 +92,7 @@
       '        <a href="./contact.html" aria-label="Google Business Profile (pending)" title="Google Business Profile (pending)"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.35 11.1H12v2.92h5.38c-.23 1.5-1.75 4.4-5.38 4.4-3.24 0-5.87-2.68-5.87-5.98s2.63-5.98 5.87-5.98c1.84 0 3.08.78 3.79 1.46l2.58-2.5C16.74 3.86 14.63 3 12 3 7.03 3 3 7.03 3 12s4.03 9 9 9c5.2 0 8.65-3.65 8.65-8.8 0-.59-.06-1.03-.14-1.1z"/></svg></a>' +
       "      </nav>" +
       '      <nav class="footer-legal-links"><a href="./privacy-policy.html">Privacy Policy</a><a href="./terms-of-service.html">Terms of Service</a><a href="./sitemap.xml">Sitemap</a></nav>' +
-      '      <span class="footer-badge-corner" aria-label="Company badge"><img src="./assets/images/revemetrics-badge.png" alt="by Revemetrics" loading="lazy" onerror="this.closest(\'.footer-badge-corner\').style.display=\'none\';"></span>' +
+      '      <span class="footer-badge-corner" aria-label="Company badge"><img src="./assets/images/revemetrics-badge.png" alt="by Revemetrics" loading="lazy" width="120" height="40" onerror="this.closest(\'.footer-badge-corner\').style.display=\'none\';"></span>' +
       "    </div>" +
       "  </div>" +
       "</footer>";

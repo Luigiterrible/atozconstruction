@@ -1,12 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://atozgeneralcontractor.com/pruebas/</loc></url>
-  <url><loc>https://atozgeneralcontractor.com/pruebas/services.html</loc></url>
-  <url><loc>https://atozgeneralcontractor.com/pruebas/residential.html</loc></url>
-  <url><loc>https://atozgeneralcontractor.com/pruebas/commercial.html</loc></url>
-  <url><loc>https://atozgeneralcontractor.com/pruebas/about.html</loc></url>
-  <url><loc>https://atozgeneralcontractor.com/pruebas/contact.html</loc></url>
-  <url><loc>https://atozgeneralcontractor.com/pruebas/affiliates.html</loc></url>
-  <url><loc>https://atozgeneralcontractor.com/pruebas/privacy-policy.html</loc></url>
-  <url><loc>https://atozgeneralcontractor.com/pruebas/terms-of-service.html</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://atozgeneralcontractor.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://atozgeneralcontractor.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://atozgeneralcontractor.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://atozgeneralcontractor.com/"/>
+  </url>
+
+  <url>
+    <loc>https://atozgeneralcontractor.com/services.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://atozgeneralcontractor.com/services.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://atozgeneralcontractor.com/services.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://atozgeneralcontractor.com/services.html"/>
+  </url>
+
+  <url>
+    <loc>https://atozgeneralcontractor.com/residential.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://atozgeneralcontractor.com/residential.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://atozgeneralcontractor.com/residential.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://atozgeneralcontractor.com/residential.html"/>
+  </url>
+
+  <url>
+    <loc>https://atozgeneralcontractor.com/commercial.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://atozgeneralcontractor.com/commercial.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://atozgeneralcontractor.com/commercial.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://atozgeneralcontractor.com/commercial.html"/>
+  </url>
+
+  <url>
+    <loc>https://atozgeneralcontractor.com/about.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://atozgeneralcontractor.com/about.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://atozgeneralcontractor.com/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://atozgeneralcontractor.com/about.html"/>
+  </url>
+
+  <url>
+    <loc>https://atozgeneralcontractor.com/contact.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://atozgeneralcontractor.com/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://atozgeneralcontractor.com/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://atozgeneralcontractor.com/contact.html"/>
+  </url>
+
+  <url>
+    <loc>https://atozgeneralcontractor.com/affiliates.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://atozgeneralcontractor.com/affiliates.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://atozgeneralcontractor.com/affiliates.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://atozgeneralcontractor.com/affiliates.html"/>
+  </url>
+
+  <url>
+    <loc>https://atozgeneralcontractor.com/privacy-policy.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://atozgeneralcontractor.com/privacy-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://atozgeneralcontractor.com/privacy-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://atozgeneralcontractor.com/privacy-policy.html"/>
+  </url>
+
+  <url>
+    <loc>https://atozgeneralcontractor.com/terms-of-service.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://atozgeneralcontractor.com/terms-of-service.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://atozgeneralcontractor.com/terms-of-service.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://atozgeneralcontractor.com/terms-of-service.html"/>
+  </url>
+
 </urlset>
