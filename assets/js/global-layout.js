@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
   var headerHost = document.getElementById("global-header");
   var footerHost = document.getElementById("global-footer");
 
@@ -6,7 +6,7 @@
     headerHost.innerHTML =
       '<header id="site-header" role="banner">' +
       '  <div class="header-inner">' +
-      '    <a href="./index.html" class="logo-wrap" aria-label="A to Z Construction - Home">' +
+      '    <a href="./" class="logo-wrap" aria-label="A to Z Construction - Home">' +
       '      <img src="./assets/images/icon.png" alt="A to Z Construction &amp; Services Logo" width="56" height="56">' +
       '      <div class="logo-text-wrap">' +
       '        <span class="logo-name"><span>A to Z</span> Construction &amp; Services</span>' +
@@ -14,9 +14,9 @@
       "      </div>" +
       "    </a>" +
       '    <nav id="main-nav" aria-label="Main navigation">' +
-      '      <a href="./index.html" class="nav-link" data-en="Home" data-es="Inicio">Home</a>' +
+      '      <a href="./" class="nav-link" data-en="Home" data-es="Inicio">Home</a>' +
       '      <a href="./services.html" class="nav-link" data-en="Services" data-es="Servicios">Services</a>' +
-      '      <a href="./Residential.html" class="nav-link" data-en="Residential" data-es="Residencial">Residential</a>' +
+      '      <a href="./residential.html" class="nav-link" data-en="Residential" data-es="Residencial">Residential</a>' +
       '      <a href="./commercial.html" class="nav-link" data-en="Commercial" data-es="Comercial">Commercial</a>' +
       '      <a href="./about.html" class="nav-link" data-en="About Us" data-es="Nosotros">About Us</a>' +
       '      <a href="./contact.html" class="nav-link" data-en="Contact" data-es="Contacto">Contact</a>' +
@@ -32,9 +32,9 @@
       "    </div>" +
       "  </div>" +
       '  <nav id="mobile-nav">' +
-      '    <a href="./index.html" class="mobile-nav-link" data-en="Home" data-es="Inicio">Home</a>' +
+      '    <a href="./" class="mobile-nav-link" data-en="Home" data-es="Inicio">Home</a>' +
       '    <a href="./services.html" class="mobile-nav-link" data-en="Services" data-es="Servicios">Services</a>' +
-      '    <a href="./Residential.html" class="mobile-nav-link" data-en="Residential" data-es="Residencial">Residential</a>' +
+      '    <a href="./residential.html" class="mobile-nav-link" data-en="Residential" data-es="Residencial">Residential</a>' +
       '    <a href="./commercial.html" class="mobile-nav-link" data-en="Commercial" data-es="Comercial">Commercial</a>' +
       '    <a href="./about.html" class="mobile-nav-link" data-en="About Us" data-es="Nosotros">About Us</a>' +
       '    <a href="./contact.html" class="mobile-nav-link" data-en="Contact" data-es="Contacto">Contact</a>' +
@@ -50,16 +50,16 @@
       '  <div class="footer-inner">' +
       '    <div class="footer-grid">' +
       '      <div class="footer-logo">' +
-      '        <a href="./index.html"><img src="./assets/images/icon.png" alt="A to Z Construction" loading="lazy" width="60" height="60"></a>' +
+      '        <a href="./"><img src="./assets/images/icon.png" alt="A to Z Construction" loading="lazy" width="60" height="60"></a>' +
       '        <p class="footer-desc" data-en="Licensed General Contractor<br>All Work Guaranteed<br>Serving NY, NJ &amp; Philadelphia." data-es="Contratista general licenciado<br>Todos los trabajos garantizados<br>Atendemos NY, NJ y Filadelfia.">Licensed General Contractor<br>All Work Guaranteed<br>Serving NY, NJ &amp; Philadelphia.</p>' +
       '        <a href="tel:+18565000237" style="color:var(--orange);font-weight:700;font-size:1rem;text-decoration:none;">+1 (856) 500-0237</a>' +
       "      </div>" +
       "      <div>" +
       '        <h4 class="footer-col-title" data-en="Quick Links" data-es="Accesos R&aacute;pidos">Quick Links</h4>' +
       '        <ul class="footer-links">' +
-      '          <li><a href="./index.html" data-en="Home" data-es="Inicio">Home</a></li>' +
+      '          <li><a href="./" data-en="Home" data-es="Inicio">Home</a></li>' +
       '          <li><a href="./services.html" data-en="Services" data-es="Servicios">Services</a></li>' +
-      '          <li><a href="./Residential.html" data-en="Residential" data-es="Residencial">Residential</a></li>' +
+      '          <li><a href="./residential.html" data-en="Residential" data-es="Residencial">Residential</a></li>' +
       '          <li><a href="./commercial.html" data-en="Commercial" data-es="Comercial">Commercial</a></li>' +
       '          <li><a href="./about.html" data-en="About Us" data-es="Nosotros">About Us</a></li>' +
       '          <li><a href="./contact.html" data-en="Contact" data-es="Contacto">Contact</a></li>' +
@@ -68,11 +68,11 @@
       "      <div>" +
       '        <h4 class="footer-col-title" data-en="Top Services" data-es="Servicios Destacados">Top Services</h4>' +
       '        <ul class="footer-links">' +
-      '          <li><a href="./Residential.html">Kitchen Remodeling</a></li>' +
-      '          <li><a href="./Residential.html">Bathroom Remodeling</a></li>' +
-      '          <li><a href="./Residential.html">HVAC Repair</a></li>' +
-      '          <li><a href="./Residential.html">Plumbing Repair</a></li>' +
-      '          <li><a href="./Residential.html">Electrical Repair</a></li>' +
+      '          <li><a href="./residential.html">Kitchen Remodeling</a></li>' +
+      '          <li><a href="./residential.html">Bathroom Remodeling</a></li>' +
+      '          <li><a href="./residential.html">HVAC Repair</a></li>' +
+      '          <li><a href="./residential.html">Plumbing Repair</a></li>' +
+      '          <li><a href="./residential.html">Electrical Repair</a></li>' +
       '          <li><a href="./commercial.html">Commercial Build Outs</a></li>' +
       "        </ul>" +
       "      </div>" +
