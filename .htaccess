@@ -1,0 +1,25 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Force HTTPS
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Canonical home URL
+  RewriteRule ^index\.html$ / [L,R=301,NC]
+
+  # Legacy uppercase URL normalization
+  RewriteRule ^Residential\.html$ /residential.html [L,R=301,NC]
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # CSP tuned for current inline styles/scripts and third-party assets in this project.
+  Header always set Content-Security-Policy "default-src 'self' https: data: blob:; img-src 'self' https: data: blob:; font-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; connect-src 'self' https:; frame-src https://www.google.com https://www.gstatic.com; object-src 'none'; base-uri 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
+
+  # Send HSTS only for HTTPS responses.
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" "expr=%{HTTPS} == 'on'"
+</IfModule>
