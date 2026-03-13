@@ -149,6 +149,10 @@
     .form-textarea{resize:vertical;min-height:110px;color:var(--white);}
     .form-textarea::placeholder{color:rgba(255,255,255,.25);}
     .form-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;}
+    .consent-group{display:flex;align-items:flex-start;gap:.75rem;padding:.95rem 1rem;background:rgba(255,255,255,.04);border:1.5px solid rgba(250,204,21,.22);border-radius:10px;margin-top:.4rem;}
+    .consent-checkbox{margin-top:.2rem;accent-color:var(--gold);flex-shrink:0;}
+    .consent-text{font-size:.82rem;line-height:1.6;color:rgba(255,255,255,.72);}
+    .consent-text strong{color:var(--white);}
     .form-submit{width:100%;font-family:'Oswald',sans-serif;font-size:1rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.9rem;background:var(--gold);color:var(--black);border:none;border-radius:8px;cursor:pointer;transition:background .2s,transform .1s;margin-top:.5rem;}
     .form-submit:hover{background:var(--gold-dark);color:white;transform:translateY(-1px);}
     .form-note{font-size:.78rem;color:rgba(255,255,255,.35);margin-top:.75rem;text-align:center;}
@@ -461,6 +465,14 @@
             <div class="form-group">
               <label class="form-label" for="about" data-en="Tell Us About Your Work *" data-es="Cu&eacute;ntanos Sobre Tu Trabajo *">Tell Us About Your Work *</label>
               <textarea class="form-textarea" id="about" name="about" required rows="4" placeholder="Describe your experience, types of projects you handle, and what makes you a strong fit for the A to Z network..." data-placeholder-en="Describe your experience, types of projects you handle, and what makes you a strong fit for the A to Z network..." data-placeholder-es="Describe tu experiencia, los tipos de proyectos que realizas y por qu&eacute; encajas bien en la red A to Z..."></textarea>
+            </div>
+            <div class="form-group">
+              <div class="consent-group">
+                <input class="consent-checkbox" type="checkbox" id="affiliate-tcpa-consent" name="tcpa_consent" required>
+                <label class="consent-text" for="affiliate-tcpa-consent">
+                  <span data-en="By checking this box, you expressly agree to be contacted by A to Z Construction &amp; Services by phone call, text message, and email using the contact information you provided, including through automated technology where applicable, regarding your affiliate application, onboarding, and related opportunities. Consent is not a condition of submitting this application. Message and data rates may apply." data-es="Al marcar esta casilla, aceptas expresamente que A to Z Construction &amp; Services se comunique contigo por llamada telef&oacute;nica, mensaje de texto o correo electr&oacute;nico utilizando la informaci&oacute;n de contacto que proporcionaste, incluso mediante tecnolog&iacute;a automatizada cuando corresponda, en relaci&oacute;n con tu solicitud de afiliado, incorporaci&oacute;n y oportunidades relacionadas. El consentimiento no es una condici&oacute;n para enviar esta solicitud. Pueden aplicarse tarifas de mensajes y datos.">By checking this box, you expressly agree to be contacted by A to Z Construction &amp; Services by phone call, text message, and email using the contact information you provided, including through automated technology where applicable, regarding your affiliate application, onboarding, and related opportunities. Consent is not a condition of submitting this application. Message and data rates may apply.</span>
+                </label>
+              </div>
             </div>
             <button type="submit" class="form-submit" data-en="Submit Application &rarr;" data-es="Enviar Solicitud &rarr;">Submit Application &rarr;</button>
             <p class="form-note" data-en="We review all applications within 2 to 3 business days. Submissions are kept confidential." data-es="Revisamos todas las solicitudes en 2 a 3 d&iacute;as h&aacute;biles. Las solicitudes se mantienen confidenciales.">We review all applications within 2 to 3 business days. Submissions are kept confidential.</p>
