@@ -1,4 +1,4 @@
-(function () {
+﻿(function () {
   var headerHost = document.getElementById("global-header");
   var footerHost = document.getElementById("global-footer");
 
@@ -52,7 +52,7 @@
       '      <div class="footer-logo">' +
       '        <a href="./"><img src="./assets/images/icon.png" alt="A to Z Construction" loading="lazy" width="60" height="60"></a>' +
       '        <p class="footer-desc" data-en="Licensed General Contractor<br>All Work Guaranteed<br>Serving NY, NJ &amp; Philadelphia." data-es="Contratista general licenciado<br>Todos los trabajos garantizados<br>Atendemos NY, NJ y Filadelfia.">Licensed General Contractor<br>All Work Guaranteed<br>Serving NY, NJ &amp; Philadelphia.</p>' +
-      '        <a href="tel:+18565000237" style="color:var(--orange);font-weight:700;font-size:1rem;text-decoration:none;">+1 (856) 500-0237</a>' +
+      '        <a href="tel:+18564043637" style="color:var(--orange);font-weight:700;font-size:1rem;text-decoration:none;">+1 (856) 404-3637</a>' +
       "      </div>" +
       "      <div>" +
       '        <h4 class="footer-col-title" data-en="Quick Links" data-es="Accesos R&aacute;pidos">Quick Links</h4>' +
@@ -78,8 +78,9 @@
       "      </div>" +
       "      <div>" +
       '        <h4 class="footer-col-title" data-en="Contact Us" data-es="Cont&aacute;ctanos">Contact Us</h4>' +
-      '        <div class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+18565000237">+1 (856) 500-0237</a></div>' +
+      '        <div class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+18564043637">+1 (856) 404-3637</a></div>' +
       '        <div class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><a href="mailto:info@atozgeneralcontractor.com">info@atozgeneralcontractor.com</a></div>' +
+      '        <div class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>PO BOX 998, Williamstown, NJ 08094</span></div>' +
       '        <div class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>NY &middot; NJ &middot; Philadelphia</span></div>' +
       "      </div>" +
       "    </div>" +
@@ -91,7 +92,7 @@
       '        <a href="./contact.html" aria-label="LinkedIn (pending)" title="LinkedIn (pending)"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 8.5H3.56V20h3.38V8.5zM5.25 3A1.97 1.97 0 1 0 5.3 6.94 1.97 1.97 0 0 0 5.25 3zM20.44 13.55c0-3.45-1.84-5.05-4.3-5.05-1.98 0-2.87 1.09-3.37 1.86V8.5H9.39V20h3.38v-6.07c0-1.6.3-3.14 2.28-3.14 1.95 0 1.98 1.82 1.98 3.24V20h3.41v-6.45z"/></svg></a>' +
       '        <a href="./contact.html" aria-label="Google Business Profile (pending)" title="Google Business Profile (pending)"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.35 11.1H12v2.92h5.38c-.23 1.5-1.75 4.4-5.38 4.4-3.24 0-5.87-2.68-5.87-5.98s2.63-5.98 5.87-5.98c1.84 0 3.08.78 3.79 1.46l2.58-2.5C16.74 3.86 14.63 3 12 3 7.03 3 3 7.03 3 12s4.03 9 9 9c5.2 0 8.65-3.65 8.65-8.8 0-.59-.06-1.03-.14-1.1z"/></svg></a>' +
       "      </nav>" +
-      '      <nav class="footer-legal-links"><a href="./privacy-policy.html">Privacy Policy</a><a href="./terms-of-service.html">Terms of Service</a><a href="./sitemap.xml">Sitemap</a></nav>' +
+      '      <nav class="footer-legal-links"><a href="./privacy-policy.html">Privacy Policy</a><a href="./terms-of-service.html">Terms of Service</a><a href="./accessibility-statement.html">Accessibility</a><a href="./sitemap.xml">Sitemap</a></nav>' +
       '      <span class="footer-badge-corner" aria-label="Company badge"><img src="./assets/images/revemetrics-badge.png" alt="by Revemetrics" loading="lazy" width="120" height="40" onerror="this.closest(\'.footer-badge-corner\').style.display=\'none\';"></span>' +
       "    </div>" +
       "  </div>" +
@@ -239,7 +240,7 @@
     banner.innerHTML =
       '<div class="cookie-inner">' +
       '  <p class="cookie-title" data-en="Cookie Preferences" data-es="Preferencias de Cookies">Cookie Preferences</p>' +
-      '  <p class="cookie-text" data-en="We use essential cookies to run this site and optional cookies to improve performance." data-es="Usamos cookies esenciales para operar este sitio y cookies opcionales para mejorar el rendimiento.">We use essential cookies to run this site and optional cookies to improve performance.</p>' +
+      '  <p class="cookie-text" data-en="We use essential cookies to run this site and optional cookies for analytics, chat, and performance improvements." data-es="Usamos cookies esenciales para operar este sitio y cookies opcionales para anal&iacute;tica, chat y mejoras de rendimiento.">We use essential cookies to run this site and optional cookies for analytics, chat, and performance improvements.</p>' +
       '  <p class="cookie-links">' +
       '    <a href="./privacy-policy.html" data-en="Privacy Policy" data-es="Pol&iacute;tica de Privacidad">Privacy Policy</a>' +
       '    <span aria-hidden="true">&middot;</span>' +
@@ -270,5 +271,7 @@
   if (!consent) ensureCookieBanner();
   else setCookieConsent(consent);
 })();
+
+
 
 

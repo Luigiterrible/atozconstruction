@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" id="html-root">
 <head>
   <meta charset="UTF-8">
@@ -36,12 +36,20 @@
     "@type": "HomeAndConstructionBusiness",
     "name": "A to Z Construction & Services",
     "url": "https://atozgeneralcontractor.com",
-    "telephone": "+18565000237",
+    "telephone": "+18564043637",
     "email": "info@atozgeneralcontractor.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "PO BOX 998",
+      "addressLocality": "Williamstown",
+      "addressRegion": "NJ",
+      "postalCode": "08094",
+      "addressCountry": "US"
+    },
     "contactPoint": [
       {
         "@type": "ContactPoint",
-        "telephone": "+18565000237",
+        "telephone": "+18564043637",
         "contactType": "customer service",
         "availableLanguage": ["English", "Spanish"],
         "hoursAvailable": {
@@ -53,7 +61,7 @@
       },
       {
         "@type": "ContactPoint",
-        "telephone": "+18565000237",
+        "telephone": "+18564043637",
         "contactType": "customer support",
         "availableLanguage": ["English", "Spanish"],
         "hoursAvailable": {
@@ -151,8 +159,13 @@
     .form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--orange);box-shadow:0 0 0 3px rgba(232,130,26,.12);}
     .form-textarea{resize:vertical;min-height:130px;}
     .form-input.invalid,.form-select.invalid,.form-textarea.invalid{border-color:#DC2626 !important;box-shadow:0 0 0 3px rgba(220,38,38,.12);}
+    .consent-checkbox.invalid{outline:2px solid rgba(220,38,38,.35);outline-offset:3px;}
     .field-error{display:none;margin-top:.35rem;font-size:.78rem;line-height:1.35;color:#B91C1C;font-weight:600;}
     .form-group.has-error .field-error{display:block;}
+    .consent-group{display:flex;align-items:flex-start;gap:.75rem;padding:.9rem 1rem;background:#fff;border:1.5px solid #e3d8c7;border-radius:10px;margin-top:.4rem;}
+    .consent-checkbox{margin-top:.2rem;accent-color:var(--orange);flex-shrink:0;}
+    .consent-text{font-size:.82rem;line-height:1.55;color:var(--gray-dark);}
+    .consent-text strong{color:var(--black);}
     .form-submit{width:100%;font-family:'Oswald',sans-serif;font-size:1rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:.9rem;background:var(--orange);color:white;border:none;border-radius:8px;cursor:pointer;transition:background .2s,transform .1s;margin-top:.5rem;}
     .form-submit:hover{background:var(--orange-dark);transform:translateY(-1px);}
     .form-note{font-size:.78rem;color:var(--text-muted);margin-top:.75rem;text-align:center;}
@@ -242,6 +255,9 @@
     .newsletter-input-group input:focus{border-color:var(--orange);box-shadow:0 0 0 3px rgba(232,130,26,.12);}
     .newsletter-submit{width:100%;background:var(--orange);color:white;border:none;padding:.72rem 1rem;border-radius:8px;font-family:'Oswald',sans-serif;font-size:.85rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:background .2s;}
     .newsletter-submit:hover{background:var(--orange-dark);}
+    .newsletter-consent{display:flex;align-items:flex-start;gap:.55rem;margin-top:.75rem;}
+    .newsletter-consent input{margin-top:.2rem;accent-color:var(--orange);flex-shrink:0;}
+    .newsletter-consent label{font-size:.77rem;color:var(--text-muted);line-height:1.5;}
     .newsletter-note{font-size:.77rem;color:var(--text-muted);margin:.6rem 0 0 0;}
   </style>
   <link rel="stylesheet" href="./assets/css/global-layout.css" data-global-layout="override">
@@ -266,7 +282,7 @@
       <h1 class="page-h1" id="page-h1">
         <span data-en="Let&rsquo;s Get Your <em>Project Started</em>" data-es="Comencemos tu <em>proyecto hoy</em>">Let&rsquo;s Get Your <em>Project Started</em></span>
       </h1>
-      <p class="page-sub" data-en="Free estimates, fast response, no obligation. Reach us by phone, WhatsApp, or fill out the form below, we&rsquo;ll get back to you promptly. Bilingual service in English and Spanish." data-es="Presupuestos gratis, respuesta r&aacute;pida y sin compromiso. Ll&aacute;manos, escr&iacute;benos por WhatsApp o completa el formulario. Te responderemos pronto. Servicio biling&uuml;e en ingl&eacute;s y espa&ntilde;ol.">
+      <p class="page-sub" data-en="Free estimates, fast response, and no obligation. Call us, send us a WhatsApp message, or fill out the form below and we&rsquo;ll get back to you promptly. Service available in English and Spanish." data-es="Presupuestos gratis, respuesta r&aacute;pida y sin compromiso. Ll&aacute;manos, escr&iacute;benos por WhatsApp o completa el formulario y te responderemos lo antes posible. Atenci&oacute;n disponible en ingl&eacute;s y espa&ntilde;ol.">
         Free estimates, fast response, no obligation. Reach us by phone, WhatsApp, or fill out the form below, we&rsquo;ll get back to you promptly. Bilingual service in English and Spanish.
       </p>
     </div>
@@ -275,17 +291,17 @@
   <section id="quick-contact" aria-label="Quick contact options">
     <div class="quick-inner">
       <div class="quick-grid">
-        <a href="tel:+18565000237" class="quick-card call-card">
+        <a href="tel:+18564043637" class="quick-card call-card">
           <div class="quick-card-icon orange" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
           <span class="quick-card-label" data-en="Call us" data-es="Ll&aacute;manos">Call us</span>
-          <span class="quick-card-value">+1 (856) 500-0237</span>
-          <span class="quick-card-note" data-en="Mon to Sat, 7am to 8pm" data-es="Lun a S&aacute;b, 7am a 8pm">Mon to Sat, 7am to 8pm</span>
+          <span class="quick-card-value">+1 (856) 404-3637</span>
+          <span class="quick-card-note" data-en="Mon to Sat, 7am to 8pm" data-es="Lun a S&aacute;b, de 7:00 a. m. a 8:00 p. m.">Mon to Sat, 7am to 8pm</span>
         </a>
-        <a href="https://wa.me/18565000237?text=Hello!%20I%20need%20a%20free%20estimate." target="_blank" rel="noopener noreferrer" class="quick-card whatsapp-card">
+        <a href="https://wa.me/18564043637?text=Hello!%20I%20need%20a%20free%20estimate." target="_blank" rel="noopener noreferrer" class="quick-card whatsapp-card">
           <div class="quick-card-icon green" aria-hidden="true"><svg class="wa-icon" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.601 2.326A7.85 7.85 0 0 0 8.034.001C3.636.001.057 3.582.056 7.98c0 1.4.366 2.77 1.062 3.98L0 16l4.158-1.09a7.93 7.93 0 0 0 3.873 1.01h.003c4.397 0 7.978-3.582 7.979-7.98a7.94 7.94 0 0 0-2.412-5.614zm-5.567 12.258h-.003a6.57 6.57 0 0 1-3.347-.916l-.24-.142-2.468.648.659-2.407-.156-.247a6.56 6.56 0 0 1-1.01-3.513c.002-3.627 2.955-6.58 6.586-6.58 1.756 0 3.407.684 4.648 1.926a6.56 6.56 0 0 1 1.923 4.655c-.001 3.627-2.955 6.576-6.59 6.576z"/><path d="M11.609 9.292c-.198-.099-1.17-.578-1.352-.644-.182-.066-.315-.099-.446.1-.132.198-.512.644-.628.776-.116.132-.231.149-.429.05-.197-.1-.833-.307-1.588-.98-.588-.524-.985-1.17-1.1-1.367-.116-.198-.012-.305.087-.404.09-.09.198-.231.297-.347.099-.116.132-.198.198-.33.066-.132.033-.248-.017-.347-.05-.099-.446-1.075-.611-1.473-.161-.387-.325-.334-.446-.34a1.8 1.8 0 0 0-.38-.036c-.132 0-.347.05-.528.248-.182.198-.694.677-.694 1.65s.71 1.914.809 2.046c.099.132 1.398 2.133 3.387 2.992.473.204.84.325 1.127.416.474.151.904.13 1.245.08.38-.057 1.17-.478 1.336-.94.165-.462.165-.859.116-.94-.05-.083-.182-.132-.38-.231z"/></svg></div>
           <span class="quick-card-label">WhatsApp</span>
-          <span class="quick-card-value">+1 (856) 500-0237</span>
-          <span class="quick-card-note" data-en="Fast response guaranteed" data-es="Respuesta r&aacute;pida garantizada">Fast response guaranteed</span>
+          <span class="quick-card-value">+1 (856) 404-3637</span>
+          <span class="quick-card-note" data-en="Fast response" data-es="Respuesta r&aacute;pida">Fast response</span>
         </a>
         <a href="mailto:info@atozgeneralcontractor.com" class="quick-card email-card">
           <div class="quick-card-icon dark" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
@@ -302,7 +318,7 @@
       <div class="contact-main-panel">
         <p class="section-eyebrow" data-en="Free Estimate" data-es="Presupuesto Gratis">Free Estimate</p>
         <h2 class="section-title" id="form-heading"><span data-en="Send Us a <em>Message</em>" data-es="Env&iacute;anos un <em>mensaje</em>">Send Us a <em>Message</em></span></h2>
-        <p class="section-subtitle" data-en="Fill out the form and we&rsquo;ll get back to you as soon as possible. If you need immediate contact, use WhatsApp or call us directly." data-es="Completa el formulario y te responderemos lo antes posible. Si necesitas contacto inmediato, usa WhatsApp o ll&aacute;manos directamente.">Fill out the form and we&rsquo;ll get back to you as soon as possible. If you need immediate contact, use WhatsApp or call us directly.</p>
+        <p class="section-subtitle" data-en="Fill out the form and we&rsquo;ll get back to you as soon as possible. If you want a faster response, send us a WhatsApp message or call us directly." data-es="Completa el formulario y te responderemos lo antes posible. Si quieres una respuesta m&aacute;s r&aacute;pida, escr&iacute;benos por WhatsApp o ll&aacute;manos directamente.">Fill out the form and we&rsquo;ll get back to you as soon as possible. If you want a faster response, send us a WhatsApp message or call us directly.</p>
         <div class="form-wrap">
           <h3 class="form-title" data-en="Contact Form, Free Estimate" data-es="Formulario de contacto, presupuesto gratis">Contact Form, Free Estimate</h3>
           <form id="contact-form" action="mailto:estimates@atozgeneralcontractor.com" method="post" aria-label="General contact form">
@@ -313,7 +329,7 @@
               </div>
               <div class="form-group">
                 <label class="form-label" for="phone" data-en="Phone Number *" data-es="Tel&eacute;fono *">Phone Number *</label>
-                <input class="form-input" type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="+1 (856) 500-0237" data-placeholder-en="+1 (856) 500-0237" data-placeholder-es="+1 (856) 500-0237">
+                <input class="form-input" type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="+1 (856) 404-3637" data-placeholder-en="+1 (856) 404-3637" data-placeholder-es="+1 (856) 404-3637">
               </div>
             </div>
             <div class="form-group">
@@ -326,7 +342,7 @@
                 <option value="" data-en="Select type..." data-es="Selecciona el tipo...">Select type...</option>
                 <option value="residential" data-en="Residential Service" data-es="Servicio Residencial">Residential Service</option>
                 <option value="commercial" data-en="Commercial Service" data-es="Servicio Comercial">Commercial Service</option>
-                <option value="priority" data-en="Immediate Assistance" data-es="Atenci&oacute;n inmediata">Immediate Assistance</option>
+                <option value="priority" data-en="Priority Assistance" data-es="Atenci&oacute;n Prioritaria">Priority Assistance</option>
                 <option value="other" data-en="Other / Not Sure" data-es="Otro / No estoy seguro">Other / Not Sure</option>
               </select>
             </div>
@@ -368,6 +384,14 @@
                 <option value="email" data-en="Email" data-es="Correo Electr&oacute;nico">Email</option>
               </select>
             </div>
+            <div class="form-group">
+              <div class="consent-group">
+                <input class="consent-checkbox" type="checkbox" id="tcpa-consent" name="tcpa_consent" required data-error-en="Please agree to be contacted before submitting the form." data-error-es="Debes aceptar el consentimiento de contacto antes de enviar el formulario.">
+                <label class="consent-text" for="tcpa-consent">
+                  <span data-en="By checking this box, you agree to be contacted by A to Z Construction &amp; Services by phone call and text message at the number you provided, including through automated technology. Consent is not a condition of purchase. Message and data rates may apply." data-es="Al marcar esta casilla, aceptas que A to Z Construction &amp; Services se comunique contigo por llamada telef&oacute;nica y mensaje de texto al n&uacute;mero que proporcionaste, incluso mediante tecnolog&iacute;a automatizada. El consentimiento no es una condici&oacute;n de compra. Pueden aplicarse tarifas de mensajes y datos.">By checking this box, you agree to be contacted by A to Z Construction &amp; Services by phone call and text message at the number you provided, including through automated technology. Consent is not a condition of purchase. Message and data rates may apply.</span>
+                </label>
+              </div>
+            </div>
             <button type="submit" class="form-submit" data-en="Send Message &amp; Request Estimate &rarr;" data-es="Enviar Mensaje y Solicitar Presupuesto &rarr;">Send Message &amp; Request Estimate &rarr;</button>
             <p class="form-note" data-en="We typically respond within a few hours during business hours. Every service is backed by warranty." data-es="Normalmente respondemos en pocas horas durante el horario laboral. Todos los servicios tienen garant&iacute;a.">We typically respond within a few hours during business hours. Every service is backed by warranty.</p>
             <div class="form-success" id="form-success" role="alert">
@@ -380,18 +404,18 @@
       <aside class="contact-sidebar" aria-label="Contact details">
         <div class="sidebar-card">
           <p class="sidebar-label" data-en="Phone" data-es="Tel&eacute;fono">Phone</p>
-          <a href="tel:+18565000237" class="sidebar-link">
+          <a href="tel:+18564043637" class="sidebar-link">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            +1 (856) 500-0237
+            +1 (856) 404-3637
           </a>
         </div>
         <div class="sidebar-card">
           <p class="sidebar-label">WhatsApp</p>
-          <a href="https://wa.me/18565000237" target="_blank" rel="noopener noreferrer" class="sidebar-link">
+          <a href="https://wa.me/18564043637" target="_blank" rel="noopener noreferrer" class="sidebar-link">
             <svg class="wa-icon" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.601 2.326A7.85 7.85 0 0 0 8.034.001C3.636.001.057 3.582.056 7.98c0 1.4.366 2.77 1.062 3.98L0 16l4.158-1.09a7.93 7.93 0 0 0 3.873 1.01h.003c4.397 0 7.978-3.582 7.979-7.98a7.94 7.94 0 0 0-2.412-5.614zm-5.567 12.258h-.003a6.57 6.57 0 0 1-3.347-.916l-.24-.142-2.468.648.659-2.407-.156-.247a6.56 6.56 0 0 1-1.01-3.513c.002-3.627 2.955-6.58 6.586-6.58 1.756 0 3.407.684 4.648 1.926a6.56 6.56 0 0 1 1.923 4.655c-.001 3.627-2.955 6.576-6.59 6.576z"/><path d="M11.609 9.292c-.198-.099-1.17-.578-1.352-.644-.182-.066-.315-.099-.446.1-.132.198-.512.644-.628.776-.116.132-.231.149-.429.05-.197-.1-.833-.307-1.588-.98-.588-.524-.985-1.17-1.1-1.367-.116-.198-.012-.305.087-.404.09-.09.198-.231.297-.347.099-.116.132-.198.198-.33.066-.132.033-.248-.017-.347-.05-.099-.446-1.075-.611-1.473-.161-.387-.325-.334-.446-.34a1.8 1.8 0 0 0-.38-.036c-.132 0-.347.05-.528.248-.182.198-.694.677-.694 1.65s.71 1.914.809 2.046c.099.132 1.398 2.133 3.387 2.992.473.204.84.325 1.127.416.474.151.904.13 1.245.08.38-.057 1.17-.478 1.336-.94.165-.462.165-.859.116-.94-.05-.083-.182-.132-.38-.231z"/></svg>
-            +1 (856) 500-0237
+            +1 (856) 404-3637
           </a>
-          <p class="sidebar-text" data-en="Message us anytime, we respond fast." data-es="Escr&iacute;benos cuando quieras, respondemos r&aacute;pido.">Message us anytime, we respond fast.</p>
+          <p class="sidebar-text" data-en="Send us a message anytime and we&rsquo;ll reply as soon as possible." data-es="Escr&iacute;benos cuando quieras y te responderemos lo antes posible.">Send us a message anytime and we&rsquo;ll reply as soon as possible.</p>
         </div>
         <div class="sidebar-card">
           <p class="sidebar-label" data-en="Email" data-es="Correo">Email</p>
@@ -401,15 +425,19 @@
           </a>
         </div>
         <div class="sidebar-card">
+          <p class="sidebar-label" data-en="Mailing Address" data-es="Direcci&oacute;n Postal">Mailing Address</p>
+          <p class="sidebar-text" data-en="PO BOX 998, Williamstown, NJ 08094" data-es="PO BOX 998, Williamstown, NJ 08094">PO BOX 998, Williamstown, NJ 08094</p>
+        </div>
+        <div class="sidebar-card">
           <p class="sidebar-label" data-en="Business Hours" data-es="Horario de Atenci&oacute;n">Business Hours</p>
-          <div class="hours-row"><span class="hours-day" data-en="Monday to Friday" data-es="Lunes a viernes">Monday to Friday</span><span class="hours-time">7am to 8pm</span></div>
-          <div class="hours-row"><span class="hours-day" data-en="Saturday" data-es="S&aacute;bado">Saturday</span><span class="hours-time">8am to 6pm</span></div>
+          <div class="hours-row"><span class="hours-day" data-en="Monday to Friday" data-es="Lunes a viernes">Monday to Friday</span><span class="hours-time" data-en="7am to 8pm" data-es="7:00 a. m. a 8:00 p. m.">7am to 8pm</span></div>
+          <div class="hours-row"><span class="hours-day" data-en="Saturday" data-es="S&aacute;bado">Saturday</span><span class="hours-time" data-en="8am to 6pm" data-es="8:00 a. m. a 6:00 p. m.">8am to 6pm</span></div>
           <div class="hours-row"><span class="hours-day" data-en="Sunday" data-es="Domingo">Sunday</span><span class="hours-time" data-en="By appointment" data-es="Con cita previa">By appointment</span></div>
-          <div class="hours-row"><span class="hours-day" data-en="Response Time" data-es="Tiempo de Respuesta">Response Time</span><span class="hours-time" data-en="Same day options" data-es="Opciones para el mismo d&iacute;a">Same day options</span></div>
+          <div class="hours-row"><span class="hours-day" data-en="Response Time" data-es="Tiempo de Respuesta">Response Time</span><span class="hours-time" data-en="Same-day options" data-es="Opciones el mismo d&iacute;a">Same-day options</span></div>
         </div>
         <div class="sidebar-card">
           <p class="sidebar-label" data-en="Service Areas" data-es="&Aacute;reas de Servicio">Service Areas</p>
-          <p class="sidebar-text" data-en="New York (NY) &middot; New Jersey (NJ) &middot; Philadelphia (PA)" data-es="Nueva York (NY) &middot; Nueva Jersey (NJ) &middot; Filadelfia (PA)">New York (NY) &middot; New Jersey (NJ) &middot; Philadelphia (PA)</p>
+          <p class="sidebar-text" data-en="New York (NY) &middot; New Jersey (NJ) &middot; Philadelphia" data-es="Nueva York (NY) &middot; Nueva Jersey (NJ) &middot; Filadelfia">New York (NY) &middot; New Jersey (NJ) &middot; Philadelphia</p>
         </div>
         <section id="newsletter" class="sidebar-card newsletter-card" aria-labelledby="newsletter-heading">
           <div class="newsletter-inner">
@@ -419,6 +447,12 @@
               <div class="newsletter-input-group">
                 <input type="email" id="newsletter-email" name="email" placeholder="Enter your email address" data-placeholder-en="Enter your email address" data-placeholder-es="Ingresa tu correo electr&oacute;nico" required>
                 <button type="submit" class="newsletter-submit" data-en="Subscribe" data-es="Suscribirme">Subscribe</button>
+              </div>
+              <div class="newsletter-consent">
+                <input type="checkbox" id="newsletter-consent" name="newsletter_consent" required>
+                <label for="newsletter-consent">
+                  <span data-en="I agree to receive emails from A to Z Construction &amp; Services with home improvement tips, updates, and occasional promotional offers. I understand I can unsubscribe at any time." data-es="Acepto recibir correos electr&oacute;nicos de A to Z Construction &amp; Services con consejos para mejoras del hogar, novedades y ofertas promocionales ocasionales. Entiendo que puedo cancelar mi suscripci&oacute;n en cualquier momento.">I agree to receive emails from A to Z Construction &amp; Services with home improvement tips, updates, and occasional promotional offers. I understand I can unsubscribe at any time.</span>
+                </label>
               </div>
               <p class="newsletter-note" data-en="No spam. Unsubscribe anytime." data-es="Sin spam. Puedes cancelar cuando quieras.">No spam. Unsubscribe anytime.</p>
             </form>
@@ -431,15 +465,15 @@
     <div class="contact-urgent-inner">
       <div class="contact-urgent-top">
         <div>
-          <p class="contact-urgent-title" data-en="Need Immediate Contact?" data-es="&iquest;Necesitas contacto inmediato?">Need Immediate Contact?</p>
-          <p class="contact-urgent-text" data-en="Licensed and insured. Every service is backed by warranty. Trusted General Contractor serving NY, NJ and Philadelphia." data-es="Licenciado y asegurado. Todos los servicios tienen garant&iacute;a. Contratista general de confianza en NY, NJ y Filadelfia.">Licensed and insured. Every service is backed by warranty. Trusted General Contractor serving NY, NJ and Philadelphia.</p>
+          <p class="contact-urgent-title" data-en="Need a Faster Response?" data-es="&iquest;Necesitas una Respuesta M&aacute;s R&aacute;pida?">Need a Faster Response?</p>
+          <p class="contact-urgent-text" data-en="Licensed and insured. Every service is backed by warranty. Trusted General Contractor serving NY, NJ, and Philadelphia." data-es="Contamos con licencia y seguro. Todos los servicios est&aacute;n respaldados por garant&iacute;a. Contratista general de confianza en NY, NJ y Filadelfia.">Licensed and insured. Every service is backed by warranty. Trusted General Contractor serving NY, NJ, and Philadelphia.</p>
         </div>
         <div class="contact-urgent-actions">
-          <a href="https://wa.me/18565000237?text=Hello!%20I%20need%20immediate%20contact%20for%20a%20service%20estimate." target="_blank" rel="noopener noreferrer" class="emergency-link wa">
+          <a href="https://wa.me/18564043637?text=Hello!%20I%20need%20immediate%20contact%20for%20a%20service%20estimate." target="_blank" rel="noopener noreferrer" class="emergency-link wa">
             <svg class="wa-icon" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.601 2.326A7.85 7.85 0 0 0 8.034.001C3.636.001.057 3.582.056 7.98c0 1.4.366 2.77 1.062 3.98L0 16l4.158-1.09a7.93 7.93 0 0 0 3.873 1.01h.003c4.397 0 7.978-3.582 7.979-7.98a7.94 7.94 0 0 0-2.412-5.614zm-5.567 12.258h-.003a6.57 6.57 0 0 1-3.347-.916l-.24-.142-2.468.648.659-2.407-.156-.247a6.56 6.56 0 0 1-1.01-3.513c.002-3.627 2.955-6.58 6.586-6.58 1.756 0 3.407.684 4.648 1.926a6.56 6.56 0 0 1 1.923 4.655c-.001 3.627-2.955 6.576-6.59 6.576z"/><path d="M11.609 9.292c-.198-.099-1.17-.578-1.352-.644-.182-.066-.315-.099-.446.1-.132.198-.512.644-.628.776-.116.132-.231.149-.429.05-.197-.1-.833-.307-1.588-.98-.588-.524-.985-1.17-1.1-1.367-.116-.198-.012-.305.087-.404.09-.09.198-.231.297-.347.099-.116.132-.198.198-.33.066-.132.033-.248-.017-.347-.05-.099-.446-1.075-.611-1.473-.161-.387-.325-.334-.446-.34a1.8 1.8 0 0 0-.38-.036c-.132 0-.347.05-.528.248-.182.198-.694.677-.694 1.65s.71 1.914.809 2.046c.099.132 1.398 2.133 3.387 2.992.473.204.84.325 1.127.416.474.151.904.13 1.245.08.38-.057 1.17-.478 1.336-.94.165-.462.165-.859.116-.94-.05-.083-.182-.132-.38-.231z"/></svg>
-            <span data-en="WhatsApp Now" data-es="WhatsApp ahora">WhatsApp Now</span>
+            <span data-en="Message Us on WhatsApp" data-es="Escr&iacute;benos por WhatsApp">Message Us on WhatsApp</span>
           </a>
-          <a href="tel:+18565000237" class="emergency-link phone">
+          <a href="tel:+18564043637" class="emergency-link phone">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             <span data-en="Call us" data-es="Ll&aacute;manos">Call us</span>
           </a>
@@ -450,7 +484,7 @@
 </main>
 <!-- FOOTER -->
 <div id="global-footer"></div>
-<a id="whatsapp-float" href="https://wa.me/18565000237?text=Hello!%20I%20need%20a%20free%20estimate." target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
+<a id="whatsapp-float" href="https://wa.me/18564043637?text=Hello!%20I%20need%20a%20free%20estimate." target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
   <svg class="wa-icon" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.601 2.326A7.85 7.85 0 0 0 8.034.001C3.636.001.057 3.582.056 7.98c0 1.4.366 2.77 1.062 3.98L0 16l4.158-1.09a7.93 7.93 0 0 0 3.873 1.01h.003c4.397 0 7.978-3.582 7.979-7.98a7.94 7.94 0 0 0-2.412-5.614zm-5.567 12.258h-.003a6.57 6.57 0 0 1-3.347-.916l-.24-.142-2.468.648.659-2.407-.156-.247a6.56 6.56 0 0 1-1.01-3.513c.002-3.627 2.955-6.58 6.586-6.58 1.756 0 3.407.684 4.648 1.926a6.56 6.56 0 0 1 1.923 4.655c-.001 3.627-2.955 6.576-6.59 6.576z"/><path d="M11.609 9.292c-.198-.099-1.17-.578-1.352-.644-.182-.066-.315-.099-.446.1-.132.198-.512.644-.628.776-.116.132-.231.149-.429.05-.197-.1-.833-.307-1.588-.98-.588-.524-.985-1.17-1.1-1.367-.116-.198-.012-.305.087-.404.09-.09.198-.231.297-.347.099-.116.132-.198.198-.33.066-.132.033-.248-.017-.347-.05-.099-.446-1.075-.611-1.473-.161-.387-.325-.334-.446-.34a1.8 1.8 0 0 0-.38-.036c-.132 0-.347.05-.528.248-.182.198-.694.677-.694 1.65s.71 1.914.809 2.046c.099.132 1.398 2.133 3.387 2.992.473.204.84.325 1.127.416.474.151.904.13 1.245.08.38-.057 1.17-.478 1.336-.94.165-.462.165-.859.116-.94-.05-.083-.182-.132-.38-.231z"/></svg>
   <span class="wa-text" data-en="WhatsApp" data-es="WhatsApp">WhatsApp</span>
 </a>
@@ -490,9 +524,11 @@
     const err = ensureErrorNode(field);
     const group = field.closest('.form-group');
     if (!err || !group) return;
+    const lang = localStorage.getItem('azc-lang') || (document.getElementById('html-root')?.lang || 'en');
+    const customError = lang === 'es' ? field.dataset.errorEs : field.dataset.errorEn;
     field.classList.add('invalid');
     group.classList.add('has-error');
-    err.textContent = field.validationMessage || 'This field is required.';
+    err.textContent = customError || field.validationMessage || 'This field is required.';
   }
 
   function clearFieldError(field){
@@ -555,15 +591,15 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click'
     <div style="padding:1.4rem;">
       <p style="font-size:.85rem;color:var(--gray-dark);margin-bottom:1rem;text-align:center;font-weight:600;" data-en="How would you like to reach us?" data-es="&iquest;C&oacute;mo prefieres contactarnos?">How would you like to reach us?</p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1rem;">
-        <a href="https://wa.me/18565000237?text=Hello!%20I%20would%20like%20a%20free%20estimate." target="_blank" rel="noopener noreferrer" onclick="closePopup('timer')" style="display:flex;flex-direction:column;align-items:center;gap:.45rem;padding:1rem .75rem;background:#25D366;color:white;border-radius:10px;text-decoration:none;text-align:center;">
+        <a href="https://wa.me/18564043637?text=Hello!%20I%20would%20like%20a%20free%20estimate." target="_blank" rel="noopener noreferrer" onclick="closePopup('timer')" style="display:flex;flex-direction:column;align-items:center;gap:.45rem;padding:1rem .75rem;background:#25D366;color:white;border-radius:10px;text-decoration:none;text-align:center;">
           <svg class="wa-icon" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.601 2.326A7.85 7.85 0 0 0 8.034.001C3.636.001.057 3.582.056 7.98c0 1.4.366 2.77 1.062 3.98L0 16l4.158-1.09a7.93 7.93 0 0 0 3.873 1.01h.003c4.397 0 7.978-3.582 7.979-7.98a7.94 7.94 0 0 0-2.412-5.614zm-5.567 12.258h-.003a6.57 6.57 0 0 1-3.347-.916l-.24-.142-2.468.648.659-2.407-.156-.247a6.56 6.56 0 0 1-1.01-3.513c.002-3.627 2.955-6.58 6.586-6.58 1.756 0 3.407.684 4.648 1.926a6.56 6.56 0 0 1 1.923 4.655c-.001 3.627-2.955 6.576-6.59 6.576z"/><path d="M11.609 9.292c-.198-.099-1.17-.578-1.352-.644-.182-.066-.315-.099-.446.1-.132.198-.512.644-.628.776-.116.132-.231.149-.429.05-.197-.1-.833-.307-1.588-.98-.588-.524-.985-1.17-1.1-1.367-.116-.198-.012-.305.087-.404.09-.09.198-.231.297-.347.099-.116.132-.198.198-.33.066-.132.033-.248-.017-.347-.05-.099-.446-1.075-.611-1.473-.161-.387-.325-.334-.446-.34a1.8 1.8 0 0 0-.38-.036c-.132 0-.347.05-.528.248-.182.198-.694.677-.694 1.65s.71 1.914.809 2.046c.099.132 1.398 2.133 3.387 2.992.473.204.84.325 1.127.416.474.151.904.13 1.245.08.38-.057 1.17-.478 1.336-.94.165-.462.165-.859.116-.94-.05-.083-.182-.132-.38-.231z"/></svg>
           <span style="font-family:'Oswald',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;" data-en="WhatsApp" data-es="WhatsApp">WhatsApp</span>
           <span style="font-size:.7rem;opacity:.9;" data-en="Fast response" data-es="Respuesta r&aacute;pida">Fast response</span>
         </a>
-        <a href="tel:+18565000237" onclick="closePopup('timer')" style="display:flex;flex-direction:column;align-items:center;gap:.45rem;padding:1rem .75rem;background:var(--black);color:white;border-radius:10px;text-decoration:none;text-align:center;">
+        <a href="tel:+18564043637" onclick="closePopup('timer')" style="display:flex;flex-direction:column;align-items:center;gap:.45rem;padding:1rem .75rem;background:var(--black);color:white;border-radius:10px;text-decoration:none;text-align:center;">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           <span style="font-family:'Oswald',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;" data-en="Call us" data-es="Ll&aacute;manos">Call us</span>
-          <span style="font-size:.7rem;opacity:.75;" data-en="Mon to Sat, 7am to 8pm" data-es="Lun a S&aacute;b, de 7am a 8pm">Mon to Sat, 7am to 8pm</span>
+          <span style="font-size:.7rem;opacity:.75;" data-en="Mon to Sat, 7am to 8pm" data-es="Lun a S&aacute;b, de 7:00 a. m. a 8:00 p. m.">Mon to Sat, 7am to 8pm</span>
         </a>
       </div>
       <p style="font-size:.73rem;color:var(--gray-mid);text-align:center;" data-en="No obligation, free estimates always." data-es="Sin compromiso, presupuestos siempre gratis.">No obligation, free estimates always.</p>
@@ -591,15 +627,15 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click'
         <p style="font-size:.82rem;color:var(--black);font-weight:600;line-height:1.4;" data-en="Free estimates &middot; Fast response &middot; No obligation" data-es="Presupuestos gratis &middot; Respuesta r&aacute;pida &middot; Sin compromiso">Free estimates &middot; Fast response &middot; No obligation</p>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:.9rem;">
-        <a href="https://wa.me/18565000237?text=Hello!%20I%20was%20about%20to%20leave%20but%20I%20need%20a%20free%20estimate." target="_blank" rel="noopener noreferrer" onclick="closePopup('exit')" style="display:flex;flex-direction:column;align-items:center;gap:.45rem;padding:1rem .75rem;background:#25D366;color:white;border-radius:10px;text-decoration:none;text-align:center;">
+        <a href="https://wa.me/18564043637?text=Hello!%20I%20was%20about%20to%20leave%20but%20I%20need%20a%20free%20estimate." target="_blank" rel="noopener noreferrer" onclick="closePopup('exit')" style="display:flex;flex-direction:column;align-items:center;gap:.45rem;padding:1rem .75rem;background:#25D366;color:white;border-radius:10px;text-decoration:none;text-align:center;">
           <svg class="wa-icon" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.601 2.326A7.85 7.85 0 0 0 8.034.001C3.636.001.057 3.582.056 7.98c0 1.4.366 2.77 1.062 3.98L0 16l4.158-1.09a7.93 7.93 0 0 0 3.873 1.01h.003c4.397 0 7.978-3.582 7.979-7.98a7.94 7.94 0 0 0-2.412-5.614zm-5.567 12.258h-.003a6.57 6.57 0 0 1-3.347-.916l-.24-.142-2.468.648.659-2.407-.156-.247a6.56 6.56 0 0 1-1.01-3.513c.002-3.627 2.955-6.58 6.586-6.58 1.756 0 3.407.684 4.648 1.926a6.56 6.56 0 0 1 1.923 4.655c-.001 3.627-2.955 6.576-6.59 6.576z"/><path d="M11.609 9.292c-.198-.099-1.17-.578-1.352-.644-.182-.066-.315-.099-.446.1-.132.198-.512.644-.628.776-.116.132-.231.149-.429.05-.197-.1-.833-.307-1.588-.98-.588-.524-.985-1.17-1.1-1.367-.116-.198-.012-.305.087-.404.09-.09.198-.231.297-.347.099-.116.132-.198.198-.33.066-.132.033-.248-.017-.347-.05-.099-.446-1.075-.611-1.473-.161-.387-.325-.334-.446-.34a1.8 1.8 0 0 0-.38-.036c-.132 0-.347.05-.528.248-.182.198-.694.677-.694 1.65s.71 1.914.809 2.046c.099.132 1.398 2.133 3.387 2.992.473.204.84.325 1.127.416.474.151.904.13 1.245.08.38-.057 1.17-.478 1.336-.94.165-.462.165-.859.116-.94-.05-.083-.182-.132-.38-.231z"/></svg>
           <span style="font-family:'Oswald',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;" data-en="WhatsApp" data-es="WhatsApp">WhatsApp</span>
           <span style="font-size:.7rem;opacity:.9;" data-en="Quick reply" data-es="Respuesta r&aacute;pida">Quick reply</span>
         </a>
-        <a href="tel:+18565000237" onclick="closePopup('exit')" style="display:flex;flex-direction:column;align-items:center;gap:.45rem;padding:1rem .75rem;background:var(--black);color:white;border-radius:10px;text-decoration:none;text-align:center;">
+        <a href="tel:+18564043637" onclick="closePopup('exit')" style="display:flex;flex-direction:column;align-items:center;gap:.45rem;padding:1rem .75rem;background:var(--black);color:white;border-radius:10px;text-decoration:none;text-align:center;">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           <span style="font-family:'Oswald',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;" data-en="Call us" data-es="Ll&aacute;manos">Call us</span>
-          <span style="font-size:.7rem;opacity:.75;" data-en="Mon to Sat, 7am to 8pm" data-es="Lun a S&aacute;b, de 7am a 8pm">Mon to Sat, 7am to 8pm</span>
+          <span style="font-size:.7rem;opacity:.75;" data-en="Mon to Sat, 7am to 8pm" data-es="Lun a S&aacute;b, de 7:00 a. m. a 8:00 p. m.">Mon to Sat, 7am to 8pm</span>
         </a>
       </div>
       <button onclick="closePopup('exit')" style="width:100%;font-size:.78rem;color:var(--gray-mid);background:none;border:none;cursor:pointer;padding:.4rem;" data-en="No thanks, I will contact you later" data-es="No, gracias. Los contactar&eacute; m&aacute;s tarde">No thanks, I will contact you later</button>
@@ -610,7 +646,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click'
 @keyframes popupIn{from{opacity:0;transform:scale(.92) translateY(12px);}to{opacity:1;transform:scale(1) translateY(0);}}
 </style>
 <!-- TAWK.TO LIVE CHAT - DEFERRED FOR INP -->
-<script type="text/javascript">
+<script type="text/plain" data-cookie-category="marketing">
 var Tawk_API = Tawk_API || {}, Tawk_LoadStart;
 (function(){
   var loaded = false;
@@ -636,6 +672,8 @@ var Tawk_API = Tawk_API || {}, Tawk_LoadStart;
 <script src="./assets/js/popup.js?v=20260305e"></script>
 </body>
 </html>
+
+
 
 
 

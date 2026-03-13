@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://atozgeneralcontractor.com/pruebas/sitemap.xml
+Sitemap: https://atozgeneralcontractor.com/sitemap.xml

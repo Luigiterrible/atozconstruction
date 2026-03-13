@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" id="html-root">
 <head>
   <meta charset="UTF-8">
@@ -37,8 +37,16 @@
     "name": "A to Z Construction & Services",
     "alternateName": "Pro Handyman Xpress",
     "url": "https://atozgeneralcontractor.com",
-    "telephone": "+18565000237",
+    "telephone": "+18564043637",
     "email": "info@atozgeneralcontractor.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "PO BOX 998",
+      "addressLocality": "Williamstown",
+      "addressRegion": "NJ",
+      "postalCode": "08094",
+      "addressCountry": "US"
+    },
     "description": "Licensed General Contractor serving NY, NJ & Philadelphia. Residential & commercial construction from A to Z.",
     "areaServed": [
       {"@type": "State", "name": "New York"},
@@ -179,6 +187,27 @@
     .author-info{display:flex;flex-direction:column;}
     .author-name{font-weight:600;color:#1A1A1A;margin:0;font-style:normal;}
     .author-location{color:#6B7280;font-size:.9rem;margin:.25rem 0 0 0;}
+    /* TEAM */
+    #team{background:var(--off-white);padding:4.5rem 1.5rem;}
+    .team-inner{max-width:1280px;margin:0 auto;}
+    .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2.5rem;}
+    .team-card{background:var(--white);border-radius:14px;overflow:hidden;border:1.5px solid #e3d8c7;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:border-color .25s,box-shadow .25s,transform .25s;}
+    .team-card:hover{border-color:var(--orange);box-shadow:0 10px 30px rgba(232,130,26,.14);transform:translateY(-4px);}
+    .team-photo-wrap{position:relative;overflow:hidden;aspect-ratio:4/3.8;background:#ece9e4;}
+    .team-photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;transition:transform .4s ease;}
+    .team-photo-paul{object-position:center 16%;}
+    .team-photo-henry{object-position:center 16%;}
+    .team-photo-luis{object-fit:cover;object-position:center 3%;transform:scale(1.04);}
+    .team-card:hover .team-photo-wrap img{transform:scale(1.04);}
+    .team-card:hover .team-photo-wrap .team-photo-luis{transform:scale(1.08);}
+    .team-photo-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 55%,rgba(26,26,26,.55) 100%);}
+    .team-info{padding:1.4rem 1.5rem 1.6rem;}
+    .team-name{font-family:'Oswald',sans-serif;font-size:1.3rem;font-weight:700;color:var(--black);margin-bottom:.2rem;}
+    .team-role{font-family:'Oswald',sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-bottom:.85rem;}
+    .team-divider{width:32px;height:3px;background:var(--orange);border-radius:2px;margin-bottom:.85rem;}
+    .team-bio{font-size:.9rem;color:var(--gray-dark);line-height:1.7;}
+    @media(max-width:1024px){.team-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:600px){.team-grid{grid-template-columns:1fr;}}
   </style>
   <link rel="stylesheet" href="./assets/css/global-layout.css" data-global-layout="override">
 </head>
@@ -210,7 +239,7 @@
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
           <span data-en="Get a Free Estimate" data-es="Presupuesto Gratis">Get a Free Estimate</span>
         </a>
-        <a href="tel:+18565000237" class="btn-outline">
+        <a href="tel:+18564043637" class="btn-outline">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           <span data-en="Call us Now" data-es="Ll&aacute;manos ahora">Call us Now</span>
         </a>
@@ -231,7 +260,7 @@
         <img src="./assets/images/d2f952df-1018-11f1-8275-0242ac110002-uwdocksujhexvrqym1jov.jpg" alt="A to Z Construction team at work" loading="lazy" width="800" height="500">
         <div class="who-badge">
           <span class="who-badge-num">A to Z</span>
-          <span class="who-badge-label" data-en="Every Service" data-es="Todo Servicio">Every Service</span>
+          <span class="who-badge-label" data-en="Every Service" data-es="Todos los Servicios">Every Service</span>
         </div>
       </div>
     </div>
@@ -310,21 +339,21 @@
           <div class="why-check" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
           <div class="why-text">
             <h4 data-en="Licensed General Contractor" data-es="Contratista General Licenciado">Licensed General Contractor</h4>
-            <p data-en="Fully licensed and insured in NY, NJ, and PA, you're protected from start to finish." data-es="Completamente licenciado y asegurado en NY, NJ y PA, est&aacute;s protegido de principio a fin.">Fully licensed and insured in NY, NJ, and PA, you're protected from start to finish.</p>
+            <p data-en="Licensed and insured for the work we perform, so you can move forward with confidence from start to finish." data-es="Contamos con licencia y seguro para los trabajos que realizamos, para que puedas avanzar con confianza de principio a fin.">Licensed and insured for the work we perform, so you can move forward with confidence from start to finish.</p>
           </div>
         </div>
         <div class="why-item">
           <div class="why-check" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
           <div class="why-text">
             <h4 data-en="One Point of Contact" data-es="Un Solo Punto de Contacto">One Point of Contact</h4>
-            <p data-en="No runaround between subcontractors. You communicate with us and we handle the coordination." data-es="Sin ir de un subcontratista a otro. Comunicas con nosotros y nosotros manejamos la coordinaci&oacute;n.">No runaround between subcontractors. You communicate with us and we handle the coordination.</p>
+            <p data-en="No bouncing between contractors. You talk to us, and we handle the coordination." data-es="Sin tener que ir de contratista en contratista. Hablas con nosotros y nosotros nos encargamos de la coordinaci&oacute;n.">No bouncing between contractors. You talk to us, and we handle the coordination.</p>
           </div>
         </div>
         <div class="why-item">
           <div class="why-check" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
           <div class="why-text">
-            <h4 data-en="Bilingual Service EN / ES" data-es="Servicio Biling&uuml;e EN / ES">Bilingual Service EN / ES</h4>
-            <p data-en="We serve our community in both English and Spanish, no language barrier, no misunderstandings." data-es="Servimos a nuestra comunidad en ingl&eacute;s y espa&ntilde;ol, sin barrera de idioma, sin malentendidos.">We serve our community in both English and Spanish, no language barrier, no misunderstandings.</p>
+            <h4 data-en="Bilingual Service in English &amp; Spanish" data-es="Atenci&oacute;n Biling&uuml;e en Ingl&eacute;s y Espa&ntilde;ol">Bilingual Service in English &amp; Spanish</h4>
+            <p data-en="We work with clients in both English and Spanish, so communication stays clear from start to finish." data-es="Atendemos a nuestros clientes en ingl&eacute;s y espa&ntilde;ol, para que la comunicaci&oacute;n sea clara de principio a fin.">We work with clients in both English and Spanish, so communication stays clear from start to finish.</p>
           </div>
         </div>
         <div class="why-item">
@@ -337,15 +366,61 @@
         <div class="why-item">
           <div class="why-check" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
           <div class="why-text">
-            <h4 data-en="Fast Professional Response" data-es="Respuesta Profesional R&aacute;pida">Fast Professional Response</h4>
-            <p data-en="Need immediate contact? Our team responds quickly through WhatsApp and phone to keep your project moving." data-es="&iquest;Necesitas contacto inmediato? Nuestro equipo responde r&aacute;pido por WhatsApp y tel&eacute;fono para mantener tu proyecto en marcha.">Need immediate contact? Our team responds quickly through WhatsApp and phone to keep your project moving.</p>
+            <h4 data-en="Fast, Professional Response" data-es="Respuesta R&aacute;pida y Profesional">Fast, Professional Response</h4>
+            <p data-en="Need a quick answer? Our team responds fast by phone and WhatsApp to keep your project moving." data-es="&iquest;Necesitas una respuesta r&aacute;pida? Nuestro equipo responde por tel&eacute;fono y WhatsApp para mantener tu proyecto en movimiento.">Need a quick answer? Our team responds fast by phone and WhatsApp to keep your project moving.</p>
           </div>
         </div>
         <div class="why-item">
           <div class="why-check" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
           <div class="why-text">
             <h4 data-en="Network of Verified Specialists" data-es="Red de Especialistas Verificados">Network of Verified Specialists</h4>
-            <p data-en="Our affiliate network ensures the right expert handles every trade, plumbers, electricians, HVAC techs, and more." data-es="Nuestra red de afiliados garantiza que el experto correcto maneje cada oficio, plomeros, electricistas, t&eacute;cnicos de HVAC y m&aacute;s.">Our affiliate network ensures the right expert handles every trade, plumbers, electricians, HVAC techs, and more.</p>
+            <p data-en="Our affiliate network helps us assign the right specialist to each trade, from plumbing and electrical to HVAC and more." data-es="Nuestra red de afiliados nos permite asignar al especialista correcto para cada trabajo, desde plomer&iacute;a y electricidad hasta HVAC y mucho m&aacute;s.">Our affiliate network helps us assign the right specialist to each trade, from plumbing and electrical to HVAC and more.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- TEAM -->
+  <section id="team" aria-labelledby="team-heading">
+    <div class="team-inner">
+      <p class="section-eyebrow" data-en="Meet the Team" data-es="Conoce al Equipo">Meet the Team</p>
+      <h2 class="section-title" id="team-heading"><span data-en="The People Behind <em>Every Project</em>" data-es="Las Personas Detr&aacute;s de <em>Cada Proyecto</em>">The People Behind <em>Every Project</em></span></h2>
+      <p class="body-text" style="max-width:680px;margin-top:.5rem;" data-en="At A to Z Construction, our strength is our people. Decades of combined experience, a shared commitment to quality, and a culture built on trust and accountability. When you hire A to Z, you know exactly who is working for you." data-es="En A to Z Construction, nuestra fortaleza es nuestra gente. D&eacute;cadas de experiencia combinada, un compromiso compartido con la calidad y una cultura basada en la confianza y la responsabilidad. Cuando contratas A to Z, sabes exactamente qui&eacute;n trabaja para ti.">At A to Z Construction, our strength is our people. Decades of combined experience, a shared commitment to quality, and a culture built on trust and accountability. When you hire A to Z, you know exactly who is working for you.</p>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-photo-wrap">
+            <img class="team-photo-paul" src="./assets/images/team-paul.png" alt="Paul Sanchez, Founder and CEO of A to Z Construction" loading="lazy" width="600" height="450">
+            <div class="team-photo-overlay" aria-hidden="true"></div>
+          </div>
+          <div class="team-info">
+            <p class="team-name">Paul Sanchez</p>
+            <p class="team-role" data-en="Founder &amp; Chief Executive Officer" data-es="Fundador y Director Ejecutivo">Founder &amp; Chief Executive Officer</p>
+            <div class="team-divider" aria-hidden="true"></div>
+            <p class="team-bio" data-en="With over 40 years of hands-on experience in construction and home improvement, Paul built A to Z from the ground up. A proud New Jersey resident, he leads the company with the same principle he started with: do the job right, every single time." data-es="Con m&aacute;s de 40 a&ntilde;os de experiencia pr&aacute;ctica en construcci&oacute;n y mejoras del hogar, Paul construy&oacute; A to Z desde cero. Orgulloso residente de Nueva Jersey, lidera la empresa con el mismo principio con el que comenz&oacute;: hacer el trabajo bien, siempre.">With over 40 years of hands-on experience in construction and home improvement, Paul built A to Z from the ground up. A proud New Jersey resident, he leads the company with the same principle he started with: do the job right, every single time.</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-photo-wrap">
+            <img class="team-photo-henry" src="./assets/images/team-henry.png" alt="Henry Sanchez, Chief Operations Officer of A to Z Construction" loading="lazy" width="600" height="450">
+            <div class="team-photo-overlay" aria-hidden="true"></div>
+          </div>
+          <div class="team-info">
+            <p class="team-name">Henry Sanchez</p>
+            <p class="team-role" data-en="Chief Operations Officer" data-es="Director de Operaciones">Chief Operations Officer</p>
+            <div class="team-divider" aria-hidden="true"></div>
+            <p class="team-bio" data-en="With over 40 years in the construction industry, Henry oversees every project from the ground level. His deep field expertise ensures that every job runs on time, on budget, and up to the highest standards of quality." data-es="Con m&aacute;s de 40 a&ntilde;os en la industria de la construcci&oacute;n, Henry supervisa cada proyecto desde el terreno. Su profunda experiencia en campo garantiza que cada trabajo se realice a tiempo, dentro del presupuesto y con los m&aacute;s altos est&aacute;ndares de calidad.">With over 40 years in the construction industry, Henry oversees every project from the ground level. His deep field expertise ensures that every job runs on time, on budget, and up to the highest standards of quality.</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-photo-wrap">
+            <img class="team-photo-luis" src="./assets/images/team-luis.jpg" alt="Luis Valdez, Director of Technology and Business Intelligence at A to Z Construction" loading="lazy" width="600" height="450">
+            <div class="team-photo-overlay" aria-hidden="true"></div>
+          </div>
+          <div class="team-info">
+            <p class="team-name">Luis Valdez</p>
+            <p class="team-role" data-en="Director of Technology &amp; Business Intelligence" data-es="Director de Tecnolog&iacute;a e Inteligencia de Negocio">Director of Technology &amp; Business Intelligence</p>
+            <div class="team-divider" aria-hidden="true"></div>
+            <p class="team-bio" data-en="With over 30 years of experience, Luis drives the data, systems, and digital strategy behind A to Z's operations. From performance analytics to process optimization, he ensures the business runs as precisely as the projects it delivers." data-es="Con m&aacute;s de 30 a&ntilde;os de experiencia, Luis impulsa los datos, los sistemas y la estrategia digital detr&aacute;s de las operaciones de A to Z. Desde el an&aacute;lisis de rendimiento hasta la optimizaci&oacute;n de procesos, garantiza que el negocio funcione con tanta precisi&oacute;n como los proyectos que entrega.">With over 30 years of experience, Luis drives the data, systems, and digital strategy behind A to Z's operations. From performance analytics to process optimization, he ensures the business runs as precisely as the projects it delivers.</p>
           </div>
         </div>
       </div>
@@ -355,11 +430,11 @@
   <section id="testimonials" aria-labelledby="testimonials-heading">
     <div class="testimonials-inner">
       <p class="section-eyebrow" data-en="What Our Customers Say" data-es="Lo Que Dicen Nuestros Clientes">What Our Customers Say</p>
-      <h2 class="section-title" id="testimonials-heading"><span data-en="Trusted by <em>Hundreds</em> of Homeowners" data-es="La confianza de <em>cientos</em> de propietarios">Trusted by <em>Hundreds</em> of Homeowners</span></h2>
+      <h2 class="section-title" id="testimonials-heading"><span data-en="Trusted by <em>Homeowners and Businesses</em>" data-es="La confianza de <em>propietarios y empresas</em>">Trusted by <em>Homeowners and Businesses</em></span></h2>
       <div class="testimonials-grid">
         <div class="testimonial-card">
           <div class="testimonial-stars" aria-label="5 star rating">
-            ★★★★★
+            &#9733;&#9733;&#9733;&#9733;&#9733;
           </div>
           <blockquote class="testimonial-quote">
             <p data-en="A to Z Construction transformed our outdated kitchen into a modern masterpiece. The team was professional, communicated clearly throughout, and finished ahead of schedule. Highly recommend!" data-es="A to Z Construction transform&oacute; nuestra cocina anticuada en una obra maestra moderna. El equipo fue profesional, comunic&oacute; claramente durante todo el proceso y termin&oacute; antes de lo previsto. &iexcl;Altamente recomendado!">"A to Z Construction transformed our outdated kitchen into a modern masterpiece. The team was professional, communicated clearly throughout, and finished ahead of schedule. Highly recommend!"</p>
@@ -377,7 +452,7 @@
         </div>
         <div class="testimonial-card">
           <div class="testimonial-stars" aria-label="5 star rating">
-            ★★★★★
+            &#9733;&#9733;&#9733;&#9733;&#9733;
           </div>
           <blockquote class="testimonial-quote">
             <p data-en="From the initial consultation to the final walkthrough, A to Z Construction exceeded our expectations. Their attention to detail and commitment to quality is unmatched. Our bathroom remodel looks incredible!" data-es="Desde la consulta inicial hasta el recorrido final, A to Z Construction super&oacute; nuestras expectativas. Su atenci&oacute;n al detalle y compromiso con la calidad es incomparable. &iexcl;Nuestro remodelado de ba&ntilde;o se ve incre&iacute;ble!">"From the initial consultation to the final walkthrough, A to Z Construction exceeded our expectations. Their attention to detail and commitment to quality is unmatched. Our bathroom remodel looks incredible!"</p>
@@ -395,10 +470,10 @@
         </div>
         <div class="testimonial-card">
           <div class="testimonial-stars" aria-label="5 star rating">
-            ★★★★★
+            &#9733;&#9733;&#9733;&#9733;&#9733;
           </div>
           <blockquote class="testimonial-quote">
-            <p data-en="We needed emergency plumbing repairs, and A to Z Construction responded within hours. Their licensed plumbers fixed the issue quickly and professionally. Great service at a fair price!" data-es="Necesit&aacute;bamos reparaciones de plomer&iacute;a de emergencia, y A to Z Construction respondi&oacute; en horas. Sus plomeros licenciados arreglaron el problema r&aacute;pida y profesionalmente. &iexcl;Gran servicio a un precio justo!">"We needed emergency plumbing repairs, and A to Z Construction responded within hours. Their licensed plumbers fixed the issue quickly and professionally. Great service at a fair price!"</p>
+            <p data-en="We needed urgent plumbing repairs, and A to Z Construction responded quickly. Their licensed plumbers fixed the issue professionally and at a fair price." data-es="Necesit&aacute;bamos una reparaci&oacute;n urgente de plomer&iacute;a, y A to Z Construction respondi&oacute; con rapidez. Sus plomeros licenciados resolvieron el problema de manera profesional y a un precio justo.">"We needed urgent plumbing repairs, and A to Z Construction responded quickly. Their licensed plumbers fixed the issue professionally and at a fair price."</p>
           </blockquote>
           <div class="testimonial-author">
             <div class="author-avatar">
@@ -448,7 +523,7 @@
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
           <span data-en="Get Free Estimate" data-es="Presupuesto Gratis">Get Free Estimate</span>
         </a>
-        <a href="https://wa.me/18565000237?text=Hello!%20I%20would%20like%20to%20learn%20more%20about%20A%20to%20Z%20Construction." target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+        <a href="https://wa.me/18564043637?text=Hello!%20I%20would%20like%20to%20learn%20more%20about%20A%20to%20Z%20Construction." target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
           <svg class="wa-icon" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.601 2.326A7.85 7.85 0 0 0 8.034.001C3.636.001.057 3.582.056 7.98c0 1.4.366 2.77 1.062 3.98L0 16l4.158-1.09a7.93 7.93 0 0 0 3.873 1.01h.003c4.397 0 7.978-3.582 7.979-7.98a7.94 7.94 0 0 0-2.412-5.614zm-5.567 12.258h-.003a6.57 6.57 0 0 1-3.347-.916l-.24-.142-2.468.648.659-2.407-.156-.247a6.56 6.56 0 0 1-1.01-3.513c.002-3.627 2.955-6.58 6.586-6.58 1.756 0 3.407.684 4.648 1.926a6.56 6.56 0 0 1 1.923 4.655c-.001 3.627-2.955 6.576-6.59 6.576z"/><path d="M11.609 9.292c-.198-.099-1.17-.578-1.352-.644-.182-.066-.315-.099-.446.1-.132.198-.512.644-.628.776-.116.132-.231.149-.429.05-.197-.1-.833-.307-1.588-.98-.588-.524-.985-1.17-1.1-1.367-.116-.198-.012-.305.087-.404.09-.09.198-.231.297-.347.099-.116.132-.198.198-.33.066-.132.033-.248-.017-.347-.05-.099-.446-1.075-.611-1.473-.161-.387-.325-.334-.446-.34a1.8 1.8 0 0 0-.38-.036c-.132 0-.347.05-.528.248-.182.198-.694.677-.694 1.65s.71 1.914.809 2.046c.099.132 1.398 2.133 3.387 2.992.473.204.84.325 1.127.416.474.151.904.13 1.245.08.38-.057 1.17-.478 1.336-.94.165-.462.165-.859.116-.94-.05-.083-.182-.132-.38-.231z"/></svg>
           <span data-en="WhatsApp Us" data-es="Escr&iacute;benos">WhatsApp Us</span>
         </a>
@@ -458,7 +533,7 @@
 </main>
 <!-- FOOTER -->
 <div id="global-footer"></div>
-<a id="whatsapp-float" href="https://wa.me/18565000237?text=Hello!%20I%20would%20like%20to%20learn%20more%20about%20A%20to%20Z%20Construction." target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
+<a id="whatsapp-float" href="https://wa.me/18564043637?text=Hello!%20I%20would%20like%20to%20learn%20more%20about%20A%20to%20Z%20Construction." target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
   <svg class="wa-icon" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.601 2.326A7.85 7.85 0 0 0 8.034.001C3.636.001.057 3.582.056 7.98c0 1.4.366 2.77 1.062 3.98L0 16l4.158-1.09a7.93 7.93 0 0 0 3.873 1.01h.003c4.397 0 7.978-3.582 7.979-7.98a7.94 7.94 0 0 0-2.412-5.614zm-5.567 12.258h-.003a6.57 6.57 0 0 1-3.347-.916l-.24-.142-2.468.648.659-2.407-.156-.247a6.56 6.56 0 0 1-1.01-3.513c.002-3.627 2.955-6.58 6.586-6.58 1.756 0 3.407.684 4.648 1.926a6.56 6.56 0 0 1 1.923 4.655c-.001 3.627-2.955 6.576-6.59 6.576z"/><path d="M11.609 9.292c-.198-.099-1.17-.578-1.352-.644-.182-.066-.315-.099-.446.1-.132.198-.512.644-.628.776-.116.132-.231.149-.429.05-.197-.1-.833-.307-1.588-.98-.588-.524-.985-1.17-1.1-1.367-.116-.198-.012-.305.087-.404.09-.09.198-.231.297-.347.099-.116.132-.198.198-.33.066-.132.033-.248-.017-.347-.05-.099-.446-1.075-.611-1.473-.161-.387-.325-.334-.446-.34a1.8 1.8 0 0 0-.38-.036c-.132 0-.347.05-.528.248-.182.198-.694.677-.694 1.65s.71 1.914.809 2.046c.099.132 1.398 2.133 3.387 2.992.473.204.84.325 1.127.416.474.151.904.13 1.245.08.38-.057 1.17-.478 1.336-.94.165-.462.165-.859.116-.94-.05-.083-.182-.132-.38-.231z"/></svg>
   <span class="wa-text" data-en="WhatsApp" data-es="WhatsApp">WhatsApp</span>
 </a>
@@ -490,15 +565,15 @@
     <div style="padding:1.4rem;">
       <p style="font-size:.85rem;color:var(--gray-dark);margin-bottom:1rem;text-align:center;font-weight:600;" data-en="How would you like to reach us?" data-es="&iquest;C&oacute;mo prefieres contactarnos?">How would you like to reach us?</p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1rem;">
-        <a href="https://wa.me/18565000237?text=Hello!%20I%20would%20like%20a%20free%20estimate." target="_blank" rel="noopener noreferrer" onclick="closePopup('timer')" style="display:flex;flex-direction:column;align-items:center;gap:.45rem;padding:1rem .75rem;background:#25D366;color:white;border-radius:10px;text-decoration:none;text-align:center;">
+        <a href="https://wa.me/18564043637?text=Hello!%20I%20would%20like%20a%20free%20estimate." target="_blank" rel="noopener noreferrer" onclick="closePopup('timer')" style="display:flex;flex-direction:column;align-items:center;gap:.45rem;padding:1rem .75rem;background:#25D366;color:white;border-radius:10px;text-decoration:none;text-align:center;">
           <svg class="wa-icon" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.601 2.326A7.85 7.85 0 0 0 8.034.001C3.636.001.057 3.582.056 7.98c0 1.4.366 2.77 1.062 3.98L0 16l4.158-1.09a7.93 7.93 0 0 0 3.873 1.01h.003c4.397 0 7.978-3.582 7.979-7.98a7.94 7.94 0 0 0-2.412-5.614zm-5.567 12.258h-.003a6.57 6.57 0 0 1-3.347-.916l-.24-.142-2.468.648.659-2.407-.156-.247a6.56 6.56 0 0 1-1.01-3.513c.002-3.627 2.955-6.58 6.586-6.58 1.756 0 3.407.684 4.648 1.926a6.56 6.56 0 0 1 1.923 4.655c-.001 3.627-2.955 6.576-6.59 6.576z"/><path d="M11.609 9.292c-.198-.099-1.17-.578-1.352-.644-.182-.066-.315-.099-.446.1-.132.198-.512.644-.628.776-.116.132-.231.149-.429.05-.197-.1-.833-.307-1.588-.98-.588-.524-.985-1.17-1.1-1.367-.116-.198-.012-.305.087-.404.09-.09.198-.231.297-.347.099-.116.132-.198.198-.33.066-.132.033-.248-.017-.347-.05-.099-.446-1.075-.611-1.473-.161-.387-.325-.334-.446-.34a1.8 1.8 0 0 0-.38-.036c-.132 0-.347.05-.528.248-.182.198-.694.677-.694 1.65s.71 1.914.809 2.046c.099.132 1.398 2.133 3.387 2.992.473.204.84.325 1.127.416.474.151.904.13 1.245.08.38-.057 1.17-.478 1.336-.94.165-.462.165-.859.116-.94-.05-.083-.182-.132-.38-.231z"/></svg>
           <span style="font-family:'Oswald',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;" data-en="WhatsApp" data-es="WhatsApp">WhatsApp</span>
           <span style="font-size:.7rem;opacity:.9;" data-en="Fast response" data-es="Respuesta r&aacute;pida">Fast response</span>
         </a>
-        <a href="tel:+18565000237" onclick="closePopup('timer')" style="display:flex;flex-direction:column;align-items:center;gap:.45rem;padding:1rem .75rem;background:var(--black);color:white;border-radius:10px;text-decoration:none;text-align:center;">
+        <a href="tel:+18564043637" onclick="closePopup('timer')" style="display:flex;flex-direction:column;align-items:center;gap:.45rem;padding:1rem .75rem;background:var(--black);color:white;border-radius:10px;text-decoration:none;text-align:center;">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           <span style="font-family:'Oswald',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;" data-en="Call us" data-es="Ll&aacute;manos">Call us</span>
-          <span style="font-size:.7rem;opacity:.75;" data-en="Mon to Sat, 7am to 8pm" data-es="Lun a S&aacute;b, de 7am a 8pm">Mon to Sat, 7am to 8pm</span>
+          <span style="font-size:.7rem;opacity:.75;" data-en="Mon to Sat, 7am to 8pm" data-es="Lun a S&aacute;b, de 7:00 a. m. a 8:00 p. m.">Mon to Sat, 7am to 8pm</span>
         </a>
       </div>
       <p style="font-size:.73rem;color:var(--gray-mid);text-align:center;" data-en="No obligation, free estimates always." data-es="Sin compromiso, presupuestos siempre gratis.">No obligation, free estimates always.</p>
@@ -526,15 +601,15 @@
         <p style="font-size:.82rem;color:var(--black);font-weight:600;line-height:1.4;" data-en="Free estimates &middot; Fast response &middot; No obligation" data-es="Presupuestos gratis &middot; Respuesta r&aacute;pida &middot; Sin compromiso">Free estimates &middot; Fast response &middot; No obligation</p>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:.9rem;">
-        <a href="https://wa.me/18565000237?text=Hello!%20I%20was%20about%20to%20leave%20but%20I%20need%20a%20free%20estimate." target="_blank" rel="noopener noreferrer" onclick="closePopup('exit')" style="display:flex;flex-direction:column;align-items:center;gap:.45rem;padding:1rem .75rem;background:#25D366;color:white;border-radius:10px;text-decoration:none;text-align:center;">
+        <a href="https://wa.me/18564043637?text=Hello!%20I%20was%20about%20to%20leave%20but%20I%20need%20a%20free%20estimate." target="_blank" rel="noopener noreferrer" onclick="closePopup('exit')" style="display:flex;flex-direction:column;align-items:center;gap:.45rem;padding:1rem .75rem;background:#25D366;color:white;border-radius:10px;text-decoration:none;text-align:center;">
           <svg class="wa-icon" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.601 2.326A7.85 7.85 0 0 0 8.034.001C3.636.001.057 3.582.056 7.98c0 1.4.366 2.77 1.062 3.98L0 16l4.158-1.09a7.93 7.93 0 0 0 3.873 1.01h.003c4.397 0 7.978-3.582 7.979-7.98a7.94 7.94 0 0 0-2.412-5.614zm-5.567 12.258h-.003a6.57 6.57 0 0 1-3.347-.916l-.24-.142-2.468.648.659-2.407-.156-.247a6.56 6.56 0 0 1-1.01-3.513c.002-3.627 2.955-6.58 6.586-6.58 1.756 0 3.407.684 4.648 1.926a6.56 6.56 0 0 1 1.923 4.655c-.001 3.627-2.955 6.576-6.59 6.576z"/><path d="M11.609 9.292c-.198-.099-1.17-.578-1.352-.644-.182-.066-.315-.099-.446.1-.132.198-.512.644-.628.776-.116.132-.231.149-.429.05-.197-.1-.833-.307-1.588-.98-.588-.524-.985-1.17-1.1-1.367-.116-.198-.012-.305.087-.404.09-.09.198-.231.297-.347.099-.116.132-.198.198-.33.066-.132.033-.248-.017-.347-.05-.099-.446-1.075-.611-1.473-.161-.387-.325-.334-.446-.34a1.8 1.8 0 0 0-.38-.036c-.132 0-.347.05-.528.248-.182.198-.694.677-.694 1.65s.71 1.914.809 2.046c.099.132 1.398 2.133 3.387 2.992.473.204.84.325 1.127.416.474.151.904.13 1.245.08.38-.057 1.17-.478 1.336-.94.165-.462.165-.859.116-.94-.05-.083-.182-.132-.38-.231z"/></svg>
           <span style="font-family:'Oswald',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;" data-en="WhatsApp" data-es="WhatsApp">WhatsApp</span>
           <span style="font-size:.7rem;opacity:.9;" data-en="Quick reply" data-es="Respuesta r&aacute;pida">Quick reply</span>
         </a>
-        <a href="tel:+18565000237" onclick="closePopup('exit')" style="display:flex;flex-direction:column;align-items:center;gap:.45rem;padding:1rem .75rem;background:var(--black);color:white;border-radius:10px;text-decoration:none;text-align:center;">
+        <a href="tel:+18564043637" onclick="closePopup('exit')" style="display:flex;flex-direction:column;align-items:center;gap:.45rem;padding:1rem .75rem;background:var(--black);color:white;border-radius:10px;text-decoration:none;text-align:center;">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           <span style="font-family:'Oswald',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;" data-en="Call us" data-es="Ll&aacute;manos">Call us</span>
-          <span style="font-size:.7rem;opacity:.75;" data-en="Mon to Sat, 7am to 8pm" data-es="Lun a S&aacute;b, de 7am a 8pm">Mon to Sat, 7am to 8pm</span>
+          <span style="font-size:.7rem;opacity:.75;" data-en="Mon to Sat, 7am to 8pm" data-es="Lun a S&aacute;b, de 7:00 a. m. a 8:00 p. m.">Mon to Sat, 7am to 8pm</span>
         </a>
       </div>
       <button onclick="closePopup('exit')" style="width:100%;font-size:.78rem;color:var(--gray-mid);background:none;border:none;cursor:pointer;padding:.4rem;" data-en="No thanks, I will contact you later" data-es="No, gracias. Los contactar&eacute; m&aacute;s tarde">No thanks, I will contact you later</button>
@@ -545,7 +620,7 @@
 @keyframes popupIn{from{opacity:0;transform:scale(.92) translateY(12px);}to{opacity:1;transform:scale(1) translateY(0);}}
 </style>
 <!-- TAWK.TO LIVE CHAT - DEFERRED FOR INP -->
-<script type="text/javascript">
+<script type="text/plain" data-cookie-category="marketing">
 var Tawk_API = Tawk_API || {}, Tawk_LoadStart;
 (function(){
   var loaded = false;
@@ -571,11 +646,6 @@ var Tawk_API = Tawk_API || {}, Tawk_LoadStart;
 <script src="./assets/js/popup.js?v=20260305e"></script>
 </body>
 </html>
-
-
-
-
-
 
 
 
