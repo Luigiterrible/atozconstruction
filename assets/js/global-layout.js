@@ -19,8 +19,9 @@
       '      <a href="./residential.html" class="nav-link" data-en="Residential" data-es="Residencial">Residential</a>' +
       '      <a href="./commercial.html" class="nav-link" data-en="Commercial" data-es="Comercial">Commercial</a>' +
       '      <a href="./about.html" class="nav-link" data-en="About Us" data-es="Nosotros">About Us</a>' +
+      '      <a href="./resources.html" class="nav-link" data-en="Resources" data-es="Recursos">Resources</a>' +
       '      <a href="./contact.html" class="nav-link" data-en="Contact" data-es="Contacto">Contact</a>' +
-      '      <a href="./affiliates.html" class="nav-link" data-en="Affiliates" data-es="Afiliados">Affiliates</a>' +
+      '      <a href="./affiliates.html" class="nav-link affiliates-link" data-en="Affiliates" data-es="Afiliados">Affiliates</a>' +
       "    </nav>" +
       '    <div class="header-right">' +
       '      <a id="header-cta-link" href="./contact.html" class="btn-header-cta" data-en="Free Estimate" data-es="Presupuesto Gratis">Free Estimate</a>' +
@@ -37,8 +38,9 @@
       '    <a href="./residential.html" class="mobile-nav-link" data-en="Residential" data-es="Residencial">Residential</a>' +
       '    <a href="./commercial.html" class="mobile-nav-link" data-en="Commercial" data-es="Comercial">Commercial</a>' +
       '    <a href="./about.html" class="mobile-nav-link" data-en="About Us" data-es="Nosotros">About Us</a>' +
+      '    <a href="./resources.html" class="mobile-nav-link" data-en="Resources" data-es="Recursos">Resources</a>' +
       '    <a href="./contact.html" class="mobile-nav-link" data-en="Contact" data-es="Contacto">Contact</a>' +
-      '    <a href="./affiliates.html" class="mobile-nav-link" data-en="Affiliates" data-es="Afiliados">Affiliates</a>' +
+      '    <a href="./affiliates.html" class="mobile-nav-link affiliates-link" data-en="Affiliates" data-es="Afiliados">Affiliates</a>' +
       '    <a id="mobile-cta-link" href="./contact.html" class="mobile-nav-link" style="font-weight:700;" data-en="Free Estimate" data-es="Presupuesto Gratis">Free Estimate</a>' +
       "  </nav>" +
       "</header>";
@@ -62,6 +64,7 @@
       '          <li><a href="./residential.html" data-en="Residential" data-es="Residencial">Residential</a></li>' +
       '          <li><a href="./commercial.html" data-en="Commercial" data-es="Comercial">Commercial</a></li>' +
       '          <li><a href="./about.html" data-en="About Us" data-es="Nosotros">About Us</a></li>' +
+      '          <li><a href="./resources.html" data-en="Resources" data-es="Recursos">Resources</a></li>' +
       '          <li><a href="./contact.html" data-en="Contact" data-es="Contacto">Contact</a></li>' +
       "        </ul>" +
       "      </div>" +
@@ -121,7 +124,8 @@
     var page = (location.pathname.split("/").pop() || "index.html").toLowerCase();
     document.querySelectorAll("#site-header #main-nav .nav-link, #site-header #mobile-nav .mobile-nav-link").forEach(function (el) {
       var href = (el.getAttribute("href") || "").replace("./", "").toLowerCase();
-      if (href && href === page) {
+      var isResourcesCluster = href === "resources.html" && (page === "resources.html" || page.indexOf("resource-") === 0);
+      if ((href && href === page) || isResourcesCluster) {
         el.classList.add("active");
         if (page === "affiliates.html" && href === "affiliates.html") {
           el.classList.add("affiliates-active");

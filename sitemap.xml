@@ -48,6 +48,15 @@
   </url>
 
   <url>
+    <loc>https://atozgeneralcontractor.com/resources.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://atozgeneralcontractor.com/resources.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://atozgeneralcontractor.com/resources.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://atozgeneralcontractor.com/resources.html"/>
+  </url>
+
+  <url>
     <loc>https://atozgeneralcontractor.com/contact.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -63,6 +72,96 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://atozgeneralcontractor.com/affiliates.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://atozgeneralcontractor.com/affiliates.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://atozgeneralcontractor.com/affiliates.html"/>
+  </url>
+
+  <url>
+    <loc>https://atozgeneralcontractor.com/resource-kitchen-remodel-costs.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://atozgeneralcontractor.com/resource-kitchen-remodel-costs.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://atozgeneralcontractor.com/resource-kitchen-remodel-costs.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://atozgeneralcontractor.com/resource-kitchen-remodel-costs.html"/>
+  </url>
+
+  <url>
+    <loc>https://atozgeneralcontractor.com/resource-bathroom-remodel-costs.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://atozgeneralcontractor.com/resource-bathroom-remodel-costs.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://atozgeneralcontractor.com/resource-bathroom-remodel-costs.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://atozgeneralcontractor.com/resource-bathroom-remodel-costs.html"/>
+  </url>
+
+  <url>
+    <loc>https://atozgeneralcontractor.com/resource-hvac-repair-replace.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://atozgeneralcontractor.com/resource-hvac-repair-replace.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://atozgeneralcontractor.com/resource-hvac-repair-replace.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://atozgeneralcontractor.com/resource-hvac-repair-replace.html"/>
+  </url>
+
+  <url>
+    <loc>https://atozgeneralcontractor.com/resource-electrical-panel-upgrade-signs.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://atozgeneralcontractor.com/resource-electrical-panel-upgrade-signs.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://atozgeneralcontractor.com/resource-electrical-panel-upgrade-signs.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://atozgeneralcontractor.com/resource-electrical-panel-upgrade-signs.html"/>
+  </url>
+
+  <url>
+    <loc>https://atozgeneralcontractor.com/resource-property-maintenance-checklist.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://atozgeneralcontractor.com/resource-property-maintenance-checklist.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://atozgeneralcontractor.com/resource-property-maintenance-checklist.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://atozgeneralcontractor.com/resource-property-maintenance-checklist.html"/>
+  </url>
+
+  <url>
+    <loc>https://atozgeneralcontractor.com/resource-office-build-out-guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://atozgeneralcontractor.com/resource-office-build-out-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://atozgeneralcontractor.com/resource-office-build-out-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://atozgeneralcontractor.com/resource-office-build-out-guide.html"/>
+  </url>
+
+  <url>
+    <loc>https://atozgeneralcontractor.com/resource-full-home-remodel-guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://atozgeneralcontractor.com/resource-full-home-remodel-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://atozgeneralcontractor.com/resource-full-home-remodel-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://atozgeneralcontractor.com/resource-full-home-remodel-guide.html"/>
+  </url>
+
+  <url>
+    <loc>https://atozgeneralcontractor.com/resource-roof-repair-replace.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://atozgeneralcontractor.com/resource-roof-repair-replace.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://atozgeneralcontractor.com/resource-roof-repair-replace.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://atozgeneralcontractor.com/resource-roof-repair-replace.html"/>
+  </url>
+
+  <url>
+    <loc>https://atozgeneralcontractor.com/resource-plumbing-old-home-leaks.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://atozgeneralcontractor.com/resource-plumbing-old-home-leaks.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://atozgeneralcontractor.com/resource-plumbing-old-home-leaks.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://atozgeneralcontractor.com/resource-plumbing-old-home-leaks.html"/>
+  </url>
+
+  <url>
+    <loc>https://atozgeneralcontractor.com/resource-commercial-maintenance-guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://atozgeneralcontractor.com/resource-commercial-maintenance-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://atozgeneralcontractor.com/resource-commercial-maintenance-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://atozgeneralcontractor.com/resource-commercial-maintenance-guide.html"/>
   </url>
 
   <url>
