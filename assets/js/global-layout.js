@@ -10,7 +10,7 @@
       '      <img src="./assets/images/icon.png" alt="A to Z Construction &amp; Services Logo" width="56" height="56">' +
       '      <div class="logo-text-wrap">' +
       '        <span class="logo-name"><span>A to Z</span> Construction &amp; Services</span>' +
-      '        <span class="logo-tagline" data-en="Pro Handyman Xpress &middot; General Contractor" data-es="Pro Handyman Xpress &middot; Contratista general">Pro Handyman Xpress &middot; General Contractor</span>' +
+      '        <span class="logo-tagline" data-en="Pro Handyman Xpress &middot; General Contractor" data-es="Pro Handyman Xpress &middot; Contratista General">Pro Handyman Xpress &middot; General Contractor</span>' +
       "      </div>" +
       "    </a>" +
       '    <nav id="main-nav" aria-label="Main navigation">' +
@@ -51,7 +51,7 @@
       '    <div class="footer-grid">' +
       '      <div class="footer-logo">' +
       '        <a href="./"><img src="./assets/images/icon.png" alt="A to Z Construction" loading="lazy" width="60" height="60"></a>' +
-      '        <p class="footer-desc" data-en="Licensed General Contractor<br>All Work Guaranteed<br>Serving NY, NJ &amp; Philadelphia." data-es="Contratista general licenciado<br>Todos los trabajos garantizados<br>Atendemos NY, NJ y Filadelfia.">Licensed General Contractor<br>All Work Guaranteed<br>Serving NY, NJ &amp; Philadelphia.</p>' +
+      '        <p class="footer-desc" data-en="Licensed General Contractor<br>All Work Guaranteed<br>Serving NY, NJ &amp; Philadelphia." data-es="Contratista General Licenciado<br>Todos los Trabajos Garantizados<br>Atendemos NY, NJ y Filadelfia.">Licensed General Contractor<br>All Work Guaranteed<br>Serving NY, NJ &amp; Philadelphia.</p>' +
       '        <a href="tel:+18564043637" style="color:var(--orange);font-weight:700;font-size:1rem;text-decoration:none;">+1 (856) 404-3637</a>' +
       "      </div>" +
       "      <div>" +
