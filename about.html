@@ -179,8 +179,9 @@
     .testimonial-stars{color:#FACC15;font-size:1.25rem;margin-bottom:1rem;}
     .testimonial-quote{margin:0 0 1.5rem 0;font-style:italic;color:#374151;line-height:1.6;}
     .testimonial-author{display:flex;align-items:center;gap:1rem;}
-    .author-avatar{width:48px;height:48px;border-radius:50%;overflow:hidden;background:#E8821A;display:flex;align-items:center;justify-content:center;color:white;font-weight:600;font-size:1.1rem;}
-    .avatar-placeholder{background:#E8821A;color:white;display:flex;align-items:center;justify-content:center;width:100%;height:100%;font-weight:600;}
+    .author-avatar{width:48px;height:48px;border-radius:50%;overflow:hidden;position:relative;background:#E8821A;display:flex;align-items:center;justify-content:center;color:white;font-weight:600;font-size:1.1rem;flex-shrink:0;}
+    .author-avatar img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
+    .avatar-placeholder{position:absolute;inset:0;background:#E8821A;color:white;display:flex;align-items:center;justify-content:center;width:100%;height:100%;font-weight:600;}
     .author-info{display:flex;flex-direction:column;}
     .author-name{font-weight:600;color:#1A1A1A;margin:0;font-style:normal;}
     .author-location{color:#6B7280;font-size:.9rem;margin:.25rem 0 0 0;}
@@ -194,9 +195,8 @@
     .team-photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;transition:transform .4s ease;}
     .team-photo-paul{object-position:center 16%;}
     .team-photo-henry{object-position:center 16%;}
-    .team-photo-luis{object-fit:cover;object-position:center 3%;transform:scale(1.04);}
+    .team-photo-luis{object-position:center 16%;}
     .team-card:hover .team-photo-wrap img{transform:scale(1.04);}
-    .team-card:hover .team-photo-wrap .team-photo-luis{transform:scale(1.08);}
     .team-photo-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 55%,rgba(26,26,26,.55) 100%);}
     .team-info{padding:1.4rem 1.5rem 1.6rem;}
     .team-name{font-family:'Oswald',sans-serif;font-size:1.3rem;font-weight:700;color:var(--black);margin-bottom:.2rem;}
@@ -438,7 +438,7 @@
           </blockquote>
           <div class="testimonial-author">
             <div class="author-avatar">
-              <img src="./assets/images/testimonial-1.jpg" alt="Maria Rodriguez" loading="lazy" width="48" height="48" onerror="this.style.display='none'">
+              <img src="./assets/images/testimonial-1.jpg" alt="Maria Rodriguez" loading="lazy" width="48" height="48" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'">
               <div class="avatar-placeholder">MR</div>
             </div>
             <div class="author-info">
@@ -456,7 +456,7 @@
           </blockquote>
           <div class="testimonial-author">
             <div class="author-avatar">
-              <img src="./assets/images/testimonial-2.jpg" alt="James Chen" loading="lazy" width="48" height="48" onerror="this.style.display='none'">
+              <img src="./assets/images/testimonial-2.jpg" alt="James Chen" loading="lazy" width="48" height="48" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'">
               <div class="avatar-placeholder">JC</div>
             </div>
             <div class="author-info">
@@ -474,7 +474,7 @@
           </blockquote>
           <div class="testimonial-author">
             <div class="author-avatar">
-              <img src="./assets/images/testimonial-3.jpg" alt="Sarah Johnson" loading="lazy" width="48" height="48" onerror="this.style.display='none'">
+              <img src="./assets/images/testimonial-3.jpg" alt="Sarah Johnson" loading="lazy" width="48" height="48" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'">
               <div class="avatar-placeholder">SJ</div>
             </div>
             <div class="author-info">

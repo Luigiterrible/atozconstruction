@@ -71,12 +71,12 @@
       "      <div>" +
       '        <h4 class="footer-col-title" data-en="Top Services" data-es="Servicios Destacados">Top Services</h4>' +
       '        <ul class="footer-links">' +
-      '          <li><a href="./residential.html">Kitchen Remodeling</a></li>' +
-      '          <li><a href="./residential.html">Bathroom Remodeling</a></li>' +
-      '          <li><a href="./residential.html">HVAC Repair</a></li>' +
-      '          <li><a href="./residential.html">Plumbing Repair</a></li>' +
-      '          <li><a href="./residential.html">Electrical Repair</a></li>' +
-      '          <li><a href="./commercial.html">Commercial Build Outs</a></li>' +
+      '          <li><a href="./residential.html" data-en="Kitchen Remodeling" data-es="Remodelaci&oacute;n de Cocina">Kitchen Remodeling</a></li>' +
+      '          <li><a href="./residential.html" data-en="Bathroom Remodeling" data-es="Remodelaci&oacute;n de Ba&ntilde;o">Bathroom Remodeling</a></li>' +
+      '          <li><a href="./residential.html" data-en="HVAC Repair" data-es="Reparaci&oacute;n de HVAC">HVAC Repair</a></li>' +
+      '          <li><a href="./residential.html" data-en="Plumbing Repair" data-es="Reparaci&oacute;n de Plomer&iacute;a">Plumbing Repair</a></li>' +
+      '          <li><a href="./residential.html" data-en="Electrical Repair" data-es="Reparaci&oacute;n El&eacute;ctrica">Electrical Repair</a></li>' +
+      '          <li><a href="./commercial.html" data-en="Commercial Build Outs" data-es="Construcciones Comerciales Interiores">Commercial Build Outs</a></li>' +
       "        </ul>" +
       "      </div>" +
       "      <div>" +
