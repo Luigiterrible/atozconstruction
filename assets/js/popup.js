@@ -2,8 +2,8 @@
   if(window.__azcPopupBooted) return;
   window.__azcPopupBooted = true;
 
-  // Temporary global kill-switch requested by user.
-  var POPUPS_ENABLED = false;
+  // Global enable flag for production behavior.
+  var POPUPS_ENABLED = true;
   if(!POPUPS_ENABLED){
     ['popup-timer','popup-exit'].forEach(function(id){
       var el = document.getElementById(id);
@@ -23,6 +23,13 @@
   var START_TS       = Date.now();
   var EXIT_INTENT_ENABLED = false;
   var memoryShown = { timer: false, exit: false, converted: false };
+
+  function getViewportWidth(){
+    var docWidth = document.documentElement ? document.documentElement.clientWidth || 0 : 0;
+    var winWidth = window.innerWidth || 0;
+    var vvWidth = window.visualViewport ? window.visualViewport.width || 0 : 0;
+    return Math.max(docWidth, winWidth, vvWidth);
+  }
 
   function safeGet(storage, key){
     try { return storage.getItem(key); } catch(_) { return null; }
@@ -78,10 +85,17 @@
 
   function showPopup(id){
     // Hard guard: never allow exit popup when exit-intent is disabled (mobile/tablet).
-    if(id === 'popup-exit' && !EXIT_INTENT_ENABLED) return;
+    if(id === 'popup-exit' && !isExitIntentContext()) return;
     var el = document.getElementById(id);
     if(!el) return;
     if(el.dataset.azcOpen === '1') return;
+    ['popup-timer','popup-exit'].forEach(function(otherId){
+      if(otherId === id) return;
+      var otherEl = document.getElementById(otherId);
+      if(!otherEl) return;
+      otherEl.style.display = 'none';
+      otherEl.dataset.azcOpen = '0';
+    });
     applyLang(el);
     applyPopupLayout(el);
     el.style.display = 'flex';
@@ -148,6 +162,7 @@
   }
 
   function canShowExit(){
+    if(!isExitIntentContext()) return false;
     if(memoryShown.exit || safeGet(sessionStorage, EXIT_KEY)) return false;
     if(hasConverted()) return false;
     if(!memoryShown.timer && !safeGet(sessionStorage, TIMER_KEY)) return false;
@@ -158,10 +173,23 @@
   }
 
   function showExitPopup(){
-    if(!EXIT_INTENT_ENABLED) return;
+    if(!isExitIntentContext()) return;
     if(!canShowExit()) return;
     markShown(EXIT_KEY);
     showPopup('popup-exit');
+  }
+
+  function disableExitPopup(){
+    EXIT_INTENT_ENABLED = false;
+    var exitEl = document.getElementById('popup-exit');
+    if(exitEl){
+      exitEl.style.display = 'none';
+      exitEl.dataset.azcOpen = '0';
+    }
+    if(document.body){
+      var timerOpen = (document.getElementById('popup-timer') || {}).dataset && document.getElementById('popup-timer').dataset.azcOpen === '1';
+      if(!timerOpen) document.body.style.overflow = '';
+    }
   }
 
   function injectPopupResponsiveStyles(){
@@ -210,12 +238,12 @@
     if(!timerOpen && !exitOpen) document.body.style.overflow = '';
   };
 
-  // Mark conversion on any WhatsApp or Call click anywhere on the page
+  // Mark conversion on any WhatsApp, Call, or Email click anywhere on the page.
   document.addEventListener('click', function(e){
     var link = e.target.closest('a');
     if(!link) return;
     var href = link.getAttribute('href') || '';
-    if(href.indexOf('wa.me') !== -1 || href.indexOf('tel:') === 0){
+    if(href.indexOf('wa.me') !== -1 || href.indexOf('tel:') === 0 || href.indexOf('mailto:') === 0){
       memoryShown.converted = true;
       safeSet(sessionStorage, CONVERTED_KEY, '1');
     }
@@ -271,40 +299,45 @@
   })();
 
   var isLikelyMobileUA = /android|iphone|ipad|ipod|mobile|iemobile|opera mini/i.test((navigator.userAgent || '').toLowerCase());
-  var viewportWidth = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-  var isDesktopViewport = viewportWidth >= 1024;
-  var shouldEnableExitIntent = isDesktopViewport && !isTouchDevice && !isMobileViewport && !isLikelyMobileUA;
-  EXIT_INTENT_ENABLED = shouldEnableExitIntent;
+  function isExitIntentContext(){
+    var viewportWidth = getViewportWidth();
+    var isDesktopViewport = viewportWidth >= 1024;
+    var hasFinePointer = false;
+    var hasHover = false;
+    try {
+      hasFinePointer = !!(window.matchMedia && window.matchMedia('(pointer: fine)').matches);
+      hasHover = !!(window.matchMedia && window.matchMedia('(hover: hover)').matches);
+    } catch(_) {}
+    return isDesktopViewport && hasFinePointer && hasHover && !isTouchDevice && !isMobileViewport && !isLikelyMobileUA;
+  }
+  EXIT_INTENT_ENABLED = isExitIntentContext();
 
   // Mobile hard-stop: fully disable exit popup state and visibility.
   if(!EXIT_INTENT_ENABLED){
-    memoryShown.exit = true;
-    safeSet(sessionStorage, EXIT_KEY, '1');
-    safeSet(sessionStorage, EXIT_ARMED_KEY, '1');
-    var forcedExitEl = document.getElementById('popup-exit');
-    if(forcedExitEl){
-      forcedExitEl.style.display = 'none';
-      forcedExitEl.dataset.azcOpen = '0';
-    }
+    disableExitPopup();
   }
 
   // EXIT INTENT POPUP - desktop only
-  if(shouldEnableExitIntent && !safeGet(sessionStorage, EXIT_KEY)){
+  if(EXIT_INTENT_ENABLED && !safeGet(sessionStorage, EXIT_KEY)){
     document.addEventListener('mouseleave', function handler(e){
+      if(!isExitIntentContext()) return;
       if(e.clientY <= 0){
-        document.removeEventListener('mouseleave', handler);
-        showExitPopup();
+        if(canShowExit()){
+          document.removeEventListener('mouseleave', handler);
+          showExitPopup();
+        }
       }
     });
   }
 
   // EXIT INTENT POPUP - back button support (desktop only)
-  if(shouldEnableExitIntent){
+  if(EXIT_INTENT_ENABLED){
     if(!safeGet(sessionStorage, EXIT_ARMED_KEY)){
       safeSet(sessionStorage, EXIT_ARMED_KEY, '1');
       try { history.pushState({ azcExitTrap: true }, '', location.href); } catch(_) {}
     }
     window.addEventListener('popstate', function(){
+      if(!isExitIntentContext()) return;
       if(!canShowExit()) return;
       showExitPopup();
       try { history.pushState({ azcExitTrap: true }, '', location.href); } catch(_) {}
@@ -312,8 +345,24 @@
   }
 
   window.addEventListener('resize', function(){
+    EXIT_INTENT_ENABLED = isExitIntentContext();
+    if(!EXIT_INTENT_ENABLED){
+      disableExitPopup();
+    }
     applyPopupLayout(document.getElementById('popup-timer'));
     applyPopupLayout(document.getElementById('popup-exit'));
+  });
+
+  window.addEventListener('pageshow', function(){
+    if(!isExitIntentContext()){
+      disableExitPopup();
+    }
+  });
+
+  document.addEventListener('visibilitychange', function(){
+    if(document.visibilityState === 'visible' && !isExitIntentContext()){
+      disableExitPopup();
+    }
   });
 
   // Keep popup language in sync when user changes site language on mobile/desktop.
