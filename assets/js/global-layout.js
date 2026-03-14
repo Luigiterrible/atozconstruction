@@ -1,7 +1,31 @@
 ﻿(function () {
+  var SITE_RESET_VERSION = "20260314-reset-1";
+  var SITE_RESET_MARKER = "azc-site-reset-version";
   var headerHost = document.getElementById("global-header");
   var footerHost = document.getElementById("global-footer");
 
+  function runOneTimeSiteReset() {
+    var alreadyReset = null;
+    try {
+      alreadyReset = localStorage.getItem(SITE_RESET_MARKER);
+    } catch (_) {}
+    if (alreadyReset === SITE_RESET_VERSION) return;
+
+    try {
+      ["azc-lang","lang","language","site-lang","azc_cookie_consent_v1"].forEach(function (key) {
+        localStorage.removeItem(key);
+      });
+      localStorage.setItem(SITE_RESET_MARKER, SITE_RESET_VERSION);
+    } catch (_) {}
+
+    try {
+      ["azc_popup_timer","azc_popup_exit","azc_converted","azc_popup_exit_armed"].forEach(function (key) {
+        sessionStorage.removeItem(key);
+      });
+    } catch (_) {}
+  }
+
+  runOneTimeSiteReset();
   if (headerHost) {
     headerHost.innerHTML =
       '<header id="site-header" role="banner">' +
@@ -176,7 +200,7 @@
     if (document.querySelector('script[data-azc-popup-loader="1"]')) return;
     if (document.querySelector('script[src*="assets/js/popup.js"]')) return;
     var popupScript = document.createElement("script");
-    popupScript.src = "./assets/js/popup.js?v=20260314c";
+    popupScript.src = "./assets/js/popup.js?v=20260314d";
     popupScript.dataset.azcPopupLoader = "1";
     document.body.appendChild(popupScript);
   }
@@ -392,6 +416,7 @@
   if (!consent) ensureCookieBanner();
   else setCookieConsent(consent);
 })();
+
 
 
 
